@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>《IsoLand2》 | 虫儿飞的游戏集</title>
+        <meta name="author" content="虫儿飞">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features="></script>
+        
+        
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+	<canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
+></canvas>
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/background.min.js"></script>
+<div id="cursor"></div>
+<link rel="stylesheet" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/css/cursor.min.css" />
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/cursor.min.js"></script>
+<canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/firework2.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height: 100vh; width: 100vw; position: fixed; display: flex; z-index: 2147483647; justify-content: space-between; background: #fff; transition: all 0.3s ease-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none">
+    <div style="position: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center">
+        <div id="loadcontent" style="width: 50vmin; height: 50vmin; padding: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: solid 10px #a3ddfb; text-align: center">
+            <div>
+                <h2>LOADING...</h2>
+                <p style="word-break: keep-all">加载过慢请开启缓存（浏览器默认开启）</p>
+                <div>
+                    <img alt="loading" src="/loading.gif" style="width: 60px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="layout">
+            <transition name="into">
+                <div v-show="showpage" style="display: -not-none">
+                    <div id="menushow">
+                        <nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">虫儿飞的游戏集</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;虫儿飞的游戏集</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                    </div>
+                    <div id="main">
+                        <div class="article">
+    <div>
+        <h1>《IsoLand2》 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/1/1
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                游戏开发
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #ffa2c4">
+                    C#
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Unity/" style="color: #00bcd4">
+                    Unity
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/2D/" style="color: #03a9f4">
+                    2D
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/MVC%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/" style="color: #03a9f4">
+                    MVC三层架构
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/" style="color: #00a596">
+                    独立开发
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h5 id="胖不丁游戏公司面试题——实现《迷失岛2：时间的灰烬》中的一个小游戏"><a href="#胖不丁游戏公司面试题——实现《迷失岛2：时间的灰烬》中的一个小游戏" class="headerlink" title="胖不丁游戏公司面试题——实现《迷失岛2：时间的灰烬》中的一个小游戏"></a>胖不丁游戏公司面试题——实现《迷失岛2：时间的灰烬》中的一个小游戏</h5><h5 id="实现要求："><a href="#实现要求：" class="headerlink" title="实现要求："></a>实现要求：</h5><blockquote>
+<p>请实现该游戏，是一个简单的解谜游戏，实现时间为一个礼拜。<br>该游戏共有5个场景，H1-H4，其中H2A是一个小游戏。每个目录均有该场景的介绍，请细看。<br>玩家一进去是在H1场景，通过鼠标&#x2F;触摸屏点击进行操作。都是点触操作。</p>
+<p>其中音乐目录下有两个背景音乐，在H2A场景中播放OpenRoad.mp3，其他场景播放PaperWings.mp3。<br>请自行制作一个主界面，有两个按钮，新游戏和继续游戏。</p>
+<p>⭐道具使用逻辑：<br>点击道具栏的道具进行选中（显示手的素材，相当于拿了道具），然后点击场景进行使用判断。</p>
+<p>⭐UI部分有：<br>1、右上角menu按钮，点击后返回主界面。<br>2、右下角有道具栏，游戏中拾取到的道具会出现在道具栏中，点击左右可以进行切换</p>
+<p>⭐要求：<br>1、需要有存档功能<br>2、UI采用UGUI进行制作。<br>3、请设计一个简单的框架，以满足更多场景更多逻辑的流程控制</p>
+</blockquote>
+<h4 id="游戏打包地址："><a href="#游戏打包地址：" class="headerlink" title="游戏打包地址："></a>游戏打包地址：</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/AzureBubble/SampleReels/blob/main/Project/IsoLand2.zip"><strong>IsoLand2</strong></a></li>
+</ul>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/%E8%BF%B7%E5%A4%B1%E5%B2%9B2%EF%BC%9A%E6%97%B6%E9%97%B4%E7%9A%84%E7%81%B0%E7%83%AC.jpg" alt="迷失岛2：时间的灰烬"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/ISOLAND2.png" alt="ISOLAND2"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/IsoLand2_H1.png" alt="IsoLand2_H1"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/IsoLand2_H2.png" alt="IsoLand2_H2"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/IsoLand2_H2%E5%AF%B9%E8%AF%9D.png" alt="IsoLand2_H2对话"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/IsoLand2_H2A%E5%B0%8F%E6%B8%B8%E6%88%8F.png" alt="IsoLand2_H2A小游戏"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/IsoLand2_H3.png" alt="IsoLand2_H4"></p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+        
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+
+</div>
+
+                        <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 虫儿飞的游戏集
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @虫儿飞
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> & <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+
+                    </div>
+                </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content" alt="showimg">
+            </div>
+        </div>
+        <script src="/js/functions.js"></script>
+<script src="/js/particlex.js"></script>
+
+    
+    
+    
+    <script src="https://cdn.staticfile.org/waline/2.9.1/waline.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.9.1/waline.min.css">
+    <script>
+        Waline.init({
+            el: "#waline-container",
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: true,
+            pageview: false,
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+            meta: "nick,mail,link".split(","),
+            requiredMeta: "nick".split(","),
+            lang: "zh-CN",
+            wordLimit: 0,
+            pageSize: "10",
+            login: "enable",
+            locale: {},
+        });
+    </script>
+    
+    
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <script>
+        Waline.init({
+            el: '#waline-container',
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: "true",
+            pageview: "false",
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(','),
+            meta: "nick,mail,link".split(','),
+            requiredMeta: "nick".split(','),
+            lang: "zh-CN",
+            wordLimit: parseInt("0"),
+            pageSize: "10",
+            login: "enable",
+        });
+    </script>
+    
+
+
+    </body>
+</html>

@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>《救赎之路》 | 虫儿飞的游戏集</title>
+        <meta name="author" content="虫儿飞">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features="></script>
+        
+        
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+	<canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
+></canvas>
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/background.min.js"></script>
+<div id="cursor"></div>
+<link rel="stylesheet" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/css/cursor.min.css" />
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/cursor.min.js"></script>
+<canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/firework2.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height: 100vh; width: 100vw; position: fixed; display: flex; z-index: 2147483647; justify-content: space-between; background: #fff; transition: all 0.3s ease-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none">
+    <div style="position: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center">
+        <div id="loadcontent" style="width: 50vmin; height: 50vmin; padding: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: solid 10px #a3ddfb; text-align: center">
+            <div>
+                <h2>LOADING...</h2>
+                <p style="word-break: keep-all">加载过慢请开启缓存（浏览器默认开启）</p>
+                <div>
+                    <img alt="loading" src="/loading.gif" style="width: 60px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="layout">
+            <transition name="into">
+                <div v-show="showpage" style="display: -not-none">
+                    <div id="menushow">
+                        <nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">虫儿飞的游戏集</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;虫儿飞的游戏集</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                    </div>
+                    <div id="main">
+                        <div class="article">
+    <div>
+        <h1>《救赎之路》 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/1/12
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                游戏开发
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #00bcd4">
+                    C#
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Unity/" style="color: #03a9f4">
+                    Unity
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/2D/" style="color: #03a9f4">
+                    2D
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/" style="color: #ff7d73">
+                    团队合作
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h5 id="2023年1月12-1月13日-UGDP高校寒假实训作品《救赎之路》"><a href="#2023年1月12-1月13日-UGDP高校寒假实训作品《救赎之路》" class="headerlink" title="2023年1月12-1月13日 UGDP高校寒假实训作品《救赎之路》"></a>2023年1月12-1月13日 UGDP高校寒假实训作品《救赎之路》</h5><ul>
+<li>ps：由于新人较多，时间问题，在游戏功能实现上存在一点问题，所以有很多东西和我一开始的设想并不一致，但这款游戏还是越玩越能让人上瘾。</li>
+</ul>
+<h4 id="游戏类型："><a href="#游戏类型：" class="headerlink" title="游戏类型："></a>游戏类型：</h4><ul>
+<li>第三人称2D横版跳跃解谜</li>
+</ul>
+<h4 id="故事背景："><a href="#故事背景：" class="headerlink" title="故事背景："></a>故事背景：</h4><ul>
+<li>意识模糊间，你来到一个虚幻的世界，通过按WASD键操控你跟NPC对话、获取道具避过敌人和障碍，从而往地图前方探索，揭开这个世界的真相。</li>
+</ul>
+<h4 id="核心机制："><a href="#核心机制：" class="headerlink" title="核心机制："></a>核心机制：</h4><ul>
+<li>通过上下左右走&#x2F;跳跃&#x2F;冲刺操控你往前走，在场景中避开敌人并获取增益道具（瞬移&#x2F;回溯三秒&#x2F;护盾），让自己顺利通过关卡。</li>
+</ul>
+<h4 id="剧情大纲："><a href="#剧情大纲：" class="headerlink" title="剧情大纲："></a>剧情大纲：</h4><ul>
+<li><strong>迷境：</strong>从开场npc1处得知你是一名新转校生，刚转过来。你发现有黑影在附近偷窥，找完日记本后去门口追它！</li>
+<li><strong>影子：</strong>出生点出现新npc影子，你追上了，和它开始对话。对话中影子表示你不能呆在这里，需要找出口出去。你拒绝，影子狂暴，开始追逐战，甩掉它！</li>
+<li><strong>困惑：</strong>顺利通第二关后来到第三关，影子跟你对话解释：你现实中成为了植物人，而这里是你大脑所构造的内心幻想世界，只有冲出这里，现实中的自己才会醒来，你是否选择相信它，抉择权全在你。</li>
+</ul>
+<h4 id="游戏特点："><a href="#游戏特点：" class="headerlink" title="游戏特点："></a>游戏特点：</h4><ul>
+<li><strong>道具设计</strong><ul>
+<li>护盾——免疫所有伤害</li>
+<li>回溯——回到自己3s前的位置</li>
+<li>影子——模仿你的动作并追逐主角</li>
+</ul>
+</li>
+<li><strong>关卡设计</strong><ul>
+<li>设计层层递进</li>
+<li>节奏转换</li>
+<li>边闯关边读故事</li>
+</ul>
+</li>
+<li><strong>技能设计</strong><ul>
+<li>跳跃&#x2F;二段跳</li>
+<li>冲刺</li>
+<li>瞬移</li>
+</ul>
+</li>
+</ul>
+<h4 id="游戏打包地址："><a href="#游戏打包地址：" class="headerlink" title="游戏打包地址："></a>游戏打包地址：</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/AzureBubble/SampleReels/blob/main/Project/%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF.zip"><strong>《救赎之路》</strong></a></li>
+</ul>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/2023UDGP%E5%AF%92%E5%81%87%E5%AE%9E%E8%AE%AD48%E5%B0%8F%E6%97%B6.png" alt="2023UDGP寒假实训48小时"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/2023UDGP%E5%AF%92%E5%81%87%E5%AE%9E%E8%AE%AD48%E5%B0%8F%E6%97%B61.png" alt="2023UDGP寒假实训48小时1"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/2023UDGP%E5%AF%92%E5%81%87%E5%AE%9E%E8%AE%AD48%E5%B0%8F%E6%97%B63.png" alt="2023UDGP寒假实训48小时3"></p>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/2023UDGP%E5%AF%92%E5%81%87%E5%AE%9E%E8%AE%AD48%E5%B0%8F%E6%97%B62.png" alt="2023UDGP寒假实训48小时2"></p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+        
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+
+</div>
+
+                        <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 虫儿飞的游戏集
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @虫儿飞
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> & <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+
+                    </div>
+                </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content" alt="showimg">
+            </div>
+        </div>
+        <script src="/js/functions.js"></script>
+<script src="/js/particlex.js"></script>
+
+    
+    
+    
+    <script src="https://cdn.staticfile.org/waline/2.9.1/waline.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.9.1/waline.min.css">
+    <script>
+        Waline.init({
+            el: "#waline-container",
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: true,
+            pageview: false,
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+            meta: "nick,mail,link".split(","),
+            requiredMeta: "nick".split(","),
+            lang: "zh-CN",
+            wordLimit: 0,
+            pageSize: "10",
+            login: "enable",
+            locale: {},
+        });
+    </script>
+    
+    
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <script>
+        Waline.init({
+            el: '#waline-container',
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: "true",
+            pageview: "false",
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(','),
+            meta: "nick,mail,link".split(','),
+            requiredMeta: "nick".split(','),
+            lang: "zh-CN",
+            wordLimit: parseInt("0"),
+            pageSize: "10",
+            login: "enable",
+        });
+    </script>
+    
+
+
+    </body>
+</html>
