@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>《Moother》 | 虫儿飞的游戏集</title>
+        <title>Shader学习笔记 | 虫儿飞的游戏集</title>
         <meta name="author" content="虫儿飞">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -149,22 +149,22 @@
                     <div id="main">
                         <div class="article">
     <div>
-        <h1>《Moother》 </h1>
+        <h1>Shader学习笔记 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/2/6
+            2023/1/1
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏开发
+                学习笔记
             </a>
         </span>
         
@@ -176,29 +176,15 @@
             
             <span class="tag">
                 
-                <a href="/tags/Unity/" style="color: #03a9f4">
+                <a href="/tags/Shader/" style="color: #00a596">
+                    Shader
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Unity/" style="color: #ff7d73">
                     Unity
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/C/" style="color: #ff7d73">
-                    C#
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/2D/" style="color: #00a596">
-                    2D
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/" style="color: #03a9f4">
-                    团队合作
                 </a>
             </span>
             
@@ -207,27 +193,49 @@
     </div>
     
     <div class="content" v-pre>
-        <h5 id="2023年2月3日48小时Globe-Game-Jam《Moother》，主题《Roots》"><a href="#2023年2月3日48小时Globe-Game-Jam《Moother》，主题《Roots》" class="headerlink" title="2023年2月3日48小时Globe Game Jam《Moother》，主题《Roots》"></a>2023年2月3日48小时Globe Game Jam《Moother》，主题《Roots》</h5><h4 id="游戏类型："><a href="#游戏类型：" class="headerlink" title="游戏类型："></a>游戏类型：</h4><ul>
-<li>2D横板叙事冒险游戏</li>
+        <h3 id="一、升级旧项目为-URP-项目（Unity-2021-3-5f1c1）"><a href="#一、升级旧项目为-URP-项目（Unity-2021-3-5f1c1）" class="headerlink" title="一、升级旧项目为 URP 项目（Unity 2021.3.5f1c1）"></a>一、升级旧项目为 URP 项目（Unity 2021.3.5f1c1）</h3><ul>
+<li><p><strong>1、安装 URP 包</strong></p>
+<ul>
+<li><p>在 Unity 的 Window 菜单中单击 Package Manager 选项，打开 Package Manager 窗口。</p>
+</li>
+<li><p>在  Package Manager 窗口的左上角的下拉菜单中选择 Unity Registry 选项，窗口左侧就会显示出所有的 Unity 官方拓展包。</p>
+</li>
+<li><p>找到 Universal RP ，或者也可以直接在右上角的搜索框中输入 “Universal RP” 进行搜索，然后点击窗口右下角的 Install 进行安装。</p>
+</li>
+<li><p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/PackageManager%E7%AA%97%E5%8F%A3.jpg" alt="PackageManager窗口"></p>
+</li>
 </ul>
-<h4 id="故事背景："><a href="#故事背景：" class="headerlink" title="故事背景："></a>故事背景：</h4><ul>
-<li>母亲的女儿被抓走，需要获得更强的装备和能力才能去拯救她女儿。</li>
+</li>
+<li><p><strong>2、创建 UPR Asset</strong></p>
+<ul>
+<li>Unity 在 URP 中开放给用户很多调节渲染质量的设置选项，用户可以通过 URP Asset 文件进行设置，创建步骤如下：<ul>
+<li>在 Project 窗口下的 Assets 目录下单击鼠标右键选择 Create ➡ Folder ➡ 命名文件为 Settings(为了文件资源工整)。</li>
+<li>在上述 Settings 文件夹中依次右键 Create ➡ Rendering ➡ URP Asset(with Universal Renderer)，Unity 会在项目资源的当前路径中自动创建出 UniversalRenderPipelineAsset 和 UniversalRenderPipelineAsset_Renderer 两个文件。</li>
 </ul>
-<h4 id="核心机制："><a href="#核心机制：" class="headerlink" title="核心机制："></a>核心机制：</h4><ul>
-<li>玩家通过不断死亡，跳入游戏开发剧情，从而开发出新的功能，使得游戏中的母亲也能获得相应的技能。</li>
+</li>
+<li><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%88%9B%E5%BB%BAURPAsset.jpg" alt="创建URPAsset"></li>
+<li>选中 UniversalRenderPipelineAsset 文件之后，即可在面板中设置 Anti Aliasing(抗锯齿)、Render Scale(渲染倍率)、Cast Shadows(投射阴影)、Shadow Resolution(阴影分辨率)等一系列影响渲染质量的选项。</li>
+<li><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/URPAsset%E8%AE%BE%E7%BD%AE%E9%9D%A2%E6%9D%BF.jpg" alt="URPAsset设置面板"></li>
+<li>创建了 URP Asset 之后，还需要将其添加到当前项目的图形设置中才能生效，操作步骤如下：<ul>
+<li>在 Edit 菜单中选择 Project Settings ➡ Graphics 选项窗口中，将之前创建好的 URP Asset 文件拖动到 Scriptable Render Pipeline Settings 中即可。</li>
 </ul>
-<h4 id="灵感来源："><a href="#灵感来源：" class="headerlink" title="灵感来源："></a>灵感来源：</h4><ul>
-<li>母亲是人类文明的根，体现了伟大的母爱，在自己孩子丢失后，母亲会不惜一切去拯救自己的孩子。</li>
+</li>
+<li><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/Unity%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3.jpg" alt="Unity项目设置窗口"></li>
 </ul>
-<h4 id="美术风格："><a href="#美术风格：" class="headerlink" title="美术风格："></a>美术风格：</h4><p>- </p>
-<h4 id="游戏打包地址："><a href="#游戏打包地址：" class="headerlink" title="游戏打包地址："></a>游戏打包地址：</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/AzureBubble/SampleReels/blob/main/Project/Moother.zip"><strong>《Moother》</strong></a></li>
+</li>
+<li><p><strong>3、升级旧材质</strong></p>
+<ul>
+<li><p>使用了新的 URP Asset 之后，项目中的所有物体会立刻变成紫色，不必担心，这是由于 URP 与旧项目中的 Shader 不兼容导致的，只需要在 Edit 菜单中依次点击 Window ➡ Rendering ➡ Render Pipeline Converter，即可将当前项目中的所有材质升级为 URP的内置材质。</p>
+</li>
+<li><p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%8D%87%E7%BA%A7%E6%97%A7%E6%9D%90%E8%B4%A8%E4%B8%BAURP%E5%86%85%E7%BD%AE%E6%9D%90%E8%B4%A8.jpg" alt="升级旧材质为URP内置材质"></p>
+</li>
+<li><p>旧材质升级为 URP 材质的 Shader 映射</p>
+</li>
+<li><p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%97%A7%E6%9D%90%E8%B4%A8%E5%8D%87%E7%BA%A7%E4%B8%BAURP%E6%9D%90%E8%B4%A8%E7%9A%84Shader%E6%98%A0%E5%B0%84.jpg" alt="旧材质升级为URP材质的Shader映射"></p>
+</li>
 </ul>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/Moother.png" alt="Moother"></p>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/Moother1.png" alt="Moother1"></p>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/Moother2.png" alt="Moother2"></p>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/Moother3.png" alt="Moother3"></p>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/SampleReels@main/Picture/Moother4.png" alt="Moother4"></p>
+</li>
+</ul>
 
     </div>
     
