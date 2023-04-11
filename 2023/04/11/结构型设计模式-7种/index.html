@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>结构型设计模式 - 7种 | 虫儿飞的游戏集</title>
+        <title>结构型设计模式（Structural Design Patterns） - 7种 | 虫儿飞的游戏集</title>
         <meta name="author" content="虫儿飞">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -149,7 +149,7 @@
                     <div id="main">
                         <div class="article">
     <div>
-        <h1>结构型设计模式 - 7种 </h1>
+        <h1>结构型设计模式（Structural Design Patterns） - 7种 </h1>
     </div>
     <div class="info">
         <span class="date">
@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
+                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
                     结构型设计模式
                 </a>
             </span>
@@ -193,8 +193,316 @@
     </div>
     
     <div class="content" v-pre>
-        <h2 id="结构型设计模式-5种"><a href="#结构型设计模式-5种" class="headerlink" title="结构型设计模式 - 5种"></a>结构型设计模式 - 5种</h2><hr>
+        <h2 id="结构型设计模式（Structural-Design-Patterns）-7种"><a href="#结构型设计模式（Structural-Design-Patterns）-7种" class="headerlink" title="结构型设计模式（Structural Design Patterns） - 7种"></a>结构型设计模式（Structural Design Patterns） - 7种</h2><hr>
+<h3 id="什么是结构型设计模式（Structural-Design-Patterns）"><a href="#什么是结构型设计模式（Structural-Design-Patterns）" class="headerlink" title="什么是结构型设计模式（Structural Design Patterns）"></a>什么是结构型设计模式（Structural Design Patterns）</h3><blockquote>
+<p>结构型设计模式（Structural Design Patterns）是一种软件设计模式，用于解决在软件系统中对象的组合、接口、类之间的关系和结构的问题。结构型设计模式可以帮助设计者创建更加灵活、可扩展和易于维护的软件系统。</p>
+<p>结构型设计模式包括以下七种常见的模式<u><code>（桥代理组装适配器，享元回家装饰外观）</code></u>：</p>
+<ol>
+<li>适配器模式（Adapter Pattern）：将一个类的接口转换成另一个类的接口，使得原本不兼容的类能够一起工作。</li>
+<li>桥接模式（Bridge Pattern）：将抽象部分与其实现部分分离，使它们可以独立地变化。</li>
+<li>组合模式（Composite Pattern）：将对象组合成树形结构以表示”部分-整体”的层次结构，使客户端可以统一对待单个对象和组合对象。</li>
+<li>装饰者模式（Decorator Pattern）：动态地为对象添加额外的行为，而不需要在对象之间使用继承关系。</li>
+<li>外观模式（Facade Pattern）：提供一个简单的接口，隐藏一组复杂的子系统接口，使得客户端更加方便地使用这些子系统。</li>
+<li>享元模式（Flyweight Pattern）：共享细粒度对象，以减少内存开销。</li>
+<li>代理模式（Proxy Pattern）：为其他对象提供一种代理以控制对这个对象的访问。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="一、适配器模式（Adapter-Pattern）"><a href="#一、适配器模式（Adapter-Pattern）" class="headerlink" title="一、适配器模式（Adapter Pattern）"></a>一、适配器模式（Adapter Pattern）</h3><blockquote>
+<p>适配器模式（Adapter Pattern）是一种结构型设计模式，用于将一个类的接口转换成另一个类的接口，以便两者可以相互兼容。适配器模式通常用于解决不兼容的接口之间的问题，或者用于将现有类的功能与其他类进行集成。</p>
+<p><u>意图：将一个类的接口转换成客户希望的另外一个接口。Adapter 模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</u></p>
+<p>适配器模式在现实生活中的应用非常广泛，例如在电子设备中的电源适配器、在软件开发中的数据库适配器等。它可以帮助解决不同接口之间的兼容性问题，实现系统的灵活扩展和复用。</p>
+<p><code>Adapter Pattern适用于：</code></p>
+<ol>
+<li>想使用一个已经存在的类，而它的接口不符合要求。</li>
+<li>想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类（即那些接口可能不一定兼容的类）协同工作。</li>
+<li>（仅适用于对象Adapter）想使用一个已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口。对象适配器可以适配它的父类接口。</li>
+</ol>
+</blockquote>
+<h5 id="适配器模式包含三个关键角色："><a href="#适配器模式包含三个关键角色：" class="headerlink" title="适配器模式包含三个关键角色："></a>适配器模式包含三个关键角色：</h5><ol>
+<li><p><strong>目标接口（Target）</strong></p>
+<blockquote>
+<p>定义了客户端期望的接口，是客户端调用的接口。</p>
+</blockquote>
+</li>
+<li><p><strong>适配器（Adapter）</strong></p>
+<blockquote>
+<p>是将被适配者的接口转换成目标接口的类，它实现了目标接口，并持有一个对被适配者的引用。</p>
+</blockquote>
+</li>
+<li><p><strong>被适配者（Adaptee）</strong></p>
+<blockquote>
+<p>是需要被适配的类或接口，其接口与目标接口不匹配。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="适配器模式包括以下几种类型："><a href="#适配器模式包括以下几种类型：" class="headerlink" title="适配器模式包括以下几种类型："></a>适配器模式包括以下几种类型：</h5><ol>
+<li><p><strong>类适配器</strong></p>
+<blockquote>
+<p>通过继承实现适配器，使得适配器类既具有目标接口的行为，又能够调用被适配类的方法。在C++中，可以通过多继承和虚继承实现类适配器模式。</p>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%B1%BB%E9%80%82%E9%85%8D%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="类适配器结构图"></p>
+<p><strong>类适配器参考代码实现</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
 
+/*
+* 类适配器
+*/
+
+// 目标接口类
+class USB
+&#123;
+public:
+    virtual void Request()
+    &#123;
+        cout &lt;&lt; &quot;USB数据线&quot; &lt;&lt; endl;
+    &#125;
+    ~USB() &#123; ; &#125;
+&#125;;
+
+// 需要适配的类
+class TypeC
+&#123;
+public:
+    void SpecificRequest()
+    &#123;
+        cout &lt;&lt; &quot;Type-C数据线&quot; &lt;&lt; endl;
+    &#125;
+    ~TypeC() &#123; ; &#125;
+&#125;;
+
+// C++多重继承实现类适配器
+class Adapter :public USB, private TypeC
+&#123;
+public:
+    void Request() override
+    &#123;
+        SpecificRequest();
+    &#125;
+    ~Adapter() &#123; ; &#125;
+&#125;;
+
+int main()
+&#123;
+    USB* usb = new Adapter(); // 创建适配器对象
+    usb-&gt;Request();
+&#125;
+</code></pre>
+</li>
+<li><p><strong><code>对象适配器</code></strong></p>
+<blockquote>
+<p>通过组合实现适配器，使得适配器类包含一个被适配类的对象，并实现目标接口的方法，通过调用被适配类的方法来完成适配。在C++中，可以通过对象组合和接口继承实现对象适配器模式。</p>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%AF%B9%E8%B1%A1%E9%80%82%E9%85%8D%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="对象适配器结构图"></p>
+<p><strong>对象适配器参考代码实现</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+/*
+* 对象适配器
+*/
+
+// 目标接口类
+class USB
+&#123;
+public:
+    virtual void Request()
+    &#123;
+        cout &lt;&lt; &quot;USB数据线&quot; &lt;&lt; endl;
+    &#125;
+    ~USB() &#123; ; &#125;
+&#125;;
+
+// 需要适配的类
+class TypeC
+&#123;
+public:
+    void SpecificRequest()
+    &#123;
+        cout &lt;&lt; &quot;Type-C数据线&quot; &lt;&lt; endl;
+    &#125;
+    ~TypeC() &#123; ; &#125;
+&#125;;
+
+class Adapter :public USB
+&#123;
+private:
+    TypeC* typeC; // 定义一个需要适配的对象
+public:
+    Adapter(TypeC* tc) :typeC(tc) &#123; ; &#125;
+    void Request() override
+    &#123;
+        typeC-&gt;SpecificRequest(); // 需要创建适配对象调用方法
+    &#125;
+    ~Adapter() &#123; ; &#125;
+&#125;;
+
+int main()
+&#123;
+    TypeC* typeC = new TypeC();
+    USB* usb = new Adapter(typeC);
+    usb-&gt;Request();
+&#125;
+</code></pre>
+</li>
+<li><p><strong>接口适配器</strong></p>
+<blockquote>
+<p>也称为缺省适配器模式，通过定义一个抽象适配器类，其中包含目标接口的所有方法，但方法体为空，子类可以选择性地覆盖其中的方法，从而实现适配。在C++中，可以通过接口继承和虚函数实现接口适配器模式。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="适配器的优缺点："><a href="#适配器的优缺点：" class="headerlink" title="适配器的优缺点："></a>适配器的优缺点：</h5><blockquote>
+<p>适配器模式的优点：</p>
+<ol>
+<li>解决接口不兼容问题：通过适配器，可以将不兼容的接口转换成兼容的接口，使得不同接口之间能够协同工作。</li>
+<li>复用已有代码：可以复用已有的类或接口，而无需修改其源代码，只需实现适配器即可。</li>
+<li>灵活性：可以通过适配器替换不同的实现，从而实现不同的适配逻辑。</li>
+</ol>
+<p>适配器模式的缺点：</p>
+<ol>
+<li>增加了系统的复杂性，引入了适配器类，需要进行额外的设计和编码工作。</li>
+<li>在设计时需要注意选择适配器的类型（类适配器、对象适配器、接口适配器），以及适配器和目标接口的设计，以确保系统的结构清晰和易于理解。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="二、桥接模式（Bridge-Pattern）"><a href="#二、桥接模式（Bridge-Pattern）" class="headerlink" title="二、桥接模式（Bridge Pattern）"></a>二、桥接模式（Bridge Pattern）</h3><blockquote>
+<p>桥接模式（Bridge Pattern）是一种结构型设计模式，用于将抽象和实现部分解耦，使它们可以独立地变化。桥接模式通过使用组合关系，将抽象和实现部分分离成不同的类层次结构，从而实现抽象和实现的解耦。</p>
+<p><u>意图：将抽象部分与其实现部分分离，使它们都可以独立地变化。</u></p>
+<p>在传统的继承关系中，抽象类和具体实现类之间存在紧耦合关系，导致当抽象类或具体实现类发生变化时，可能会影响到彼此之间的稳定性和灵活性。而桥接模式通过将抽象和实现部分分离，使它们可以独立地演化和变化，从而实现了解耦和灵活性。</p>
+<p><u><code>Bridge Pattern适用于：</code></u></p>
+<ol>
+<li>不希望在抽象和它的实现部分之间有一个固定的绑定关系。例如：这种情况可能是因为在程序运行时刻实现部分应可以被选择或者切换。</li>
+<li>类的抽象以及它的实现都应该可以通过生成子类的方法加以扩充。这是 Bridge 模式使得开发者可以对不同的抽象接口和实现部分进行组合，并分别对它们进行扩充。</li>
+<li>对 一个抽象的实现部分的修改应对客户不产生影响，即客户代码不必重新编译。</li>
+<li>（C++）想对客户完全隐藏抽象的实现部分。</li>
+<li>有许多类要生成的类层次结构。</li>
+<li>想在多个对象间共享实现（可能使用引用技术），但同时要求客户并不知道这一点。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="桥接模式结构图"></p>
+<h5 id="桥接模式包含两个关键角色："><a href="#桥接模式包含两个关键角色：" class="headerlink" title="桥接模式包含两个关键角色："></a>桥接模式包含两个关键角色：</h5><ol>
+<li><p><strong>抽象部分（Abstraction）</strong></p>
+<blockquote>
+<p>抽象部分定义了高层接口，包含抽象方法，并持有一个对实现部分的引用；</p>
+</blockquote>
+</li>
+<li><p><strong>实现部分（Implementor）</strong></p>
+<blockquote>
+<p>实现部分定义了底层接口，包含具体的实现方法。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><strong>抽象部分和实现部分通过组合关系连接在一起，而不是继承关系，从而实现了抽象和实现的解耦。</strong></li>
+</ul>
+<h5 id="桥接模式参考代码实现"><a href="#桥接模式参考代码实现" class="headerlink" title="桥接模式参考代码实现"></a>桥接模式参考代码实现</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+/*
+* 桥接模式
+*/
+
+// 抽象实现类
+class IColor
+&#123;
+public:
+    virtual void OperationImp(string name) = 0;
+&#125;;
+
+// 具体实现类Red
+class Red :public IColor
+&#123;
+    void OperationImp(string name) override
+    &#123;
+        cout &lt;&lt; name &lt;&lt; &quot;：红色&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 具体实现类Blue
+class Blue :public IColor
+&#123;
+    void OperationImp(string name) override
+    &#123;
+        cout &lt;&lt; name &lt;&lt; &quot;：蓝色&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 抽象产品
+class AProduct
+&#123;
+private:
+    string name;
+protected:
+    IColor* color;
+public:
+    AProduct() &#123; color = NULL; &#125;
+    AProduct(IColor* iColor) :color(iColor) &#123; ; &#125;
+    void SetColor(IColor* iColor) &#123; color = iColor; &#125;
+    void SetName(string n) &#123; name = n; &#125;
+    string GetName() &#123; return name; &#125;
+    virtual void Operation() = 0;
+    virtual ~AProduct() &#123; ; &#125;
+&#125;;
+
+// 具体产品A
+class ProductA :public AProduct
+&#123;
+public:
+    ProductA() &#123; color = NULL; &#125;
+    ProductA(IColor* iColor) :AProduct(iColor) &#123; ; &#125;
+    void Operation() override
+    &#123;
+        color-&gt;OperationImp(this-&gt;GetName());
+    &#125;
+&#125;;
+
+// 具体产品B
+class ProductB :public AProduct
+&#123;
+public:
+    ProductB() &#123; color = NULL; &#125;
+    ProductB(IColor* iColor) :AProduct(iColor) &#123; ; &#125;
+    void Operation() override
+    &#123;
+        color-&gt;OperationImp(this-&gt;GetName());
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    IColor* red = new Red();
+    AProduct* productA = new ProductA();
+    productA-&gt;SetName(&quot;产品A&quot;);
+    productA-&gt;SetColor(red);
+    productA-&gt;Operation();
+
+    IColor* blue = new Blue();
+    AProduct* productB = new ProductB(blue);
+    productB-&gt;SetName(&quot;产品B&quot;);
+    productB-&gt;SetColor(blue);
+    productB-&gt;Operation();
+&#125;
+</code></pre>
+<h5 id="桥接模式的优缺点："><a href="#桥接模式的优缺点：" class="headerlink" title="桥接模式的优缺点："></a>桥接模式的优缺点：</h5><blockquote>
+<p>桥接模式的优点：</p>
+<ol>
+<li>解耦和灵活性：将抽象和实现部分解耦，使它们可以独立地演化和变化，互相之间不会影响，从而提高了系统的灵活性和可扩展性。</li>
+<li>可复用性：可以通过组合不同的抽象和实现部分，构建不同的对象组合，从而实现复用性。</li>
+<li>可扩展性：可以方便地扩展抽象和实现部分，而不影响其他部分的稳定性。</li>
+<li>可替代性：可以方便地替换抽象和实现部分，从而实现不同的组合，而不需要修改抽象和实现部分的代码。</li>
+</ol>
+<p>桥接模式的缺点：</p>
+<ol>
+<li>增加了系统的复杂性，需要额外的设计和编码工作。</li>
+<li>在设计时需要谨慎选择抽象和实现部分的接口，以确保系统的结构清晰和易于理解。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h3>
     </div>
     
     
