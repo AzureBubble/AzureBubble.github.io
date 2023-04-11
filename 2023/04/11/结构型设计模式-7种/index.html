@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00a596">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
+                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
                     结构型设计模式
                 </a>
             </span>
@@ -687,6 +687,131 @@ int main()
 </blockquote>
 <hr>
 <h3 id="四、装饰器模式（Decorator-Pattern）"><a href="#四、装饰器模式（Decorator-Pattern）" class="headerlink" title="四、装饰器模式（Decorator Pattern）"></a>四、装饰器模式（Decorator Pattern）</h3><blockquote>
+<p>装饰器模式（Decorator Pattern）是一种结构型设计模式，用于动态地给对象添加新的行为或功能，而不需要修改其原有的接口或实现。</p>
+<p><u>意图：动态地给一个对象添加一些额外的职责。就增加功能而言，Decorator 模式比生成子类更加灵活。</u></p>
+<p>通过使用装饰器模式，可以灵活地在运行时动态地添加、删除或修改对象的行为，而不需要修改原有的对象代码。这使得装饰器模式在需要扩展对象功能，但又不希望修改现有代码的情况下，具有很好的适用性。</p>
+<p><u><code>Decorator Pattern适用于：</code></u></p>
+<ol>
+<li>在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。</li>
+<li>处理那些可以撤销的职责。</li>
+<li>当不能采用生成子类的方式进行扩充时。一种情况是：可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是：由于类定义被隐藏，或类定义不能用于生成子类。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="装饰器模式结构图"></p>
+<h5 id="装饰器模式有三个关键角色："><a href="#装饰器模式有三个关键角色：" class="headerlink" title="装饰器模式有三个关键角色："></a>装饰器模式有三个关键角色：</h5><ol>
+<li><p>抽象组件（Component）</p>
+<blockquote>
+<p>定义了对象的基本接口，可以是抽象类或接口，它是被装饰者和装饰者共同实现的接口。</p>
+</blockquote>
+</li>
+<li><p>具体组件（Concrete Component）</p>
+<blockquote>
+<p>实现了抽象组件接口，是被装饰的对象，即被添加新行为的对象。</p>
+</blockquote>
+</li>
+<li><p>装饰器（Decorator）</p>
+<blockquote>
+<p>继承自抽象组件，包含了一个抽象组件的引用，并且定义了与抽象组件接口相同的接口。装饰器可以添加新的行为，也可以在执行原有行为前后添加额外的处理逻辑。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="装饰器模式参考代码实现"><a href="#装饰器模式参考代码实现" class="headerlink" title="装饰器模式参考代码实现"></a>装饰器模式参考代码实现</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 装饰器模式
+*/
+
+// 抽象人类
+class Person
+&#123;
+protected:
+    string name;
+public:
+    Person() &#123; ; &#125;
+    Person(string n) :name(n) &#123; ; &#125;
+    virtual void Operation() = 0;
+    virtual ~Person() &#123; ; &#125;
+&#125;;
+
+// 抽象装饰器类
+class Decorator :public Person
+&#123;
+protected:
+    Person* person;
+public:
+    Decorator(Person* p) :person(p) &#123; ; &#125;
+    ~Decorator() &#123; ; &#125;
+&#125;;
+
+// 具体装饰器A类
+class DecoratorA :public Decorator
+&#123;
+public:
+    DecoratorA(Person* p) :Decorator(p) &#123; ; &#125;
+    void Operation() override
+    &#123;
+        person-&gt;Operation(); // 原本的职责
+        cout &lt;&lt; &quot;新增的职责：研究！&quot; &lt;&lt; endl;
+    &#125;
+    ~DecoratorA() &#123; ; &#125;
+&#125;;
+
+// 具体装饰器B类
+class DecoratorB :public Decorator
+&#123;
+public:
+    DecoratorB(Person* p) :Decorator(p) &#123; ; &#125;
+    void Operation() override
+    &#123;
+        person-&gt;Operation(); // 原本的职责
+        cout &lt;&lt; &quot;新增的职责：考试！&quot; &lt;&lt; endl;
+    &#125;
+    ~DecoratorB() &#123; ; &#125;
+&#125;;
+
+// 具体学生类
+class Student :public Person
+&#123;
+public:
+    Student(string n) :Person(n) &#123; ; &#125;
+    void Operation() override
+    &#123;
+        cout &lt;&lt; name &lt;&lt; &quot;的职责：学习！&quot; &lt;&lt; endl;
+    &#125;
+    ~Student() &#123; ; &#125;
+&#125;;
+
+int main()
+&#123;
+    Person* zhangsan = new Student(&quot;张三&quot;);
+    zhangsan-&gt;Operation();
+    cout &lt;&lt; &quot;==========分割线===========&quot; &lt;&lt; endl;
+    zhangsan = new DecoratorA(zhangsan);
+    zhangsan-&gt;Operation();
+    cout &lt;&lt; &quot;==========分割线===========&quot; &lt;&lt; endl;
+    zhangsan = new DecoratorB(zhangsan);
+    zhangsan-&gt;Operation();
+&#125;
+</code></pre>
+<h5 id="装饰器模式的优缺点："><a href="#装饰器模式的优缺点：" class="headerlink" title="装饰器模式的优缺点："></a>装饰器模式的优缺点：</h5><blockquote>
+<p>装饰器模式优点:</p>
+<ol>
+<li>动态扩展功能：装饰器模式允许在不修改原有对象的情况下，动态地添加、删除或修改对象的行为，从而实现了功能的动态扩展，避免了继承的静态扩展方式可能引发的类爆炸问题。</li>
+<li>单一职责原则：装饰器模式将功能的添加和原有对象的实现解耦，使得每个类只负责一个单一的职责，符合设计原则中的单一职责原则，提高了代码的可维护性和可扩展性。</li>
+<li>灵活性和可组合性：由于装饰器模式通过组合的方式实现功能的扩展，因此可以灵活地组合多个装饰器对象，实现不同功能的组合，具有较高的灵活性和可组合性。</li>
+</ol>
+<p>装饰器模式缺点:</p>
+<ol>
+<li>多层嵌套：使用装饰器模式可能会导致多层嵌套的装饰器对象，从而增加了代码的复杂性和理解难度。</li>
+<li>接口增多：每个装饰器都需要实现与抽象组件相同的接口，这可能导致接口的增多，使得系统更加复杂。</li>
+<li>运行时性能损耗：由于装饰器模式采用了动态添加行为的方式，可能会在运行时引入一定的性能损耗，尤其是在装饰器链较长的情况下。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="五、外观模式（Facade-Pattern）"><a href="#五、外观模式（Facade-Pattern）" class="headerlink" title="五、外观模式（Facade Pattern）"></a>五、外观模式（Facade Pattern）</h3><blockquote>
+<p>外观模式（Facade Pattern）</p>
 </blockquote>
 
     </div>
