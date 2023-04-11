@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00a596">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00bcd4">
+                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
                     结构型设计模式
                 </a>
             </span>
@@ -201,7 +201,7 @@
 <li>适配器模式（Adapter Pattern）：将一个类的接口转换成另一个类的接口，使得原本不兼容的类能够一起工作。</li>
 <li>桥接模式（Bridge Pattern）：将抽象部分与其实现部分分离，使它们可以独立地变化。</li>
 <li>组合模式（Composite Pattern）：将对象组合成树形结构以表示”部分-整体”的层次结构，使客户端可以统一对待单个对象和组合对象。</li>
-<li>装饰者模式（Decorator Pattern）：动态地为对象添加额外的行为，而不需要在对象之间使用继承关系。</li>
+<li>装饰器模式（Decorator Pattern）：动态地为对象添加额外的行为，而不需要在对象之间使用继承关系。</li>
 <li>外观模式（Facade Pattern）：提供一个简单的接口，隐藏一组复杂的子系统接口，使得客户端更加方便地使用这些子系统。</li>
 <li>享元模式（Flyweight Pattern）：共享细粒度对象，以减少内存开销。</li>
 <li>代理模式（Proxy Pattern）：为其他对象提供一种代理以控制对这个对象的访问。</li>
@@ -416,6 +416,7 @@ public:
 // 具体实现类Red
 class Red :public IColor
 &#123;
+public:
     void OperationImp(string name) override
     &#123;
         cout &lt;&lt; name &lt;&lt; &quot;：红色&quot; &lt;&lt; endl;
@@ -425,6 +426,7 @@ class Red :public IColor
 // 具体实现类Blue
 class Blue :public IColor
 &#123;
+public:
     void OperationImp(string name) override
     &#123;
         cout &lt;&lt; name &lt;&lt; &quot;：蓝色&quot; &lt;&lt; endl;
@@ -503,6 +505,188 @@ int main()
 </blockquote>
 <hr>
 <h3 id="三、组合模式（Composite-Pattern）"><a href="#三、组合模式（Composite-Pattern）" class="headerlink" title="三、组合模式（Composite Pattern）"></a>三、组合模式（Composite Pattern）</h3><blockquote>
+<p>组合模式（Composite Pattern）是一种结构型设计模式，用于将对象组织成树形结构以表示“整体-部分”的层次结构，使客户端能够以一致的方式处理单个对象和组合对象，对象的层次结构可以递归地进行组合，从而形成复杂的结构。</p>
+<p><u>意图：将对象组合成树型结构以表示“部分-整体”的层次结构。Composite 使得用户对单个对象和组合对象的使用具有一致性。</u></p>
+<p>组合模式的核心思想是将叶子节点和组合节点统一对待，使得客户端在使用组合对象时不需要关心其具体类型，而是通过统一的接口对待整体和部分。这样可以简化客户端的代码，并且在需要增加新的组合对象时不需要修改客户端代码。</p>
+<p><u><code>Composite Pattern适用于：</code></u></p>
+<ol>
+<li>想表示对象的部分 - 整体层次结构。</li>
+<li>希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="组合模式结构图"></p>
+<h5 id="组合模式中通常有两种类型的对象："><a href="#组合模式中通常有两种类型的对象：" class="headerlink" title="组合模式中通常有两种类型的对象："></a>组合模式中通常有两种类型的对象：</h5><ol>
+<li><p>叶子节点（Leaf）</p>
+<blockquote>
+<p>表示组合中的叶子节点，它没有子节点，通常是最基本的单元。</p>
+</blockquote>
+</li>
+<li><p>组合节点（Composite）</p>
+<blockquote>
+<p>表示组合中的组合节点，它可以包含子节点，通常实现了与叶子节点相同的接口，并在其中包含一个子节点列表。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="组合模式参考代码实现"><a href="#组合模式参考代码实现" class="headerlink" title="组合模式参考代码实现"></a>组合模式参考代码实现</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+using namespace std;
+
+/*
+* 组合模式
+*/
+
+// 抽象文件
+class AFile
+&#123;
+protected:
+    string* name;
+public:
+    AFile() &#123; ; &#125;
+    AFile(string* n) &#123; name = n; &#125;
+    virtual void PrintName() = 0;
+    virtual void Print() = 0;
+    virtual void Add(AFile* file) = 0;
+    virtual void Remove(AFile* file) = 0;
+    virtual vector&lt;AFile*&gt;* GetChild() = 0;
+    virtual void Show() &#123; ; &#125;
+    ~AFile() &#123; ; &#125;
+&#125;;
+
+// 组合文件夹
+class Folder :public AFile
+&#123;
+private:
+    vector&lt;AFile*&gt; childrenList;
+public:
+    Folder(string* n) :AFile(n) &#123; ; &#125;
+    void PrintName() override
+    &#123;
+        cout &lt;&lt; *name &lt;&lt; endl;
+    &#125;
+    void Print() override
+    &#123;
+        cout &lt;&lt; *name &lt;&lt; &quot; &quot;;
+    &#125;
+    void Add(AFile* file) override
+    &#123;
+        childrenList.push_back(file);
+    &#125;
+    void Remove(AFile* file) override
+    &#123;
+        for (auto it = childrenList.begin(); it != childrenList.end(); it++)
+        &#123;
+            if (*it == file)
+            &#123;
+                childrenList.erase(it);
+                break;
+            &#125;
+        &#125;
+    &#125;
+    vector&lt;AFile*&gt;* GetChild()
+    &#123;
+        return &amp;childrenList;// return new vector&lt;AFile*&gt;(childrenList)
+    &#125;
+    void Show()
+    &#123;
+        for (int i = 0; i &lt; childrenList.size(); i++)
+        &#123;
+            childrenList[i]-&gt;Print();
+        &#125;
+        cout &lt;&lt; endl;
+    &#125;
+    ~Folder() &#123; ; &#125;
+&#125;;
+
+// 叶子文件
+class File :public AFile
+&#123;
+public:
+    File(string* n) :AFile(n) &#123; ; &#125;
+    void PrintName() override
+    &#123;
+        cout &lt;&lt; *name &lt;&lt; endl;
+    &#125;
+    void Print() override
+    &#123;
+        cout &lt;&lt; *name &lt;&lt; &quot; &quot;;
+    &#125;
+    void Add(AFile* file) override
+    &#123;
+        return;
+    &#125;
+    void Remove(AFile* file) override
+    &#123;
+        return;
+    &#125;
+    vector&lt;AFile*&gt;* GetChild()
+    &#123;
+        return new vector&lt;AFile*&gt;();
+    &#125;
+    ~File() &#123; ; &#125;
+&#125;;
+
+static void print(AFile* file)
+&#123;
+    file-&gt;Print();
+    vector&lt;AFile*&gt;* child = file-&gt;GetChild();
+    if (!child-&gt;empty())
+    &#123;
+        for (int i = 0; i &lt; child-&gt;size(); i++)
+        &#123;
+            print((*child)[i]);
+            //(*child)[i]-&gt;Print();
+        &#125;
+    &#125;
+    else
+    &#123;
+        return;
+    &#125;
+&#125;
+
+int main()
+&#123;
+    AFile* root = new Folder(new string(&quot;root&quot;));
+    AFile* folderA = new Folder(new string(&quot;folderA&quot;));
+    folderA-&gt;PrintName();
+    AFile* fileB = new File(new string(&quot;fileB&quot;));
+    fileB-&gt;PrintName();
+    root-&gt;Add(folderA);
+    root-&gt;Add(fileB);
+    root-&gt;Show();
+    root-&gt;Remove(fileB);
+    root-&gt;Show();
+    vector&lt;AFile*&gt;* child = root-&gt;GetChild();
+    for (int i = 0; i &lt; child-&gt;size(); i++)
+    &#123;
+        (*child)[i]-&gt;Print();
+    &#125;
+    cout &lt;&lt; endl;
+    AFile* folderC = new Folder(new string(&quot;folderC&quot;));
+    AFile* fileD = new File(new string(&quot;fileD&quot;));
+    AFile* fileE = new File(new string(&quot;fileE&quot;));
+    root-&gt;Add(fileB);
+    folderA-&gt;Add(folderC);
+    folderC-&gt;Add(fileD);
+    folderC-&gt;Add(fileE);
+    print(root);
+&#125;
+</code></pre>
+<h5 id="组合模式的优缺点："><a href="#组合模式的优缺点：" class="headerlink" title="组合模式的优缺点："></a>组合模式的优缺点：</h5><blockquote>
+<p>组合模式的优点：</p>
+<ol>
+<li>简化客户端代码：客户端可以一致地对待叶子节点和组合节点，无需进行额外的类型判断。</li>
+<li>可扩展性：可以方便地增加、删除或修改组合对象，而无需修改客户端代码。</li>
+<li>灵活性：可以通过组合不同的叶子节点和组合节点来构建复杂的树状结构。</li>
+</ol>
+<p>组合模式的缺点：</p>
+<ol>
+<li>可能导致系统过于复杂：如果组合对象的层次结构过于复杂，可能会导致系统的理解和维护变得困难。</li>
+<li>不适合所有情况：组合模式适用于那些需要对整体和部分进行一致性处理的情况，不适用于所有情况。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="四、装饰器模式（Decorator-Pattern）"><a href="#四、装饰器模式（Decorator-Pattern）" class="headerlink" title="四、装饰器模式（Decorator Pattern）"></a>四、装饰器模式（Decorator Pattern）</h3><blockquote>
 </blockquote>
 
     </div>
