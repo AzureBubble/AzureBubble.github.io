@@ -176,7 +176,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00bcd4">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
                     设计模式
                 </a>
             </span>
@@ -1024,13 +1024,18 @@ public:
 class PieceFactory
 &#123;
 private:
-    unordered_map&lt;int, Piece*&gt; pieces; // 确保键唯一的一个哈希表结构
+    unordered_map&lt;int, Piece*&gt; pieces;
 public:
     Piece* GetPiece(int key)
     &#123;
         if (pieces.find(key) == pieces.end())
         &#123;
             pieces[key] = new WhitePiece();
+            cout &lt;&lt; &quot;create color: &quot; &lt;&lt; pieces[key] &lt;&lt; &quot; Piece.&quot; &lt;&lt; endl;
+        &#125;
+        else
+        &#123;
+            cout &lt;&lt; &quot;Piece: &quot; &lt;&lt; pieces[key] &lt;&lt; &quot; is exist.&quot; &lt;&lt; endl;
         &#125;
         return pieces[key];
     &#125;
@@ -1039,6 +1044,11 @@ public:
         if (pieces.find(key) == pieces.end())
         &#123;
             pieces[key] = new FlyweightPiece(n);
+            cout &lt;&lt; &quot;create color: &quot; &lt;&lt; pieces[key] &lt;&lt; &quot; Piece.&quot; &lt;&lt; endl;
+        &#125;
+        else
+        &#123;
+            cout &lt;&lt; &quot;Piece: &quot; &lt;&lt; pieces[key] &lt;&lt; &quot; is exist.&quot; &lt;&lt; endl;
         &#125;
         return pieces[key];
     &#125;
@@ -1048,33 +1058,34 @@ int main()
 &#123;
     PieceFactory* factory = new PieceFactory();
     Piece* piece1 = factory-&gt;GetPiece(1);
-    Piece* piece2 = factory-&gt;GetPiece(2);
-    Piece* piece3 = factory-&gt;GetPiece(1);
-    Piece* piece4 = factory-&gt;GetPiece(2);
     piece1-&gt;Draw(1, 2);
+    Piece* piece2 = factory-&gt;GetPiece(2);
     piece2-&gt;Draw(3, 4);
+    Piece* piece3 = factory-&gt;GetPiece(1);
     piece3-&gt;Draw(5, 6);
+    Piece* piece4 = factory-&gt;GetPiece(2);
     piece4-&gt;Draw(7, 8);
+
     cout &lt;&lt; &quot;=======分割线========&quot; &lt;&lt; endl;
     Piece* piece5 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 3);
-    Piece* piece6 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 3);
-    Piece* piece7 = factory-&gt;GetFlyweightPiece(&quot;white&quot;, 4);
-    Piece* piece8 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 4);
     piece5-&gt;Draw(1, 2);
+    Piece* piece6 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 3);
     piece6-&gt;Draw(3, 4); // 共享balck地址
+    Piece* piece7 = factory-&gt;GetFlyweightPiece(&quot;white&quot;, 4);
     piece7-&gt;Draw(5, 6);
+    Piece* piece8 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 4);
     piece8-&gt;Draw(7, 8); // 共享white地址
 &#125;
 </code></pre>
-<h5 id="外观模式的优缺点"><a href="#外观模式的优缺点" class="headerlink" title="外观模式的优缺点"></a>外观模式的优缺点</h5><blockquote>
-<p>外观模式的优点：</p>
+<h5 id="享元模式的优缺点"><a href="#享元模式的优缺点" class="headerlink" title="享元模式的优缺点"></a>享元模式的优缺点</h5><blockquote>
+<p>享元模式的优点：</p>
 <ol>
 <li>节省内存：享元模式通过共享相同的对象实例来减少内存消耗。当多个对象需要相同的数据时，可以通过共享一个享元对象实例来避免创建多个相同的对象，从而减少内存使用。</li>
 <li>提高性能：由于享元模式共享对象实例，可以减少对象的创建和销毁次数，从而提高系统的性能。特别是在需要频繁创建和销毁对象的情况下，使用享元模式可以显著提升性能。</li>
 <li>简化对象管理：享元模式将共享对象的管理集中化，使得对象的创建和销毁更加简化和集中化。这有助于降低系统的复杂性，减少了对象管理的开销。</li>
 <li>支持大量细粒度的对象：享元模式可以支持大量细粒度的对象共享，从而可以在需要处理大量对象时，有效地减少对象的数量，从而降低系统的开销。</li>
 </ol>
-<p>外观模式的缺点</p>
+<p>享元模式的缺点</p>
 <ol>
 <li>共享对象可能导致线程安全问题：如果多个线程同时访问共享的享元对象，并对其进行修改，可能会导致线程安全问题，需要进行适当的线程同步措施。</li>
 <li>对象共享可能导致状态共享：享元模式中的对象共享可能导致不同对象之间共享状态，这可能会对系统的行为产生意外的影响，需要仔细设计和管理共享状态。</li>
@@ -1084,6 +1095,108 @@ int main()
 </blockquote>
 <hr>
 <h3 id="七、代理模式（Proxy-Pattern）"><a href="#七、代理模式（Proxy-Pattern）" class="headerlink" title="七、代理模式（Proxy Pattern）"></a>七、代理模式（Proxy Pattern）</h3><blockquote>
+<p>代理模式（Proxy Pattern）是一种结构型设计模式，用于为其他对象提供一种代理或者占位符，以控制对原始对象的访问。</p>
+<p><u>意图：为其他对象提供一种代理以控制对这个对象的访问。</u></p>
+<p>在代理模式中，代理对象（Proxy）充当了客户端与原始对象之间的中介。客户端通过代理对象来访问原始对象，而不是直接访问原始对象。代理对象负责处理与原始对象相关的一些额外功能，例如权限控制、性能优化、延迟加载、缓存等。</p>
+<p><u><code>Proxy Pattern适用于</code></u></p>
+<ol>
+<li>远程代理（Remote Proxy）：用于访问位于远程服务器上的对象，例如网络服务、Web服务等。</li>
+<li>虚拟代理（Virtual Proxy）：用于延迟加载对象的创建，直到真正需要访问对象时才进行实际创建。</li>
+<li>安全代理（Protection Proxy）：用于控制对敏感对象的访问权限，例如权限验证、身份验证等。</li>
+<li>智能代理（Smart Proxy）：用于在访问对象时添加额外的行为，例如性能监控、日志记录、缓存管理等。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="代理模式结构图"></p>
+<h5 id="代理模式有四个关键角色："><a href="#代理模式有四个关键角色：" class="headerlink" title="代理模式有四个关键角色："></a>代理模式有四个关键角色：</h5><ol>
+<li><p>抽象主题（Subject）</p>
+<blockquote>
+<p>定义了真实主题和代理主题共同的接口，可以是接口（Interface）或抽象类（Abstract Class）。抽象主题定义了真实主题和代理主题之间的公共操作，客户端通过抽象主题来访问真实主题或代理主题。</p>
+</blockquote>
+</li>
+<li><p>真实主题（Real Subject）</p>
+<blockquote>
+<p>实现了抽象主题接口，是代理模式中真正执行业务逻辑的对象。真实主题是客户端想要访问的对象。</p>
+</blockquote>
+</li>
+<li><p>代理（Proxy）</p>
+<blockquote>
+<p>实现了抽象主题接口，是客户端访问真实主题的代理对象。代理对象通常包含一个对真实主题的引用，同时负责在访问真实主题前后执行一些额外的操作，例如权限控制、性能优化、缓存管理等。</p>
+</blockquote>
+</li>
+<li><p>客户端（Client）</p>
+<blockquote>
+<p>通过抽象主题接口来访问真实主题或代理对象，客户端通常不直接访问真实主题，而是通过代理对象来间接访问真实主题。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="代理模式参考代码实现"><a href="#代理模式参考代码实现" class="headerlink" title="代理模式参考代码实现"></a>代理模式参考代码实现</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 代理模式
+*/
+
+// 抽象主题
+class Subject
+&#123;
+public:
+    Subject() &#123; ; &#125;
+    virtual void request() = 0;
+    virtual ~Subject() &#123; ; &#125;
+&#125;;
+
+// 真实主题
+class RealSubject :public Subject
+&#123;
+public:
+    RealSubject() &#123; ; &#125;
+    void request() override
+    &#123;
+        cout &lt;&lt; &quot;执行真实主题的请求。&quot; &lt;&lt; endl;
+    &#125;
+    ~RealSubject() &#123; ; &#125;
+&#125;;
+
+// 代理
+class Proxy :public Subject
+&#123;
+private:
+    RealSubject* realSubject;
+public:
+    Proxy()
+    &#123;
+        realSubject = new RealSubject();
+    &#125;
+    void request() override
+    &#123;
+        cout &lt;&lt; &quot;执行代理的请求前的操作。&quot; &lt;&lt; endl;
+        realSubject-&gt;request();
+        cout &lt;&lt; &quot;执行代理的请求后的操作。&quot; &lt;&lt; endl;
+    &#125;
+    ~Proxy() &#123; ; &#125;
+&#125;;
+
+int main()
+&#123;
+    Subject* proxy = new Proxy();
+    proxy-&gt;request();
+&#125;
+</code></pre>
+<h5 id="代理模式的优缺点"><a href="#代理模式的优缺点" class="headerlink" title="代理模式的优缺点"></a>代理模式的优缺点</h5><blockquote>
+<p>代理模式的优点：</p>
+<ol>
+<li>代理对象可以控制对原始对象的访问，提供了一种间接的方式来管理对象，可以灵活地添加、删除或替换代理对象，而不会影响到客户端代码。</li>
+<li>代理对象可以为原始对象添加额外的功能，例如权限控制、性能优化、缓存等，提高了系统的灵活性、可维护性和性能。</li>
+<li>代理模式可以隐藏原始对象的实现细节，保护了原始对象的安全性。</li>
+<li>代理模式可以在不修改原始对象的情况下对其进行扩展或改变。</li>
+</ol>
+<p>代理模式的缺点：</p>
+<ol>
+<li>代理模式引入了额外的间接层，可能会导致系统的复杂性增加。</li>
+<li>代理模式可能会引入一定的性能开销，特别是在远程代理和虚拟代理中，由于涉及到网络通信或延迟加载的操作。</li>
+<li>代理模式需要额外的代码来实现代理对象，增加了系统的开发和维护成本。</li>
+</ol>
 </blockquote>
 
     </div>
