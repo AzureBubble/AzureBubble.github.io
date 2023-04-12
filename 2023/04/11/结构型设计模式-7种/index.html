@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00bcd4">
+                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
                     结构型设计模式
                 </a>
             </span>
@@ -811,7 +811,279 @@ int main()
 </blockquote>
 <hr>
 <h3 id="五、外观模式（Facade-Pattern）"><a href="#五、外观模式（Facade-Pattern）" class="headerlink" title="五、外观模式（Facade Pattern）"></a>五、外观模式（Facade Pattern）</h3><blockquote>
-<p>外观模式（Facade Pattern）</p>
+<p>外观模式（Facade Pattern）是一种设计模式，属于结构型设计模式。它提供了一个简化复杂系统接口的高层接口，用于简化客户端与系统之间的交互。外观模式通过隐藏系统的复杂性，将一组复杂的子系统接口封装成一个简单的接口，从而提供了一个更加简单、易于使用的接口供客户端使用。</p>
+<p>外观模式通常包含一个外观类（Facade Class），该类作为客户端与子系统之间的中介，隐藏了子系统的复杂性，并提供了一个简单的接口供客户端使用。外观类可以理解为一个门面，将复杂的子系统的接口包装在一起，为客户端提供了一个统一的入口点。</p>
+<p><u>意图：为子系统中的一组接口提供一个一致的界面，Facade 模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</u></p>
+<p><u><code>Facade Pattern适用于：</code></u></p>
+<ol>
+<li><u>要为一个复杂子系统提供一个简单接口时</u>，子系统往往因为不断演化而变得越来越复杂。大多数模式使用时都会产生更多更小的类，这使得子系统更具有可重用性，也更容易对子系统进行定制，但也给那些不需要定制子系统的用户带来了一些使用上的困难。Facade 可以提供一个简单的默认视图，这一视图对大多数用户来说已经足够，而那些需要更多的可定制的用户可以越过 Facade 层。</li>
+<li><u>客户程序与抽象类的实现部分之间存在着很大的依赖性</u>。引入 Facade 将这个子系统与客户以及其他的子系统分离，可以提高子系统的独立性和可移植性。</li>
+<li><u>当需要构建一个层次结构的子系统时，使用 Facade 模式定义子系统中每层的入口点</u>。如果子系统之间是相互依赖的，则可以让它们仅通过 Facade 进行通信，从而简化了它们之间的依赖关系。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="外观模式结构图"></p>
+<h5 id="外观模式有三个关键角色："><a href="#外观模式有三个关键角色：" class="headerlink" title="外观模式有三个关键角色："></a>外观模式有三个关键角色：</h5><ol>
+<li><p>外观（Facade）</p>
+<blockquote>
+<p>外观类是外观模式的核心，提供了一个简单的接口供客户端使用，隐藏了子系统的复杂性。外观类通常包含对子系统的一系列调用，协调和管理子系统的功能。</p>
+</blockquote>
+</li>
+<li><p>子系统（Subsystem）</p>
+<blockquote>
+<p>子系统是一组相关的类或对象，实现了复杂的功能，但对客户端来说是不可见的。子系统由外观类所封装，外观类通过调用子系统的接口来实现对其功能的访问。</p>
+</blockquote>
+</li>
+<li><p>客户端（Client）</p>
+<blockquote>
+<p>客户端是使用外观模式的对象，通过调用外观类提供的简化接口来访问子系统的功能。客户端不直接与子系统进行交互，而是通过外观类来间接访问子系统的功能。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="外观模式参考代码实现"><a href="#外观模式参考代码实现" class="headerlink" title="外观模式参考代码实现"></a>外观模式参考代码实现</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 外观模式
+*/
+
+// 子系统A
+class SubSystemA
+&#123;
+public:
+    void printA()
+    &#123;
+        cout &lt;&lt; &quot;执行子系统A的功能。&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 子系统B
+class SubSystemB
+&#123;
+public:
+    void printB()
+    &#123;
+        cout &lt;&lt; &quot;执行子系统B的功能。&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 子系统C
+class SubSystemC
+&#123;
+public:
+    void printC()
+    &#123;
+        cout &lt;&lt; &quot;执行子系统C的功能。&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 外观类
+class Facade
+&#123;
+private:
+    SubSystemA* sa;
+    SubSystemB* sb;
+    SubSystemC* sc;
+public:
+    Facade()
+    &#123;
+        sa = new  SubSystemA();
+        sb = new  SubSystemB();
+        sc = new  SubSystemC();
+    &#125;
+    void PrintA()
+    &#123;
+        sa-&gt;printA();
+    &#125;
+    void PrintB()
+    &#123;
+        sb-&gt;printB();
+    &#125;
+    void PrintC()
+    &#123;
+        sc-&gt;printC();
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    Facade* facade = new Facade();
+    facade-&gt;PrintA();
+    facade-&gt;PrintB();
+    facade-&gt;PrintC();
+&#125;
+</code></pre>
+<h5 id="外观模式的优缺点："><a href="#外观模式的优缺点：" class="headerlink" title="外观模式的优缺点："></a>外观模式的优缺点：</h5><blockquote>
+<p>外观模式的优点：</p>
+<ol>
+<li>简化客户端代码：外观模式提供了一个简单的接口，使得客户端调用子系统的功能变得简单和方便，减少了客户端与子系统之间的耦合，简化了客户端的代码。</li>
+<li>封装复杂性：外观模式将子系统的复杂性封装在一个外观类中，对客户端来说，子系统的复杂性变得不可见，从而降低了客户端理解和使用子系统的难度。</li>
+<li>提高系统灵活性：由于客户端只与外观类交互，而不直接与子系统交互，因此在不影响客户端的情况下，可以灵活地修改和扩展子系统的功能。</li>
+</ol>
+<p>外观模式的缺点：</p>
+<ol>
+<li>增加了一个外观类：引入了外观类作为客户端与子系统之间的中间层，可能会增加系统的复杂性和开发成本。</li>
+<li>不符合开闭原则：如果需要修改或者扩展子系统的功能，可能需要修改外观类的接口或者实现，从而违反了开闭原则。</li>
+<li>依赖子系统：外观模式依赖于子系统的稳定性，如果子系统发生变化，可能会导致外观类的修改，增加了系统的维护成本。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="六、享元模式（Flyweight-Pattern）"><a href="#六、享元模式（Flyweight-Pattern）" class="headerlink" title="六、享元模式（Flyweight Pattern）"></a>六、享元模式（Flyweight Pattern）</h3><blockquote>
+<p>享元模式（Flyweight Pattern）是一种结构型设计模式，用于通过共享对象以节省内存和提高性能。它的核心思想是共享细粒度的对象，以减少内存使用和对象创建的开销。</p>
+<p>在享元模式中，对象分为两种类型：内部状态（Intrinsic State）和外部状态（Extrinsic State）。内部状态是可以被共享的，而外部状态是不可共享的。内部状态是对象固有的属性，它不会随着外部环境的变化而变化，因此可以被多个对象共享。外部状态是对象的一些变化较频繁的属性，它会随着外部环境的变化而变化，因此不适合被共享。</p>
+<p>享元模式通过将内部状态和外部状态进行分离，将内部状态作为共享的部分，可以在多个对象之间共享使用，从而节省内存空间。而外部状态则通过参数的方式传递给对象，在需要时进行设置，使得多个对象可以共享内部状态，但可以有不同的外部状态。</p>
+<p><u>意图：运用共享技术有效地支持大量细粒度的对象。</u></p>
+<p><u><code>Flyweight Pattern适用于:</code></u></p>
+<ol>
+<li>一个应用程序使用了大量的对象。</li>
+<li>完全由于大量的对象，造成很大的存储开销。</li>
+<li>对象的大多数状态都可变为外部状态。</li>
+<li>如果删除对象的外部状态，那么可以完全相对较少的共享对象取代很多组对象。</li>
+<li>如果程序不依赖于对象标识。由于 Flyweight 对象可以被共享，所以对于概念上明显有别的对象，标识测试将返回真值。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="享元模式结构图"></p>
+<h5 id="享元模式通常包含以下角色："><a href="#享元模式通常包含以下角色：" class="headerlink" title="享元模式通常包含以下角色："></a>享元模式通常包含以下角色：</h5><ol>
+<li><p>Flyweight（抽象享元类）</p>
+<blockquote>
+<p>定义了享元对象的接口，包含了需要被共享的方法。</p>
+</blockquote>
+</li>
+<li><p>ConcreteFlyweight（具体享元类）</p>
+<blockquote>
+<p>实现了抽象享元类的接口，实现了共享的方法。</p>
+</blockquote>
+</li>
+<li><p>UnsharedConcreteFlyweight（非共享具体享元类）</p>
+<blockquote>
+<p>不可以被共享的具体享元类，一般不实现共享的方法。</p>
+</blockquote>
+</li>
+<li><p>FlyweightFactory（享元工厂类）</p>
+<blockquote>
+<p>负责创建和管理享元对象，实现了享元对象的共享池，可以通过工厂方法获取享元对象。</p>
+</blockquote>
+</li>
+<li><p>Client（客户端）</p>
+<blockquote>
+<p>使用享元对象的客户端，通过享元工厂获取享元对象，并通过外部状态对享元对象进行操作。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="享元模式参考代码实现"><a href="#享元模式参考代码实现" class="headerlink" title="享元模式参考代码实现"></a>享元模式参考代码实现</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+
+/*
+* 享元模式
+*/
+
+// 抽象棋子类
+class Piece
+&#123;
+protected:
+    string color;
+public:
+    Piece() &#123; ; &#125;
+    Piece(string c) :color(c) &#123; ; &#125;
+    virtual void Draw(int x, int y) = 0;
+    ~Piece() &#123; ; &#125;
+&#125;;
+
+// 具体白棋类
+class WhitePiece :public Piece
+&#123;
+private:
+public:
+    WhitePiece() :Piece(&quot;white&quot;) &#123; ; &#125;
+    void Draw(int x, int y) override
+    &#123;
+        cout &lt;&lt; &quot;Draw a Color: &quot; &lt;&lt; color &lt;&lt; &quot;, Piece (x, y) : &quot; &lt;&lt; &quot;(&quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; &quot;)&quot; &lt;&lt; &quot;, Address: &quot; &lt;&lt; this &lt;&lt; endl;
+    &#125;
+    ~WhitePiece() &#123; ; &#125;
+&#125;;
+
+// 具体黑棋类
+class FlyweightPiece :public Piece
+&#123;
+private:
+public:
+    FlyweightPiece(string c)
+    &#123;
+        color = c;
+    &#125;;
+    void Draw(int x, int y) override
+    &#123;
+        cout &lt;&lt; &quot;Draw a Color: &quot; &lt;&lt; color &lt;&lt; &quot;, Piece (x, y) : &quot; &lt;&lt; &quot;(&quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; &quot;)&quot; &lt;&lt; &quot;, Address: &quot; &lt;&lt; this &lt;&lt; endl;
+    &#125;
+    ~FlyweightPiece() &#123; ; &#125;
+&#125;;
+
+// 享元棋子工厂
+class PieceFactory
+&#123;
+private:
+    unordered_map&lt;int, Piece*&gt; pieces;
+public:
+    Piece* GetPiece(int key)
+    &#123;
+        if (pieces.find(key) == pieces.end())
+        &#123;
+            pieces[key] = new WhitePiece();
+        &#125;
+        return pieces[key];
+    &#125;
+    Piece* GetFlyweightPiece(string n, int key)
+    &#123;
+        if (pieces.find(key) == pieces.end())
+        &#123;
+            pieces[key] = new FlyweightPiece(n);
+        &#125;
+        return pieces[key];
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    PieceFactory* factory = new PieceFactory();
+    Piece* piece1 = factory-&gt;GetPiece(1);
+    Piece* piece2 = factory-&gt;GetPiece(2);
+    Piece* piece3 = factory-&gt;GetPiece(1);
+    Piece* piece4 = factory-&gt;GetPiece(2);
+    piece1-&gt;Draw(1, 2);
+    piece2-&gt;Draw(3, 4);
+    piece3-&gt;Draw(5, 6);
+    piece4-&gt;Draw(7, 8);
+    cout &lt;&lt; &quot;=======分割线========&quot; &lt;&lt; endl;
+    Piece* piece5 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 3);
+    Piece* piece6 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 3);
+    Piece* piece7 = factory-&gt;GetFlyweightPiece(&quot;white&quot;, 4);
+    Piece* piece8 = factory-&gt;GetFlyweightPiece(&quot;balck&quot;, 4);
+    piece5-&gt;Draw(1, 2);
+    piece6-&gt;Draw(3, 4); // 共享balck地址
+    piece7-&gt;Draw(5, 6);
+    piece8-&gt;Draw(7, 8); // 共享white地址
+&#125;
+</code></pre>
+<h5 id="外观模式的优缺点"><a href="#外观模式的优缺点" class="headerlink" title="外观模式的优缺点"></a>外观模式的优缺点</h5><blockquote>
+<p>外观模式的优点：</p>
+<ol>
+<li>节省内存：享元模式通过共享相同的对象实例来减少内存消耗。当多个对象需要相同的数据时，可以通过共享一个享元对象实例来避免创建多个相同的对象，从而减少内存使用。</li>
+<li>提高性能：由于享元模式共享对象实例，可以减少对象的创建和销毁次数，从而提高系统的性能。特别是在需要频繁创建和销毁对象的情况下，使用享元模式可以显著提升性能。</li>
+<li>简化对象管理：享元模式将共享对象的管理集中化，使得对象的创建和销毁更加简化和集中化。这有助于降低系统的复杂性，减少了对象管理的开销。</li>
+<li>支持大量细粒度的对象：享元模式可以支持大量细粒度的对象共享，从而可以在需要处理大量对象时，有效地减少对象的数量，从而降低系统的开销。</li>
+</ol>
+<p>外观模式的缺点</p>
+<ol>
+<li>共享对象可能导致线程安全问题：如果多个线程同时访问共享的享元对象，并对其进行修改，可能会导致线程安全问题，需要进行适当的线程同步措施。</li>
+<li>对象共享可能导致状态共享：享元模式中的对象共享可能导致不同对象之间共享状态，这可能会对系统的行为产生意外的影响，需要仔细设计和管理共享状态。</li>
+<li>对象的复用可能受限：某些对象可能无法被复用，因为它们包含了不同的状态或行为，无法作为共享对象进行共享。</li>
+<li>增加了系统复杂性：享元模式引入了共享对象的管理逻辑，可能会增加系统的复杂性，需要额外的管理和维护工作。</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="七、代理模式（Proxy-Pattern）"><a href="#七、代理模式（Proxy-Pattern）" class="headerlink" title="七、代理模式（Proxy Pattern）"></a>七、代理模式（Proxy Pattern）</h3><blockquote>
 </blockquote>
 
     </div>
