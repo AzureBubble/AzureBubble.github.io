@@ -176,7 +176,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
                     设计模式
                 </a>
             </span>
@@ -211,7 +211,267 @@
 </ol>
 </blockquote>
 <hr>
-<h3 id="一、责任链模式（Chain-of-Responsibility-Pattern）"><a href="#一、责任链模式（Chain-of-Responsibility-Pattern）" class="headerlink" title="一、责任链模式（Chain of Responsibility Pattern）"></a>一、责任链模式（Chain of Responsibility Pattern）</h3>
+<h3 id="一、责任链模式（Chain-of-Responsibility-Pattern）"><a href="#一、责任链模式（Chain-of-Responsibility-Pattern）" class="headerlink" title="一、责任链模式（Chain of Responsibility Pattern）"></a>一、责任链模式（Chain of Responsibility Pattern）</h3><blockquote>
+<p>责任链模式（Chain of Responsibility Pattern）是一种行为型设计模式，用于将处理请求的对象组成一条链，并在该链上依次处理请求，直到找到合适的处理者为止。责任链模式将请求的发送者和接收者解耦，使得多个对象都有机会处理请求，从而避免了将请求发送给固定的接收者。</p>
+<p>在责任链模式中，通常会将处理者组成一条链，并将请求从链的起始点发送给第一个处理者，然后该处理者可以选择处理请求或者将请求传递给链上的下一个处理者，依次类推，直到找到合适的处理者或者请求到达链的末尾。这样可以实现一种请求处理的流程，不同的处理者可以根据自己的逻辑来处理请求，从而实现灵活的请求处理方式。</p>
+<p><u>意图：使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，知道有一个对象处理它为止。</u></p>
+<p><u><code>Chain of Responsibility Pattern适用于：</code></u></p>
+<ol>
+<li>有多个的对象可以处理一个请求，哪个对象处理该请求运行时刻自动确定。</li>
+<li>想在不明确指定接收者的情况下向多个对象种的一个提交请求。</li>
+<li>可处理一个请求的对象集合应被动态指定。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="责任链模式结构图"></p>
+<h5 id="责任链模式的主要角色包括："><a href="#责任链模式的主要角色包括：" class="headerlink" title="责任链模式的主要角色包括："></a>责任链模式的主要角色包括：</h5><ol>
+<li><p><strong>抽象处理者（Handler）</strong></p>
+<blockquote>
+<p>定义了处理请求的接口，通常包含一个处理请求的方法，以及设置和获取下一个处理者的方法。</p>
+</blockquote>
+</li>
+<li><p><strong>具体处理者（Concrete Handler）</strong></p>
+<blockquote>
+<p>实现了抽象处理者接口，具体处理请求的逻辑，并可以选择将请求传递给下一个处理者。</p>
+</blockquote>
+</li>
+<li><p><strong>客户端（Client）</strong></p>
+<blockquote>
+<p>创建并组织责任链，将请求发送给第一个处理者，并负责将请求传递给下一个处理者，直到找到合适的处理者。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="责任链模式实现参考代码"><a href="#责任链模式实现参考代码" class="headerlink" title="责任链模式实现参考代码"></a>责任链模式实现参考代码</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 责任链模式
+*/
+
+// 抽象处理者
+class Handler
+&#123;
+protected:
+    Handler* next;
+public:
+    Handler(Handler* n = nullptr) :next(n) &#123;&#125;
+    void SetNext(Handler* n) &#123; next = n; &#125;
+    virtual void HandlerRequest(int request) = 0;
+    virtual ~Handler() &#123;&#125;
+&#125;;
+
+// 具体处理者A
+class HandlerA :public Handler
+&#123;
+public:
+    void HandlerRequest(int request) override
+    &#123;
+        if (request &lt;= 7)
+        &#123;
+            cout &lt;&lt; &quot;HandlerA 的处理完成！&quot; &lt;&lt; endl;
+        &#125;
+        else if (next)
+        &#123;
+            next-&gt;HandlerRequest(request);
+        &#125;
+        else
+        &#123;
+            cout &lt;&lt; &quot;无法处理请求！&quot; &lt;&lt; endl;
+        &#125;
+    &#125;
+&#125;;
+
+// 具体处理者B
+class HandlerB :public Handler
+&#123;
+public:
+    void HandlerRequest(int request) override
+    &#123;
+        if (request &lt;= 15)
+        &#123;
+            cout &lt;&lt; &quot;HandlerB 的处理完成！&quot; &lt;&lt; endl;
+        &#125;
+        else if (next)
+        &#123;
+            next-&gt;HandlerRequest(request);
+        &#125;
+        else
+        &#123;
+            cout &lt;&lt; &quot;无法处理请求！&quot; &lt;&lt; endl;
+        &#125;
+    &#125;
+&#125;;
+
+// 具体处理者C
+class HandlerC :public Handler
+&#123;
+public:
+    void HandlerRequest(int request) override
+    &#123;
+        if (request &lt;= 30)
+        &#123;
+            cout &lt;&lt; &quot;HandlerC 的处理完成！&quot; &lt;&lt; endl;
+        &#125;
+        else if (next)
+        &#123;
+            next-&gt;HandlerRequest(request);
+        &#125;
+        else
+        &#123;
+            cout &lt;&lt; &quot;无法处理请求！&quot; &lt;&lt; endl;
+        &#125;
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    Handler* handlerA = new HandlerA();
+    Handler* handlerB = new HandlerB();
+    Handler* handlerC = new HandlerC();
+    handlerA-&gt;SetNext(handlerB);
+    handlerB-&gt;SetNext(handlerC);
+
+    handlerA-&gt;HandlerRequest(5);
+    handlerA-&gt;HandlerRequest(10);
+    handlerA-&gt;HandlerRequest(25);
+    handlerA-&gt;HandlerRequest(35);
+&#125;
+</code></pre>
+<hr>
+<h3 id="二、-命令模式（Command-Pattern）"><a href="#二、-命令模式（Command-Pattern）" class="headerlink" title="二、 命令模式（Command Pattern）"></a>二、 命令模式（Command Pattern）</h3><blockquote>
+<p>命令模式（Command Pattern）是一种行为型设计模式，用于将请求封装成一个对象，从而允许客户端通过不同的请求对象来参数化和传递请求，使得请求的发出者和接收者解耦。命令模式将请求的发送者（客户端）和请求的接收者（执行者）分离，通过引入一个命令对象来间接地传递请求，从而实现了请求的解耦和灵活性。</p>
+<p>命令模式的核心思想是将请求封装成一个对象，从而可以实现请求的参数化、传递、撤销等操作，同时也可以实现请求的队列、日志、事务等功能。命令模式通常适用于需要将请求的发出者和接收者解耦的场景，例如，需要实现撤销、重做、延迟执行等功能的应用场景。</p>
+<p><u>意图：将一个请求封装为一个对象，从而使得可以用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤销的操作。</u></p>
+<p><u><code>Command Pattern四适用于：</code></u></p>
+<ol>
+<li>抽象出待执行的动作以参数化某对象。</li>
+<li>在不同的时刻指定、排列和执行请求。</li>
+<li>支持取消操作。</li>
+<li>支持修改日志。</li>
+<li>用构建在原语操作上的高层操作构造一个系统。</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="命令模式结构图"></p>
+<h5 id="命令模式的主要角色包括："><a href="#命令模式的主要角色包括：" class="headerlink" title="命令模式的主要角色包括："></a>命令模式的主要角色包括：</h5><ol>
+<li><p>命令接口（Command Interface）</p>
+<blockquote>
+<p>定义了执行命令的接口，通常包含一个或多个抽象方法，如 <code>Execute()</code> 方法。</p>
+</blockquote>
+</li>
+<li><p>具体命令（Concrete Command）</p>
+<blockquote>
+<p>实现了命令接口，具体命令对象通常包含了对请求的接收者的引用，以及具体的执行逻辑。</p>
+</blockquote>
+</li>
+<li><p>请求接收者（Receiver）</p>
+<blockquote>
+<p>执行命令所要求的操作，实际完成请求的处理。</p>
+</blockquote>
+</li>
+<li><p>请求发送者（Client）</p>
+<blockquote>
+<p>负责创建命令对象，并将命令对象发送给请求的接收者，请求发送者通常持有一个命令对象，可以通过命令对象来发出请求。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="命令模式实现参考代码"><a href="#命令模式实现参考代码" class="headerlink" title="命令模式实现参考代码"></a>命令模式实现参考代码</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 命令链模式
+*/
+
+// 请求接收者
+class Receiver
+&#123;
+public:
+    void Action1()
+    &#123;
+        cout &lt;&lt; &quot;接收者执行动作1&quot; &lt;&lt; endl;
+    &#125;
+    void Action2()
+    &#123;
+        cout &lt;&lt; &quot;接收者执行动作2&quot; &lt;&lt; endl;
+    &#125;
+    ~Receiver() &#123; ; &#125;
+&#125;;
+
+// 命令接口
+class Command
+&#123;
+public:
+    virtual ~Command() &#123; ; &#125;
+    virtual void Execute() = 0;
+&#125;;
+
+// 具体命令1
+class Command1 :public Command
+&#123;
+private:
+    Receiver* receiver;
+public:
+    Command1(Receiver* r) :receiver(r) &#123; ; &#125;
+    ~Command1() &#123; ; &#125;
+    void Execute()
+    &#123;
+        cout &lt;&lt; &quot;执行具体命令1&quot; &lt;&lt; endl;
+        receiver-&gt;Action1();
+    &#125;
+&#125;;
+
+// 具体命令2
+class Command2 :public Command
+&#123;
+private:
+    Receiver* receiver;
+public:
+    Command2(Receiver* r) :receiver(r) &#123; ; &#125;
+    ~Command2() &#123; ; &#125;
+    void Execute()
+    &#123;
+        cout &lt;&lt; &quot;执行具体命令2&quot; &lt;&lt; endl;
+        receiver-&gt;Action2();
+    &#125;
+&#125;;
+
+// 命令调用者
+class Invoker
+&#123;
+private:
+    Command* command;
+public:
+    void SetCommand(Command* cmd)
+    &#123;
+        command = cmd;
+    &#125;
+    void ExcuteCommand()
+    &#123;
+        if (command)
+        &#123;
+            command-&gt;Execute();
+        &#125;
+    &#125;
+    ~Invoker() &#123; ; &#125;
+&#125;;
+
+int main()
+&#123;
+    Receiver* receiver = new Receiver();
+
+    Command* command1 = new Command1(receiver);
+    Command* command2 = new Command2(receiver);
+
+    Invoker* invoker = new Invoker();
+    invoker-&gt;SetCommand(command1);
+    invoker-&gt;ExcuteCommand();
+
+    invoker-&gt;SetCommand(command2);
+    invoker-&gt;ExcuteCommand();
+&#125;
+</code></pre>
+<hr>
+<h3 id="三、解释器模式（Interpreter-Pattern）"><a href="#三、解释器模式（Interpreter-Pattern）" class="headerlink" title="三、解释器模式（Interpreter Pattern）"></a>三、解释器模式（Interpreter Pattern）</h3>
     </div>
     
     

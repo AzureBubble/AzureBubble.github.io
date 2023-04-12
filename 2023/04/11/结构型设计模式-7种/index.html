@@ -183,7 +183,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
+                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
                     结构型设计模式
                 </a>
             </span>
@@ -517,12 +517,12 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="组合模式结构图"></p>
 <h5 id="组合模式中通常有两种类型的对象："><a href="#组合模式中通常有两种类型的对象：" class="headerlink" title="组合模式中通常有两种类型的对象："></a>组合模式中通常有两种类型的对象：</h5><ol>
-<li><p>叶子节点（Leaf）</p>
+<li><p><strong>叶子节点（Leaf）</strong></p>
 <blockquote>
 <p>表示组合中的叶子节点，它没有子节点，通常是最基本的单元。</p>
 </blockquote>
 </li>
-<li><p>组合节点（Composite）</p>
+<li><p><strong>组合节点（Composite）</strong></p>
 <blockquote>
 <p>表示组合中的组合节点，它可以包含子节点，通常实现了与叶子节点相同的接口，并在其中包含一个子节点列表。</p>
 </blockquote>
@@ -700,17 +700,17 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="装饰器模式结构图"></p>
 <h5 id="装饰器模式有三个关键角色："><a href="#装饰器模式有三个关键角色：" class="headerlink" title="装饰器模式有三个关键角色："></a>装饰器模式有三个关键角色：</h5><ol>
-<li><p>抽象组件（Component）</p>
+<li><p><strong>抽象组件（Component）</strong></p>
 <blockquote>
 <p>定义了对象的基本接口，可以是抽象类或接口，它是被装饰者和装饰者共同实现的接口。</p>
 </blockquote>
 </li>
-<li><p>具体组件（Concrete Component）</p>
+<li><p><strong>具体组件（Concrete Component）</strong></p>
 <blockquote>
 <p>实现了抽象组件接口，是被装饰的对象，即被添加新行为的对象。</p>
 </blockquote>
 </li>
-<li><p>装饰器（Decorator）</p>
+<li><p><strong>装饰器（Decorator）</strong></p>
 <blockquote>
 <p>继承自抽象组件，包含了一个抽象组件的引用，并且定义了与抽象组件接口相同的接口。装饰器可以添加新的行为，也可以在执行原有行为前后添加额外的处理逻辑。</p>
 </blockquote>
@@ -824,17 +824,17 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="外观模式结构图"></p>
 <h5 id="外观模式有三个关键角色："><a href="#外观模式有三个关键角色：" class="headerlink" title="外观模式有三个关键角色："></a>外观模式有三个关键角色：</h5><ol>
-<li><p>外观（Facade）</p>
+<li><p><strong>外观（Facade）</strong></p>
 <blockquote>
 <p>外观类是外观模式的核心，提供了一个简单的接口供客户端使用，隐藏了子系统的复杂性。外观类通常包含对子系统的一系列调用，协调和管理子系统的功能。</p>
 </blockquote>
 </li>
-<li><p>子系统（Subsystem）</p>
+<li><p><strong>子系统（Subsystem）</strong></p>
 <blockquote>
 <p>子系统是一组相关的类或对象，实现了复杂的功能，但对客户端来说是不可见的。子系统由外观类所封装，外观类通过调用子系统的接口来实现对其功能的访问。</p>
 </blockquote>
 </li>
-<li><p>客户端（Client）</p>
+<li><p><strong>客户端（Client）</strong></p>
 <blockquote>
 <p>客户端是使用外观模式的对象，通过调用外观类提供的简化接口来访问子系统的功能。客户端不直接与子系统进行交互，而是通过外观类来间接访问子系统的功能。</p>
 </blockquote>
@@ -945,27 +945,27 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="享元模式结构图"></p>
 <h5 id="享元模式通常包含以下角色："><a href="#享元模式通常包含以下角色：" class="headerlink" title="享元模式通常包含以下角色："></a>享元模式通常包含以下角色：</h5><ol>
-<li><p>Flyweight（抽象享元类）</p>
+<li><p><strong>Flyweight（抽象享元类）</strong></p>
 <blockquote>
 <p>定义了享元对象的接口，包含了需要被共享的方法。</p>
 </blockquote>
 </li>
-<li><p>ConcreteFlyweight（具体享元类）</p>
+<li><p><strong>ConcreteFlyweight（具体享元类）</strong></p>
 <blockquote>
 <p>实现了抽象享元类的接口，实现了共享的方法。</p>
 </blockquote>
 </li>
-<li><p>UnsharedConcreteFlyweight（非共享具体享元类）</p>
+<li><p><strong>UnsharedConcreteFlyweight（非共享具体享元类）</strong></p>
 <blockquote>
 <p>不可以被共享的具体享元类，一般不实现共享的方法。</p>
 </blockquote>
 </li>
-<li><p>FlyweightFactory（享元工厂类）</p>
+<li><p><strong>FlyweightFactory（享元工厂类）</strong></p>
 <blockquote>
 <p>负责创建和管理享元对象，实现了享元对象的共享池，可以通过工厂方法获取享元对象。</p>
 </blockquote>
 </li>
-<li><p>Client（客户端）</p>
+<li><p><strong>Client（客户端）</strong></p>
 <blockquote>
 <p>使用享元对象的客户端，通过享元工厂获取享元对象，并通过外部状态对享元对象进行操作。</p>
 </blockquote>
@@ -1109,22 +1109,22 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="代理模式结构图"></p>
 <h5 id="代理模式有四个关键角色："><a href="#代理模式有四个关键角色：" class="headerlink" title="代理模式有四个关键角色："></a>代理模式有四个关键角色：</h5><ol>
-<li><p>抽象主题（Subject）</p>
+<li><p><strong>抽象主题（Subject）</strong></p>
 <blockquote>
 <p>定义了真实主题和代理主题共同的接口，可以是接口（Interface）或抽象类（Abstract Class）。抽象主题定义了真实主题和代理主题之间的公共操作，客户端通过抽象主题来访问真实主题或代理主题。</p>
 </blockquote>
 </li>
-<li><p>真实主题（Real Subject）</p>
+<li><p><strong>真实主题（Real Subject）</strong></p>
 <blockquote>
 <p>实现了抽象主题接口，是代理模式中真正执行业务逻辑的对象。真实主题是客户端想要访问的对象。</p>
 </blockquote>
 </li>
-<li><p>代理（Proxy）</p>
+<li><p><strong>代理（Proxy）</strong></p>
 <blockquote>
 <p>实现了抽象主题接口，是客户端访问真实主题的代理对象。代理对象通常包含一个对真实主题的引用，同时负责在访问真实主题前后执行一些额外的操作，例如权限控制、性能优化、缓存管理等。</p>
 </blockquote>
 </li>
-<li><p>客户端（Client）</p>
+<li><p><strong>客户端（Client）</strong></p>
 <blockquote>
 <p>通过抽象主题接口来访问真实主题或代理对象，客户端通常不直接访问真实主题，而是通过代理对象来间接访问真实主题。</p>
 </blockquote>
