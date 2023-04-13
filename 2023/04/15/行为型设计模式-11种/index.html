@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
+                <a href="/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
                     行为型设计模式
                 </a>
             </span>
@@ -948,7 +948,11 @@ int main()
 <p>观察者模式的核心思想是解耦对象之间的依赖关系，让主题和观察者之间通过接口进行通信，从而实现了松耦合的设计。当主题的状态发生变化时，观察者会被自动通知，并根据需要进行相应的处理，从而实现了对象间的动态协作和响应式的行为。观察者模式常用于事件处理、GUI编程、消息系统等场景。</p>
 <p><u>意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到了通知并被自动更新。</u></p>
 <p><u><code>Observer Pattern适用于:</code></u></p>
-<p>1. </p>
+<ol>
+<li>当一个抽象模型有两个方面，其中一个方面依赖于另一个方面，将这两者封装在独立的对象中以使它们可以各自独立地改变和复用。</li>
+<li>当对一个对象的改变需要同时改变其他对象，而不知道具体有多少对象有待改变时。</li>
+<li>当一个对象必须通知其他对象，而它又不能假定其他对象是谁，即不希望这些对象是紧耦合的。</li>
+</ol>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="观察者模式结构图"></p>
 <h5 id="观察者模式通常包含以下角色："><a href="#观察者模式通常包含以下角色：" class="headerlink" title="观察者模式通常包含以下角色："></a>观察者模式通常包含以下角色：</h5><ol>
@@ -989,12 +993,26 @@ public:
     virtual void Update() = 0;
 &#125;;
 
+// 抽象主题类
+class Subject
+&#123;
+public:
+    virtual void Attach(Observer* observer) = 0;
+    virtual void Detach(Observer* observer) = 0;
+    virtual void Notify() = 0;
+&#125;;
+
 // 具体观察者1
 class Observer1 :public Observer
 &#123;
 private:
     string name;
+    Subject* subject;
 public:
+    Observer1(string n, Subject* s) :name(n), subject(s)
+    &#123;
+        subject-&gt;Attach(this);
+    &#125;
     Observer1(string n) :name(n) &#123; ; &#125;
     void Update() override
     &#123;
@@ -1007,21 +1025,17 @@ class Observer2 :public Observer
 &#123;
 private:
     string name;
+    Subject* subject;
 public:
+    Observer2(string n, Subject* s) :name(n), subject(s)
+    &#123;
+        subject-&gt;Attach(this);
+    &#125;
     Observer2(string n) :name(n) &#123; ; &#125;
     void Update() override
     &#123;
         cout &lt;&lt; &quot;观察者：&quot; &lt;&lt; name &lt;&lt; &quot;收到更新通知！&quot; &lt;&lt; endl;
     &#125;
-&#125;;
-
-// 抽象主题类
-class Subject
-&#123;
-public:
-    virtual void Attach(Observer* observer) = 0;
-    virtual void Detach(Observer* observer) = 0;
-    virtual void Notify() = 0;
 &#125;;
 
 // 具体主题1
@@ -1058,10 +1072,12 @@ public:
 int main()
 &#123;
     Subject1* subject1 = new Subject1();
-    Observer* observer1 = new Observer1(&quot;observer1&quot;);
-    Observer* observer2 = new Observer2(&quot;observer2&quot;);
-    subject1-&gt;Attach(observer1);
-    subject1-&gt;Attach(observer2);
+    Observer* observer1 = new Observer1(&quot;observer1&quot;, subject1);
+    Observer* observer2 = new Observer2(&quot;observer2&quot;, subject1);
+    //Observer* observer1 = new Observer1(&quot;observer1&quot;);
+    //Observer* observer2 = new Observer2(&quot;observer2&quot;);
+    //subject1-&gt;Attach(observer1);
+    //subject1-&gt;Attach(observer2);
     subject1-&gt;Notify();
     cout &lt;&lt; &quot;==========分割线=============&quot; &lt;&lt; endl;
     subject1-&gt;Detach(observer2);
@@ -1070,9 +1086,9 @@ int main()
 </code></pre>
 <hr>
 <h3 id="八、状态模式（State-Pattern）"><a href="#八、状态模式（State-Pattern）" class="headerlink" title="八、状态模式（State Pattern）"></a>八、状态模式（State Pattern）</h3><blockquote>
-<p>观察者模式（Observer Pattern）是一种行为型设计模式，用于定义对象之间的一对多依赖关系，当一个对象的状态发生变化时，其所有依赖对象都会得到通知并自动更新。</p>
-<p>观察者模式的核心思想是解耦对象之间的依赖关系，让主题和观察者之间通过接口进行通信，从而实现了松耦合的设计。当主题的状态发生变化时，观察者会被自动通知，并根据需要进行相应的处理，从而实现了对象间的动态协作和响应式的行为。观察者模式常用于事件处理、GUI编程、消息系统等场景。</p>
-<p><u>意图：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</u></p>
+<p>状态模式（State Pattern）是一种行为型设计模式，用于在对象的状态发生变化时，使对象能够改变其行为，而不需要通过多个条件语句来实现。状态模式将对象的行为封装在不同的状态对象中，使得状态之间可以相互切换，从而实现对象在不同状态下的不同行为。</p>
+<p>状态模式的主要目的是将对象的行为和状态分离，使得对象的行为能够根据不同的状态发生变化，从而实现更灵活、可扩展和易维护的代码。它适用于对象在不同状态下需要有不同行为的场景，避免了大量的条件语句，使代码更加清晰、简洁和可维护。</p>
+<p><u>意图：允许一个对象在内部状态改变时改变它的行为。对象看起来似乎修改了它的类。</u></p>
 <p><u><code>State Pattern适用于:</code></u></p>
 <ol>
 <li>一组对象以定义良好但是复杂的方式进行通信，产生的相互依赖关系结构混乱且难以理解。</li>
@@ -1082,24 +1098,19 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="状态模式结构图"></p>
 <h5 id="状态模式通常包含以下角色："><a href="#状态模式通常包含以下角色：" class="headerlink" title="状态模式通常包含以下角色："></a>状态模式通常包含以下角色：</h5><ol>
-<li><p><strong>主题（Subject）</strong></p>
+<li><p><strong>环境（Context）</strong></p>
 <blockquote>
-<p>也称为被观察者或发布者，负责维护一组观察者对象，并通知它们自己的状态变化。</p>
+<p>负责维护一个当前状态对象的引用，并将与状态相关的请求委派给当前状态处理。</p>
 </blockquote>
 </li>
-<li><p><strong>观察者（Observer）</strong></p>
+<li><p><strong>抽象状态（State）</strong></p>
 <blockquote>
-<p>也称为订阅者或观察者，定义了一个更新接口，用于接收主题通知的更新。</p>
+<p>定义状态的接口，通常包含了处理请求的方法。</p>
 </blockquote>
 </li>
-<li><p><strong>具体主题（Concrete Subject）</strong></p>
+<li><p><strong>具体状态（Concrete State）</strong></p>
 <blockquote>
-<p>实现了主题接口，负责维护自己的状态，并在状态发生变化时通知所有观察者。</p>
-</blockquote>
-</li>
-<li><p><strong>具体观察者（Concrete Observer）</strong></p>
-<blockquote>
-<p>实现了观察者接口，负责接收并处理主题发来的通知，以便更新自己的状态。</p>
+<p>实现抽象状态的接口，并定义了在该状态下的具体行为。</p>
 </blockquote>
 </li>
 </ol>
@@ -1107,8 +1118,8 @@ int main()
 </code></pre>
 <hr>
 <h3 id="九、策略模式（Strategy-Pattern）"><a href="#九、策略模式（Strategy-Pattern）" class="headerlink" title="九、策略模式（Strategy Pattern）"></a>九、策略模式（Strategy Pattern）</h3><blockquote>
-<p>观察者模式（Observer Pattern）是一种行为型设计模式，用于定义对象之间的一对多依赖关系，当一个对象的状态发生变化时，其所有依赖对象都会得到通知并自动更新。</p>
-<p>观察者模式的核心思想是解耦对象之间的依赖关系，让主题和观察者之间通过接口进行通信，从而实现了松耦合的设计。当主题的状态发生变化时，观察者会被自动通知，并根据需要进行相应的处理，从而实现了对象间的动态协作和响应式的行为。观察者模式常用于事件处理、GUI编程、消息系统等场景。</p>
+<p>策略模式（Strategy Pattern）是一种行为型设计模式，它允许在运行时根据需要选择不同的算法或策略来完成特定的任务，而不需要在代码中硬编码这些算法或策略。策略模式通过将算法或策略封装成独立的类，并通过一个统一的接口进行调用，实现了算法或策略的独立切换和替换。</p>
+<p>策略模式在实际应用中可以用于很多场景，例如在排序算法、支付方式、日志记录等场景中，根据不同的需求选择不同的策略来完成任务。</p>
 <p><u>意图：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</u></p>
 <p><u><code>Strategy Pattern适用于:</code></u></p>
 <ol>
@@ -1119,24 +1130,19 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="策略模式结构图"></p>
 <h5 id="策略模式通常包含以下角色："><a href="#策略模式通常包含以下角色：" class="headerlink" title="策略模式通常包含以下角色："></a>策略模式通常包含以下角色：</h5><ol>
-<li><p><strong>主题（Subject）</strong></p>
+<li><p><strong>环境类（Context）</strong></p>
 <blockquote>
-<p>也称为被观察者或发布者，负责维护一组观察者对象，并通知它们自己的状态变化。</p>
+<p>它包含一个策略接口的引用，并在运行时根据需要调用策略对象的方法来完成任务。</p>
 </blockquote>
 </li>
-<li><p><strong>观察者（Observer）</strong></p>
+<li><p><strong>策略接口（Strategy）</strong></p>
 <blockquote>
-<p>也称为订阅者或观察者，定义了一个更新接口，用于接收主题通知的更新。</p>
+<p>它定义了策略模式的接口，通常包含一个或多个方法，用于描述不同的算法或策略。</p>
 </blockquote>
 </li>
-<li><p><strong>具体主题（Concrete Subject）</strong></p>
+<li><p><strong>具体策略类（Concrete Strategy）</strong></p>
 <blockquote>
-<p>实现了主题接口，负责维护自己的状态，并在状态发生变化时通知所有观察者。</p>
-</blockquote>
-</li>
-<li><p><strong>具体观察者（Concrete Observer）</strong></p>
-<blockquote>
-<p>实现了观察者接口，负责接收并处理主题发来的通知，以便更新自己的状态。</p>
+<p>它实现了策略接口，并实现了具体的算法或策略。在运行时，环境类可以根据需要选择合适的具体策略类来完成任务。</p>
 </blockquote>
 </li>
 </ol>
@@ -1144,8 +1150,8 @@ int main()
 </code></pre>
 <hr>
 <h3 id="十、模板方法模式（Template-Method-Pattern）"><a href="#十、模板方法模式（Template-Method-Pattern）" class="headerlink" title="十、模板方法模式（Template Method Pattern）"></a>十、模板方法模式（Template Method Pattern）</h3><blockquote>
-<p>观察者模式（Observer Pattern）是一种行为型设计模式，用于定义对象之间的一对多依赖关系，当一个对象的状态发生变化时，其所有依赖对象都会得到通知并自动更新。</p>
-<p>观察者模式的核心思想是解耦对象之间的依赖关系，让主题和观察者之间通过接口进行通信，从而实现了松耦合的设计。当主题的状态发生变化时，观察者会被自动通知，并根据需要进行相应的处理，从而实现了对象间的动态协作和响应式的行为。观察者模式常用于事件处理、GUI编程、消息系统等场景。</p>
+<p>模板方法模式（Template Method Pattern）是一种行为型设计模式，用于定义一个算法的骨架，将一些步骤的实现延迟到子类中，从而使子类可以重新定义算法的某些特定步骤，而不改变算法的结构。</p>
+<p>在模板方法模式中，定义一个抽象基类（或接口），其中包含了一个模板方法（Template Method），该方法是一个算法的骨架，包含了一系列的步骤，其中某些步骤可以是抽象的，留给子类实现。这样子类可以根据自身的需求，提供具体的实现，从而影响算法的行为。</p>
 <p><u>意图：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</u></p>
 <p><u><code>Template Method Pattern适用于:</code></u></p>
 <ol>
@@ -1156,24 +1162,14 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="模板方法模式结构图"></p>
 <h5 id="模板方法模式通常包含以下角色："><a href="#模板方法模式通常包含以下角色：" class="headerlink" title="模板方法模式通常包含以下角色："></a>模板方法模式通常包含以下角色：</h5><ol>
-<li><p><strong>主题（Subject）</strong></p>
+<li><p><strong>抽象基类（Abstract Class）</strong></p>
 <blockquote>
-<p>也称为被观察者或发布者，负责维护一组观察者对象，并通知它们自己的状态变化。</p>
+<p>定义了模板方法，包含了一系列的抽象和具体方法，是模板方法模式的核心。</p>
 </blockquote>
 </li>
-<li><p><strong>观察者（Observer）</strong></p>
+<li><p><strong>具体子类（Concrete Class）</strong></p>
 <blockquote>
-<p>也称为订阅者或观察者，定义了一个更新接口，用于接收主题通知的更新。</p>
-</blockquote>
-</li>
-<li><p><strong>具体主题（Concrete Subject）</strong></p>
-<blockquote>
-<p>实现了主题接口，负责维护自己的状态，并在状态发生变化时通知所有观察者。</p>
-</blockquote>
-</li>
-<li><p><strong>具体观察者（Concrete Observer）</strong></p>
-<blockquote>
-<p>实现了观察者接口，负责接收并处理主题发来的通知，以便更新自己的状态。</p>
+<p>继承抽象基类，实现抽象方法，从而提供具体的实现。</p>
 </blockquote>
 </li>
 </ol>
@@ -1181,8 +1177,8 @@ int main()
 </code></pre>
 <hr>
 <h3 id="十一、访问者模式（Visitor-Pattern）"><a href="#十一、访问者模式（Visitor-Pattern）" class="headerlink" title="十一、访问者模式（Visitor Pattern）"></a>十一、访问者模式（Visitor Pattern）</h3><blockquote>
-<p>观察者模式（Observer Pattern）是一种行为型设计模式，用于定义对象之间的一对多依赖关系，当一个对象的状态发生变化时，其所有依赖对象都会得到通知并自动更新。</p>
-<p>观察者模式的核心思想是解耦对象之间的依赖关系，让主题和观察者之间通过接口进行通信，从而实现了松耦合的设计。当主题的状态发生变化时，观察者会被自动通知，并根据需要进行相应的处理，从而实现了对象间的动态协作和响应式的行为。观察者模式常用于事件处理、GUI编程、消息系统等场景。</p>
+<p>访问者模式（Visitor Pattern）是一种行为型设计模式，用于在不修改已有对象结构的情况下，定义对这些对象结构中各个元素的新操作。访问者模式通过将对元素的操作封装成独立的访问者类，使得可以在不修改元素类的情况下，新增、扩展或变化元素的操作。</p>
+<p>需要注意的是，访问者模式在设计时需要谨慎使用，一般适用于对一组对象的操作比较稳定、固定，并且需要对这组对象进行不同的操作，而不是对每个对象进行不同的操作。</p>
 <p><u>意图：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</u></p>
 <p><u><code>Visitor Pattern适用于:</code></u></p>
 <ol>
@@ -1193,24 +1189,14 @@ int main()
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="访问者模式结构图"></p>
 <h5 id="访问者模式通常包含以下角色："><a href="#访问者模式通常包含以下角色：" class="headerlink" title="访问者模式通常包含以下角色："></a>访问者模式通常包含以下角色：</h5><ol>
-<li><p><strong>主题（Subject）</strong></p>
+<li><p><strong>访问者（Visitor）</strong></p>
 <blockquote>
-<p>也称为被观察者或发布者，负责维护一组观察者对象，并通知它们自己的状态变化。</p>
+<p>定义了对每个元素的访问操作接口，可以通过这个接口访问元素的各个部分。</p>
 </blockquote>
 </li>
-<li><p><strong>观察者（Observer）</strong></p>
+<li><p><strong>元素（Element）</strong></p>
 <blockquote>
-<p>也称为订阅者或观察者，定义了一个更新接口，用于接收主题通知的更新。</p>
-</blockquote>
-</li>
-<li><p><strong>具体主题（Concrete Subject）</strong></p>
-<blockquote>
-<p>实现了主题接口，负责维护自己的状态，并在状态发生变化时通知所有观察者。</p>
-</blockquote>
-</li>
-<li><p><strong>具体观察者（Concrete Observer）</strong></p>
-<blockquote>
-<p>实现了观察者接口，负责接收并处理主题发来的通知，以便更新自己的状态。</p>
+<p>定义了一个接受访问者的接口，使得访问者可以访问自己的内部元素结构，并可以对这些结构进行操作。</p>
 </blockquote>
 </li>
 </ol>
