@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00bcd4">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
+                <a href="/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
                     行为型设计模式
                 </a>
             </span>
@@ -1256,9 +1256,6 @@ int main()
 </li>
 </ol>
 <h5 id="策略模式实现参考代码"><a href="#策略模式实现参考代码" class="headerlink" title="策略模式实现参考代码"></a>策略模式实现参考代码</h5><pre><code class="c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;string&gt;
-#include &lt;typeinfo&gt;
 using namespace std;
 
 /*
@@ -1331,12 +1328,12 @@ int main()
 <h3 id="十、模板方法模式（Template-Method-Pattern）"><a href="#十、模板方法模式（Template-Method-Pattern）" class="headerlink" title="十、模板方法模式（Template Method Pattern）"></a>十、模板方法模式（Template Method Pattern）</h3><blockquote>
 <p>模板方法模式（Template Method Pattern）是一种行为型设计模式，用于定义一个算法的骨架，将一些步骤的实现延迟到子类中，从而使子类可以重新定义算法的某些特定步骤，而不改变算法的结构。</p>
 <p>在模板方法模式中，定义一个抽象基类（或接口），其中包含了一个模板方法（Template Method），该方法是一个算法的骨架，包含了一系列的步骤，其中某些步骤可以是抽象的，留给子类实现。这样子类可以根据自身的需求，提供具体的实现，从而影响算法的行为。</p>
-<p><u>意图：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</u></p>
+<p><u>意图：定义一个操作中的算法骨架，而将一些步骤延迟到子类中。Template Method 使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</u></p>
 <p><u><code>Template Method Pattern适用于:</code></u></p>
 <ol>
-<li>一组对象以定义良好但是复杂的方式进行通信，产生的相互依赖关系结构混乱且难以理解。</li>
-<li>一个对象引用其他很多对象并且直接与这些对象通信，导致难以复用该对象。</li>
-<li>想定制一个分布在多个类中的行为，而又不想生成太多的子类。</li>
+<li>一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现。</li>
+<li>各子类中公共的行为应被提取出来并集中到一个公共父类中，以避免代码重复。</li>
+<li>控制子类扩展。模板方法旨在特定点调用“hook”操作（默认的行为，子类可以在必要时进行重定义扩展），这就只允许在这些点进行扩展。</li>
 </ol>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="模板方法模式结构图"></p>
@@ -1352,18 +1349,71 @@ int main()
 </blockquote>
 </li>
 </ol>
-<h5 id="模板方法模式实现参考代码"><a href="#模板方法模式实现参考代码" class="headerlink" title="模板方法模式实现参考代码"></a>模板方法模式实现参考代码</h5><pre><code class="c++">
+<h5 id="模板方法模式实现参考代码"><a href="#模板方法模式实现参考代码" class="headerlink" title="模板方法模式实现参考代码"></a>模板方法模式实现参考代码</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 模板方法模式
+*/
+
+class Person
+&#123;
+public:
+    void TemplateMethod()
+    &#123;
+        cout &lt;&lt; &quot;去教室&quot; &lt;&lt; endl;
+        PrimitiveOperation1();
+        cout &lt;&lt; &quot;离开教室&quot; &lt;&lt; endl;
+        PrimitiveOperation2();
+    &#125;
+    virtual void PrimitiveOperation1() = 0;
+    virtual void PrimitiveOperation2() = 0;
+&#125;;
+
+class Student :public Person
+&#123;
+    void PrimitiveOperation1()
+    &#123;
+        cout &lt;&lt; &quot;学生听课&quot; &lt;&lt; endl;
+    &#125;
+    void PrimitiveOperation2()
+    &#123;
+        cout &lt;&lt; &quot;学生写作业&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Teacher :public Person
+&#123;
+    void PrimitiveOperation1()
+    &#123;
+        cout &lt;&lt; &quot;老师上课&quot; &lt;&lt; endl;
+    &#125;
+    void PrimitiveOperation2()
+    &#123;
+        cout &lt;&lt; &quot;老师布置作业&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    Person* student = new Student();
+    Person* teacher = new Teacher();
+    student-&gt;TemplateMethod();
+    cout &lt;&lt; &quot;================================&quot; &lt;&lt; endl;
+    teacher-&gt;TemplateMethod();
+&#125;
 </code></pre>
 <hr>
 <h3 id="十一、访问者模式（Visitor-Pattern）"><a href="#十一、访问者模式（Visitor-Pattern）" class="headerlink" title="十一、访问者模式（Visitor Pattern）"></a>十一、访问者模式（Visitor Pattern）</h3><blockquote>
 <p>访问者模式（Visitor Pattern）是一种行为型设计模式，用于在不修改已有对象结构的情况下，定义对这些对象结构中各个元素的新操作。访问者模式通过将对元素的操作封装成独立的访问者类，使得可以在不修改元素类的情况下，新增、扩展或变化元素的操作。</p>
 <p>需要注意的是，访问者模式在设计时需要谨慎使用，一般适用于对一组对象的操作比较稳定、固定，并且需要对这组对象进行不同的操作，而不是对每个对象进行不同的操作。</p>
-<p><u>意图：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</u></p>
+<p><u>意图：表示一个作用于某对象结构中的各元素的操作。它允许在不改变各元素的类的前提下定义作用于这些元素的新操作。</u></p>
 <p><u><code>Visitor Pattern适用于:</code></u></p>
 <ol>
-<li>一组对象以定义良好但是复杂的方式进行通信，产生的相互依赖关系结构混乱且难以理解。</li>
-<li>一个对象引用其他很多对象并且直接与这些对象通信，导致难以复用该对象。</li>
-<li>想定制一个分布在多个类中的行为，而又不想生成太多的子类。</li>
+<li>一个对象结构包含很多类对象，它们有不同的接口，而用户相对这些对象实施一些依赖于其具体类的操作。</li>
+<li>需要对一个对象结构中的对象进行很多不同的并且不想关的操作，而又想要避免这些操作“污染”这些对象的类。Visitor 使得用户可以将相关的操作集中起来定义在一个类中。当该对象结构被很多应用共享时，用 Visitor 模式让每个应用仅包含需要用到的操作。</li>
+<li>定于对象结构体的类很少改变，但经常需要在此结构上定义新的操作。改变对象结构类需要重定义对所有访问者的接口，这可能需要很大的代价，如果对象结构类经常改变，那么还是在这些类中定义这些操作较好。</li>
 </ol>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="访问者模式结构图"></p>
@@ -1379,7 +1429,106 @@ int main()
 </blockquote>
 </li>
 </ol>
-<h5 id="访问者模式实现参考代码"><a href="#访问者模式实现参考代码" class="headerlink" title="访问者模式实现参考代码"></a>访问者模式实现参考代码</h5><pre><code class="c++">
+<h5 id="访问者模式实现参考代码"><a href="#访问者模式实现参考代码" class="headerlink" title="访问者模式实现参考代码"></a>访问者模式实现参考代码</h5><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+using namespace std;
+
+/*
+* 访问者模式
+*/
+
+class ElementA;
+class ElementB;
+
+// 访问者接口
+class Visitor
+&#123;
+public:
+    virtual void visit(ElementA* elementA) = 0;
+    virtual void visit(ElementB* elementB) = 0;
+&#125;;
+
+// 元素接口
+class Element
+&#123;
+public:
+    virtual void accept(Visitor* visitor) = 0;
+&#125;;
+
+// 具体元素A
+class ElementA :public Element
+&#123;
+public:
+    void accept(Visitor* visitor) override
+    &#123;
+        visitor-&gt;visit(this);
+    &#125;
+    void OperationA()
+    &#123;
+        cout &lt;&lt; &quot;元素 A 的方法&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 具体元素B
+class ElementB :public Element
+&#123;
+public:
+    void accept(Visitor* visitor) override
+    &#123;
+        visitor-&gt;visit(this);
+    &#125;
+    void OperationB()
+    &#123;
+        cout &lt;&lt; &quot;元素 B 的方法&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 具体访问者
+class ConcreteVisitor :public Visitor
+&#123;
+public:
+    void visit(ElementA* elementA) override
+    &#123;
+        cout &lt;&lt; &quot;访问者访问元素 A 的方法：&quot; &lt;&lt; endl;
+        elementA-&gt;OperationA();
+    &#125;
+    void visit(ElementB* elementB) override
+    &#123;
+        cout &lt;&lt; &quot;访问者访问元素 B 的方法：&quot; &lt;&lt; endl;
+        elementB-&gt;OperationB();
+    &#125;
+&#125;;
+
+// 对象结构体类
+class ObjectStructure
+&#123;
+private:
+    vector&lt;Element*&gt;elements;
+public:
+    void  AddElement(Element* element)
+    &#123;
+        elements.push_back(element);
+    &#125;
+    void accept(Visitor* visitor)
+    &#123;
+        for (auto element : elements)
+        &#123;
+            element-&gt;accept(visitor);
+        &#125;
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    ElementA elementA;
+    ElementB elementB;
+    ConcreteVisitor visitor;
+    ObjectStructure objectStructure;
+    objectStructure.AddElement(&amp;elementA);
+    objectStructure.AddElement(&amp;elementB);
+    objectStructure.accept(&amp;visitor);
+&#125;
 </code></pre>
 
     </div>
