@@ -176,21 +176,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #ff7d73">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
+                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
                     算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/" style="color: #00a596">
+                <a href="/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
                     分治算法
                 </a>
             </span>
@@ -214,11 +214,46 @@
 </ol>
 </blockquote>
 <h3 id="分治算法的经典应用"><a href="#分治算法的经典应用" class="headerlink" title="分治算法的经典应用"></a>分治算法的经典应用</h3><h4 id="汉诺塔问题"><a href="#汉诺塔问题" class="headerlink" title="汉诺塔问题"></a>汉诺塔问题</h4><blockquote>
+<ul>
+<li><p>每次只能移动柱子最顶端的一个圆盘；</p>
+</li>
+<li><p>每个柱子上，小圆盘永远要位于大圆盘之上；</p>
+</li>
+</ul>
 </blockquote>
-<pre><code class="c#">
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98.gif" alt="汉诺塔问题"></p>
+<h5 id="分治算法解决汉诺塔问题"><a href="#分治算法解决汉诺塔问题" class="headerlink" title="分治算法解决汉诺塔问题"></a>分治算法解决汉诺塔问题</h5><pre><code class="c#">internal class Program
+&#123;
+    private static int i = 1; // 统计移动次数
+
+    private static void Main(string[] args)
+    &#123;
+        // Hanoi(圆盘个数，起始柱子，目标柱子，辅助柱子)
+        Hanoi(3, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;);
+    &#125;
+
+    private static void Hanoi(int n, char sou, char tar, char aux)
+    &#123;
+        if (n == 1) // 只有一个圆盘，直接从起始柱移动到目标柱
+        &#123;
+            Console.WriteLine(&quot;第&#123;0&#125;次，从&#123;1&#125;移动到&#123;2&#125;&quot;, i, sou, tar);
+            i++;
+        &#125;
+        else
+        &#123;
+            // 递归调用 Hanoi 方法，将 num-1 个圆盘从起始移动到辅助柱上
+            Hanoi(n - 1, sou, aux, tar);
+            Console.WriteLine(&quot;第&#123;0&#125;次，从&#123;1&#125;移动到&#123;2&#125;&quot;, i, sou, tar);
+            i++;
+            // 将辅助柱上的num-1圆盘移动到目标柱上
+            Hanoi(n - 1, aux, tar, sou);
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <blockquote>
-<p>输入：</p>
+<p>输出结果：</p>
+<p>第1次，从A移动到B<br>第2次，从A移动到B<br>第3次，从C移动到B<br>第4次，从A移动到B<br>第5次，从C移动到B<br>第6次，从C移动到B<br>第7次，从A移动到B</p>
 </blockquote>
 <h4 id="寻找数组中最大最小值问题"><a href="#寻找数组中最大最小值问题" class="headerlink" title="寻找数组中最大最小值问题"></a>寻找数组中最大最小值问题</h4><blockquote>
 <p>查找数组（序列）中最大值或最小值的算法有很多</p>
