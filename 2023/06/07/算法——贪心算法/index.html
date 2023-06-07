@@ -176,21 +176,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #03a9f4">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
+                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #00bcd4">
                     算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="color: #ff7d73">
+                <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="color: #00bcd4">
                     贪心算法
                 </a>
             </span>
@@ -200,7 +200,135 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <blockquote>
+<p>贪心算法基本思想：在对问题求解时，总是做出在当前看来是最好的选择。也就是说不从整体最优上加以考虑，算法得到的是某种意义上的局部最优解。</p>
+<p>注意：贪心算法的每一步都是最优的解决方案，但整个算法并不一定是最优的（局部最优解）。</p>
+</blockquote>
+<h3 id="贪心算法的经典应用"><a href="#贪心算法的经典应用" class="headerlink" title="贪心算法的经典应用"></a>贪心算法的经典应用</h3><h4 id="部分背包问题"><a href="#部分背包问题" class="headerlink" title="部分背包问题"></a>部分背包问题</h4><blockquote>
+<p>背包问题：在限定条件下，如何从众多物品中选出收益最高的几件物品。</p>
+<p>背包问题可细分为以下四种：</p>
+<ul>
+<li>0-1 背包问题：每件物品都不可再分，要么整个装入背包，要么放弃，不允许出现类似“将物品的 1&#x2F;3 装入背包”的情况；</li>
+<li>部分背包问题：每件物品是可再分的，即允许将某件物品的一部分（例如 1&#x2F;3）放入背包；</li>
+<li>完全背包问题：挑选物品时，每件物品可以选择多个，也就是说不限物品的数量。</li>
+<li>多重背包问题：每件物品的数量是有严格规定的，比如物品 A 有 2 件，物品 B 有 3 件。</li>
+</ul>
+<p>不同背包问题，对应的解决方案也不用，贪心算法主要解决的就是部分背包问题。</p>
+</blockquote>
+<h5 id="部分背包问题-1"><a href="#部分背包问题-1" class="headerlink" title="部分背包问题"></a>部分背包问题</h5><p>假设商店中有三种商品，它们各自的重量和收益：</p>
+<ul>
+<li>商品 1：重量10斤，收益60元；</li>
+<li>商品 2：重量20斤，收益100元；</li>
+<li>商品 3：重量30斤，收益120元；</li>
+</ul>
+<blockquote>
+<p>部分背包问题，对于每一件商品，顾客可以只购买其一部分（可再分）。现</p>
+<p>现在你有一个最多装50斤商品的背包，你如何购买商品才能使背包中的商品收益达到最大化？</p>
+<p>贪心算法思路，计算每个商品的收益率（收益&#x2F;重量）每次优先选择收益率最大的商品，直到所选商品的总重量达到了50斤。</p>
+</blockquote>
+<pre><code class="c#">internal class Program
+&#123;
+    private static int N = 3;
+
+    // w存储各个商品的重量，p存储各个商品的收益，W表示背包的承重，v是收益率
+    private static void Sort(float[] w, float[] p)
+    &#123;
+        float temp;
+        // 使用一个数组按升序来存放每件商品的收益率
+        float[] v = new float[N];
+        for (int i = 0; i &lt; N; i++)
+        &#123;
+            // 计算收益率（收益/重量）
+            v[i] = p[i] / w[i];
+        &#125;
+        // 根据收益率升序排序
+        for (int i = 0; i &lt; N; i++)
+        &#123;
+            for (int j = i + 1; j &lt; N; j++)
+            &#123;
+                if (v[i] &lt; v[j])
+                &#123;
+                    temp = v[i];
+                    v[i] = v[j];
+                    v[j] = temp;
+
+                    temp = w[i];
+                    w[i] = w[j];
+                    w[j] = temp;
+
+                    temp = p[i];
+                    p[i] = p[j];
+                    p[j] = temp;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    /*
+     * 贪心算法解决部分背包问题
+     * w：记录各个商品的总重量
+     * p：记录各个商品的总价值
+     * result：记录各个商品装入背包的比例
+     * W：背包的容量
+    */
+
+    private static void fractional_knaspack(float[] w, float[] p,
+        float[] result, float W)
+    &#123;
+        float temp = 0;
+        int i = 0;
+        // 根据收益率排序
+        Sort(w, p);
+        while (W &gt; 0)
+        &#123;
+            // 从排好序的数组中判断选中物品是否可以整个装进背包
+            temp = W &gt; w[i] ? w[i] : W;
+            // 不可以，则计算出背包容量还能装下多少
+            result[i] = temp / w[i];
+            // 背包减去装进物品的重量
+            W -= temp;
+            i++;
+        &#125;
+    &#125;
+
+    private static void Main(string[] args)
+    &#123;
+        // 背包总收益
+        float values = 0;
+        // 每个商品的重量
+        float[] w = &#123; 10, 30, 20 &#125;;
+        // 每个商品的价值
+        float[] p = &#123; 60, 100, 120 &#125;;
+        float[] result = &#123; 0, 0, 0 &#125;;
+        // 背包容量
+        float W = 50;
+        fractional_knaspack(w, p, result, W);
+        for (int i = 0; i &lt; w.Length; i++)
+        &#123;
+            // 放入比例为1，则为整个商品装入背包
+            if (result[i] == 1)
+            &#123;
+                Console.WriteLine(&quot;总重量为&#123;0&#125;，总价值为&#123;1&#125;的商品全部装入背包。&quot;, w[i], p[i]);
+                values += p[i];
+            &#125;
+            // 放入比例为0，则不装入背包
+            else if (result[i] == 0)
+            &#123;
+                Console.WriteLine(&quot;总重量为&#123;0&#125;，总价值为&#123;1&#125;的商品不装入背包。&quot;, w[i], p[i]);
+            &#125;
+            // 某个商品放入多少比例进背包
+            else
+            &#123;
+                Console.WriteLine(&quot;总重量为&#123;0&#125;，总价值为&#123;1&#125;的商品装入&#123;2&#125;%背包。&quot;,
+                    w[i], p[i], result[i] * 100);
+                values += p[i] * result[i];
+            &#125;
+        &#125;
+        Console.WriteLine(&quot;最终收获的商品价值为&#123;0:N6&#125;&quot;, values);
+    &#125;
+&#125;
+</code></pre>
+
     </div>
     
     
