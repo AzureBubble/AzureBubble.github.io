@@ -176,7 +176,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #03a9f4">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C#
                 </a>
             </span>
@@ -232,7 +232,96 @@
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98.png" alt="迷宫问题"></p>
 <pre><code class="c#">// 用 1 表示白色区域，用 0 表示黑色区域。
+internal class Program
+&#123;
+    private static int ROW = 5;
+    private static int COL = 5;
+
+    private static bool find = false;
+
+    private static void Main(string[] args)
+    &#123;
+        char[,] maze = new char[,]
+        &#123;
+            &#123;&#39;1&#39;,&#39;0&#39;,&#39;1&#39;,&#39;1&#39;,&#39;1&#39;&#125;,
+            &#123;&#39;1&#39;,&#39;1&#39;,&#39;1&#39;,&#39;0&#39;,&#39;1&#39;&#125;,
+            &#123;&#39;1&#39;,&#39;0&#39;,&#39;0&#39;,&#39;1&#39;,&#39;1&#39;&#125;,
+            &#123;&#39;1&#39;,&#39;0&#39;,&#39;0&#39;,&#39;1&#39;,&#39;0&#39;&#125;,
+            &#123;&#39;1&#39;,&#39;0&#39;,&#39;0&#39;,&#39;1&#39;,&#39;1&#39;&#125;
+        &#125;;
+        maze_puzzle(maze, 0, 0, ROW - 1, COL - 1);
+        if (!find)
+        &#123;
+            Console.WriteLine(&quot;该迷宫无解&quot;);
+        &#125;
+    &#125;
+
+    // 起点：(row, col)     终点：(outRow, outCol)
+    private static void maze_puzzle(char[,] maze, int row, int col, int outRow, int outCol)
+    &#123;
+        maze[row, col] = &#39;Y&#39;; // 将走过的区域标记为 Y
+        // 如果走到终点，则表明起点到终点有路线
+        if (row == outRow &amp;&amp; col == outCol)
+        &#123;
+            find = true;
+            Console.WriteLine(&quot;成功走出迷宫，路线图是：&quot;);
+            printMaze(maze);
+            return;
+        &#125;
+        // 判断上方是否可移动
+        if (canMove(maze, row - 1, col))
+        &#123;
+            maze_puzzle(maze, row - 1, col, outRow, outCol);
+            // 如果程序不结束，则此路不通，恢复该区域的标志
+            maze[row - 1, col] = &#39;1&#39;;
+        &#125;
+        // 判断左方是否可移动
+        if (canMove(maze, row, col - 1))
+        &#123;
+            maze_puzzle(maze, row, col - 1, outRow, outCol);
+            // 如果程序不结束，则此路不通，恢复该区域的标志
+            maze[row, col - 1] = &#39;1&#39;;
+        &#125;
+        // 判断下方是否可移动
+        if (canMove(maze, row + 1, col))
+        &#123;
+            maze_puzzle(maze, row + 1, col, outRow, outCol);
+            // 如果程序不结束，则此路不通，恢复该区域的标志
+            maze[row + 1, col] = &#39;1&#39;;
+        &#125;
+        // 判断右方是否可移动
+        if (canMove(maze, row, col + 1))
+        &#123;
+            maze_puzzle(maze, row, col + 1, outRow, outCol);
+            // 如果程序不结束，则此路不通，恢复该区域的标志
+            maze[row, col + 1] = &#39;1&#39;;
+        &#125;
+    &#125;
+
+    private static bool canMove(char[,] maze, int row, int col)
+    &#123;
+        // 判断输入的位置是否在迷宫范围内，且可移动，且还未移动过
+        return row &gt;= 0 &amp;&amp; row &lt;= ROW - 1 &amp;&amp; col &gt;= 0 &amp;&amp; col &lt;= COL - 1
+            &amp;&amp; maze[row, col] != &#39;0&#39; &amp;&amp; maze[row, col] != &#39;Y&#39;;
+    &#125;
+
+    private static void printMaze(char[,] maze)
+    &#123;
+        for (int i = 0; i &lt; ROW; i++)
+        &#123;
+            for (int j = 0; j &lt; COL; j++)
+            &#123;
+                Console.Write(maze[i, j] + &quot; &quot;);
+            &#125;
+            Console.WriteLine();
+        &#125;
+    &#125;
+&#125;
 </code></pre>
+<blockquote>
+<p>输出：</p>
+<p>成功走出迷宫，路线图是：<br>Y 0 Y Y Y<br>Y Y Y 0 Y<br>1 0 0 Y Y<br>1 0 0 Y 0<br>1 0 0 Y Y</p>
+</blockquote>
 <h4 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h4><blockquote>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.png" alt="N皇后问题"></p>
