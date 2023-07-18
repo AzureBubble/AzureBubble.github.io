@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #00bcd4">
+                <a href="/tags/C/" style="color: #ffa2c4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #ff7d73">
+                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
                     算法
                 </a>
             </span>
@@ -323,10 +323,100 @@ internal class Program
 <p>成功走出迷宫，路线图是：<br>Y 0 Y Y Y<br>Y Y Y 0 Y<br>1 0 0 Y Y<br>1 0 0 Y 0<br>1 0 0 Y Y</p>
 </blockquote>
 <h4 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h4><blockquote>
+<p>N皇后问题源自国际象棋，所有棋子中权力最大的称为皇后，它可以直着走、横着走、斜着走（沿45度角），可以攻击移动途中遇到的任何棋子。N皇后问题的具体内容是：如何将N个皇后摆放在N*N的棋盘中，使它们无法相互攻击。如下图所示。</p>
+<p>解决思路：</p>
+<p>要想使 N 个皇后不相互攻击，应将它们放置在不同的行、不同的列、还不能位于同一条 45°（或 135°）角的斜线上。</p>
+<p>回溯算法解决N皇后问题的具体思路是：将 N 个皇后逐一放置在不同的行，以“回溯”的方式逐一测试出每行皇后所在行的具体位置，最终确定所有皇后的位置。 </p>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.png" alt="N皇后问题"></p>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static int[] q = new int[20]; // 每个皇后的所在列数
+    private static int count = 0; // count 种解决方案
+
+    private static void Main(string[] args)
+    &#123;
+        Console.Write(&quot;请输入皇后的个数：&quot;);
+        string sc = Console.ReadLine();
+        int n = int.Parse(sc);
+        n_queues(1, n);
+        Console.WriteLine(&quot;共有 &quot; + count + &quot; 种摆放方式&quot;);
+    &#125;
+
+    /// &lt;summary&gt;
+    /// N皇后算法
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;k&quot;&gt;第几行数&lt;/param&gt;
+    /// &lt;param name=&quot;n&quot;&gt;皇后个数&lt;/param&gt;
+    private static void n_queues(int k, int n)
+    &#123;
+        int j;
+        // 递归出口：当前行数大于皇后个数
+        if (k &gt; n)
+        &#123;
+            print(n);
+        &#125;
+        else
+        &#123;
+            // 尝试第 k 行的每一列，找到符合要求的列
+            for (j = 1; j &lt;= n; j++)
+            &#123;
+                if (isSafe(k, j))
+                &#123;
+                    // 存进数组中保存
+                    q[k] = j;
+                    // 确认第 k 行皇后位置后，继续下一行的皇后的位置判断。
+                    n_queues(k + 1, n);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    private static bool isSafe(int k, int j)
+    &#123;
+        int i;
+        // 判断是否有其他皇后位置在同一列，或者位于该位置的斜线位置上，如果有，则不能放
+        for (i = 1; i &lt; k; i++)
+        &#123;
+            // 同一斜线判断规则：|行号差值| = |列号差值|
+            if (q[i] == j || Math.Abs(i - k) == Math.Abs(q[i] - j))
+            &#123;
+                return false;
+            &#125;
+        &#125;
+        return true;
+    &#125;
+
+    private static void print(int n)
+    &#123;
+        int i, j;
+        count++;
+        Console.WriteLine(&quot;第 &quot; + count + &quot; 个解为：&quot;);
+        for (i = 1; i &lt;= n; i++) // 行
+        &#123;
+            for (j = 0; j &lt;= n; j++) // 列
+            &#123;
+                if (q[i] != j)
+                &#123;
+                    Console.Write(&quot;x&quot;);
+                &#125;
+                else
+                &#123;
+                    Console.Write(&quot;Q&quot;);
+                &#125;
+            &#125;
+            Console.WriteLine();
+        &#125;
+        Console.WriteLine();
+    &#125;
+&#125;
 </code></pre>
+<blockquote>
+<p>输入：4</p>
+<p>第 1 个解为：<br>xxQxx<br>xxxxQ<br>xQxxx<br>xxxQx</p>
+<p>第 2 个解为：<br>xxxQx<br>xQxxx<br>xxxxQ<br>xxQxx</p>
+<p>共有 2 种摆放方式</p>
+</blockquote>
 
     </div>
     
