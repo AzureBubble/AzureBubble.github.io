@@ -176,21 +176,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #00a596">
+                <a href="/tags/C/" style="color: #ff7d73">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #00a596">
+                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
                     排序算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/" style="color: #ffa2c4">
+                <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/" style="color: #00a596">
                     交换排序
                 </a>
             </span>
@@ -262,6 +262,120 @@
 <li>不适于原本有序或基本有序的记录序列进行排序。</li>
 </ul>
 </blockquote>
+<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif" alt="快速排序"></p>
+<pre><code class="c#">// 挖坑法：用一个临时变量存储基准元素
+internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 5, 7, 3, 8, 6, 9 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        quick_sort(arr, 0, arr.Length - 1);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+
+    private static void quick_sort(int[] arr, int left, int right)
+    &#123;
+        int l = left; // 记录左指针元素
+        int r = right; // 记录右指针元素
+        if (left &gt;= right)
+        &#123;
+            return; // 递归退出条件：左指针 &gt;= 右指针
+        &#125;
+        int pivot = arr[left]; // 以数组左边第一个元素为基准元素
+        while (left &lt; right)
+        &#123;
+            // 从数组最右开始，找到第一个比基准元素小的元素
+            while (arr[right] &gt; pivot &amp;&amp; left &lt; right)
+            &#123;
+                right--;
+            &#125;
+            if (left &lt; right)
+            &#123;
+                // 把右边第一个比基准小的元素，放到数组左边
+                arr[left++] = arr[right];
+            &#125;
+            // 从最左边找到第一个比基准元素大的元素
+            while (arr[left] &lt; pivot &amp;&amp; left &lt; right)
+            &#123;
+                left++;
+            &#125;
+            if (left &lt; right)
+            &#123;
+                // 把左边第一个比基准大的元素，放到数组右边
+                arr[right--] = arr[left];
+            &#125;
+        &#125;
+        // 当左右指针重合退出 while 后，把基准元素放到当前 left 位置
+        arr[left] = pivot;
+        quick_sort(arr, l, left - 1); // 递归调用快速排序，排好基准元素左边的元素
+        quick_sort(arr, left + 1, r); // 递归调用快速排序，排好基准元素右边的元素
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="c#">// Hoare版：基本思想就是用两个指针分别指向待排序数组的开头和结尾。
+internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 5, 7, 3, 8, 6, 9 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        Hoare_quick_sort(arr, 0, arr.Length - 1);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+    
+    private static void Hoare_quick_sort(int[] arr, int left, int right)
+    &#123;
+        if (left &gt;= right)
+        &#123;
+            return;
+        &#125;
+        int pivot = left; // 存储基准元素的下标
+        int l = left;
+        int r = right;
+        while (left &lt; right)
+        &#123;
+            while (left &lt; right &amp;&amp; arr[right] &gt;= arr[pivot])
+            &#123;
+                right--;
+            &#125;
+            while (left &lt; right &amp;&amp; arr[left] &lt;= arr[pivot])
+            &#123;
+                left++;
+            &#125;
+            swap(arr, left, right);
+        &#125;
+        swap(arr, pivot, left);
+        Hoare_quick_sort(arr, l, left - 1);
+        Hoare_quick_sort(arr, left + 1, r);
+    &#125;
+
+    private static void swap(int[] arr, int left, int right)
+    &#123;
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+    &#125;
+&#125;
+</code></pre>
 
     </div>
     
