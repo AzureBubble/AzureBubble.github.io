@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #00a596">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
+                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #00a596">
                     排序算法
                 </a>
             </span>
@@ -211,8 +211,80 @@
 </ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E5%8A%A8%E5%9B%BE.gif" alt="插入排序"></p>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 5, 7, 3, 8, 6, 9 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        insert_sort(arr);
+        // insert_sort1(arr);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+
+    // for + while 实现
+    private static void insert_sort(int[] arr)
+    &#123;
+        int length = arr.Length;
+        // 以第一个元素为基准元素，下标为0
+        // 从第二个元素开始进行直接插入排序，下标为1
+        for (int i = 1; i &lt; length; i++)
+        &#123;
+            // 临时保存需要进行插入的元素
+            int insert_elem = arr[i];
+            // 记录当前需要进行插入排序的元素的位置
+            int position = i;
+            // 从 position 向前遍历，大于插入元素则后移，直至找到目标元素插入位置
+            while (position &gt; 0 &amp;&amp; arr[position - 1] &gt; insert_elem)
+            &#123;
+                // 后移
+                arr[position] = arr[position - 1];
+                // 向前遍历
+                position--;
+            &#125;
+            if (position != i)
+            &#123;
+                // 将目标元素插入到指定位置
+                arr[position] = insert_elem;
+            &#125;
+        &#125;
+    &#125;
+    
+    // 两个 for 循环
+    private static void insert_sort1(int[] arr)
+    &#123;
+        int i, j;
+        int length = arr.Length;
+        for (i = 1; i &lt; length; i++)
+        &#123;
+            // 临时存储目标元素
+            int temp = arr[i];
+            // 从目标元素的前一个元素开始向前遍历
+            // 直到遍历下标 &lt;= 0，并且遍历元素大于目标元素时
+            // 将大于目标元素的元素向后移
+            for (j = i - 1; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j--)
+            &#123;
+                arr[j + 1] = arr[j];
+            &#125;
+            // 将目标元素插入到指定位置
+            arr[j + 1] = temp;
+        &#125;
+    &#125;
+&#125;
 </code></pre>
+<blockquote>
+<p>输出：</p>
+<p>未排序前的数组：<br>5 7 3 8 6 9<br>排序后的数组：<br>3 5 6 7 8 9</p>
+</blockquote>
 <hr>
 <h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><blockquote>
 <p>折半插入排序：减少比较次数，但没有减少移动次数。</p>
@@ -225,6 +297,9 @@
 </blockquote>
 <pre><code class="c#">
 </code></pre>
+<blockquote>
+<p>输出：</p>
+</blockquote>
 <hr>
 <h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><blockquote>
 <p>希尔排序：先将整个代排序列分割成若干子序列，分别进行直接插入排序，待整个序列中的记录<code>基本有序</code>时，再对全体记录进行一次直接插入排序。</p>
@@ -238,6 +313,9 @@
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif" alt="希尔排序"></p>
 <pre><code class="c#">
 </code></pre>
+<blockquote>
+<p>输出：</p>
+</blockquote>
 
     </div>
     
