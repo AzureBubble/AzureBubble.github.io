@@ -176,21 +176,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #ffa2c4">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #00a596">
+                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
                     排序算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="color: #03a9f4">
+                <a href="/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="color: #ffa2c4">
                     选择排序
                 </a>
             </span>
@@ -201,23 +201,178 @@
     
     <div class="content" v-pre>
         <h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4><blockquote>
-<p>简单选择排序：</p>
+<p>简单选择排序：在待排序的数据中选出最大（小）的元素放在其最终的位置。</p>
+<ul>
+<li>时间复杂度&#x3D;O(n<sup>2</sup>)，空间复杂度&#x3D;O(1)。稳定排序。</li>
+</ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%8A%A8%E5%9B%BE.gif" alt="选择排序动图"></p>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 5, 7, 3, 8, 6, 9 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        selection_sort(arr);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+
+    private static void selection_sort(int[] arr)
+    &#123;
+        int length = arr.Length;
+        int i, j, min;
+        for (i = 0; i &lt; length - 1; i++)
+        &#123;
+            min = i; // 把第一个元素假设为最小
+            for (j = i + 1; j &lt; length; j++)
+            &#123;
+                // 从第二个元素开始遍历到最后一个
+                if (arr[j] &lt; arr[min])
+                &#123;
+                    // 如果期间出现小于最小元素的值，则交换位置
+                    min = j;
+                &#125;
+            &#125;
+            if (min != i)
+            &#123;
+                int temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            &#125;
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <blockquote>
 <p>输出：</p>
+<p>未排序前的数组：<br>5 7 3 8 6 9<br>排序后的数组：<br>3 5 6 7 8 9</p>
 </blockquote>
 <h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><blockquote>
-<p>堆排序：</p>
+<p>堆排序：堆的是指就是满足二叉树中任一非叶子结点均小于（大于）它的孩子结点的完全二叉树。</p>
+<ul>
+<li>时间复杂度&#x3D;O(nlog<sub>2</sub>n)，空间复杂度&#x3D;O(1)。不稳定排序。</li>
+<li>小根堆：若n个元素的序列{a<sub>1</sub>a<sub>2</sub>…a<sub>n</sub>}满足a<sub>i</sub> ≤ a<sub>2i</sub>和a<sub>i</sub> ≤ a<sub>2i+1</sub>。</li>
+<li>大根堆：若n个元素的序列{a<sub>1</sub>a<sub>2</sub>…a<sub>n</sub>}满足a<sub>i</sub> ≥ a<sub>2i</sub>和a<sub>i</sub> ≥ a<sub>2i+1</sub>。</li>
+</ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%A0%86%E6%8E%92%E5%BA%8F.gif" alt="堆排序"></p>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 5, 7, 3, 8, 6, 9 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        //big_heap_sort(arr);
+        small_heap_sort(arr);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+
+    private static void big_heap_sort(int[] arr)
+    &#123;
+        // 从树的第arr.Length / 2 - 1个结点开始建立大根堆
+        for (int i = arr.Length / 2 - 1; i &gt;= 0; i--)
+        &#123;
+            big_heap_adjust(arr, i, arr.Length);
+        &#125;
+        for (int i = arr.Length - 1; i &gt; 0; i--)
+        &#123;
+            // 把根结点与最后一个结点进行交换，把最大值放到最后
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+            // 交换后，以根结点开始，重新调整为大根堆
+            big_heap_adjust(arr, 0, i);
+        &#125;
+    &#125;
+
+    // 建立大根堆：升序，最大值（根结点）与最后一个结点交换位置
+    private static void big_heap_adjust(int[] arr, int parent, int length)
+    &#123;
+        // 临时存储根结点数值
+        int temp = arr[parent];
+        // 找到根结点的左孩子
+        int child = parent * 2 + 1;
+        // 孩子结点不大于数组长度
+        while (child &lt; length)
+        &#123;
+            // 如果右孩子在数组长度内 &amp;&amp; 右孩子 &gt; 左孩子
+            if (child + 1 &lt; length &amp;&amp; arr[child + 1] &gt; arr[child])
+            &#123;
+                // 设置为右孩子
+                child++;
+            &#125;
+            // 如果根结点 &gt; 孩子结点
+            if (temp &gt; arr[child])
+            &#123;
+                break; // 退出+
+            &#125;
+            // 否则，根结点与最大的孩子结点交换位置
+            arr[parent] = arr[child];
+            // 根结点设置为交换后的孩子结点下标
+            parent = child;
+            // 找到新的左孩子下标
+            child = parent * 2 + 1;
+        &#125;
+        // 此时parent已为最小的孩子结点，把temp放到此位置上
+        arr[parent] = temp;
+    &#125;
+
+    private static void small_heap_sort(int[] arr)
+    &#123;
+        for (int i = arr.Length / 2 - 1; i &gt;= 0; i--)
+        &#123;
+            small_heap_sort(arr, i, arr.Length);
+        &#125;
+        for (int i = arr.Length - 1; i &gt;= 0; i--)
+        &#123;
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+            small_heap_sort(arr, 0, i);
+        &#125;
+    &#125;
+
+    // 小根堆:降序，最小值（根结点）与最后一个结点交换位置
+    private static void small_heap_sort(int[] arr, int parent, int length)
+    &#123;
+        int temp = arr[parent];
+        int child = parent * 2 + 1;
+        while (child &lt; length)
+        &#123;
+            if (child + 1 &lt; length &amp;&amp; arr[child + 1] &lt; arr[child])
+            &#123;
+                child++;
+            &#125;
+            if (temp &lt; arr[child])
+            &#123;
+                break;
+            &#125;
+            arr[parent] = arr[child];
+            parent = child;
+            child = parent * 2 + 1;
+        &#125;
+        arr[parent] = temp;
+    &#125;
+&#125;
 </code></pre>
-<blockquote>
-<p>输出：</p>
-</blockquote>
 
     </div>
     
