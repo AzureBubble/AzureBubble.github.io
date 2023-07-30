@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #ffa2c4">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #00bcd4">
+                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
                     排序算法
                 </a>
             </span>
@@ -200,10 +200,77 @@
 </ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif" alt="归并排序"></p>
-<pre><code class="c#">
+<pre><code class="c#"> internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 5, 7, 3, 8, 6, 9, 4, 2 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        merge_sort(arr, 1, 8);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+     
+     // 分割数组
+     private static void merge_sort(int[] arr,int start,int end)
+     &#123;
+         if(arr == null || start &gt;= end)
+         &#123;
+             return;
+         &#125;
+         int mid = (start + end) / 2; // 取得数组中间值下标
+         // 继续分割
+         merge_sort(arr,start,mid);
+         merge_sort(arr,mid + 1,end);
+         merge(arr,start,mid,end);
+     &#125;
+     
+     privatr static void merge(int[] arr,int start,int mid,int end)// 1 1 2
+     &#123;
+         int left = mid - start + 1; // 获得左边数组元素个数 
+         int right = end - mid; // 获得右边数组元素个数 
+         int leftArr = new int[left + 1]; 
+         int rightArr = new int[right + 1]; 
+         int i;
+         for(i = 0; i &lt; left; i++)
+         &#123;
+             leftArr[i] = arr[start - 1 + i]; 
+         &#125;
+         leftArr[i] = 2147483647; // 把数组最后一个元素设置为最大值
+         for(i = 0; i &lt; right; i++)
+         &#123;
+             rightArr[i] = arr[mid + i];
+         &#125;
+         leftArr[i] = 2147483647; // 把数组最后一个元素设置为最大值
+         int j = 0;
+         i = 0;
+         for(int k = start; k &lt; end; k++)
+         &#123;
+             if(leftArr[i] &lt;= rightArr[j])
+             &#123;
+                 arr[k - 1] = leftArr[i];
+                 i++;
+             &#125;
+             else
+             &#123;
+                 arr[k - 1] = rightArr[j];
+                 j++;
+             &#125;
+         &#125;
+     &#125;
+ &#125;
 </code></pre>
 <blockquote>
 <p>输出：</p>
+<p>未排序前的数组：<br>5 7 3 8 6 9 4 2<br>排序后的数组：<br>2 3 4 5 6 7 8 9</p>
 </blockquote>
 <hr>
 <h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><blockquote>
