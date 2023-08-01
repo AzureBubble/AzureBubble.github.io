@@ -280,10 +280,72 @@
 </ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F.gif" alt="计数排序"></p>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 2, 4, 1, 2, 5, 3, 4, 8, 7 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        countingSort(arr);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+
+    private static int get_max(int[] arr)
+    &#123;
+        int max = arr[0];
+        for (int i = 1; i &lt; arr.Length; i++)
+        &#123;
+            if (arr[i] &gt; max)
+            &#123;
+                max = arr[i];
+            &#125;
+        &#125;
+        return max;
+    &#125;
+
+    private static void countingSort(int[] arr)
+    &#123;
+        int length = arr.Length;
+        // 找出数组中的最大值
+        int max = get_max(arr);
+        int[] array = new int[max + 1]; // 创建一个统计元素出现次数的数组
+        int[] output = new int[length]; // 排序数组
+        // 统计元素出现个数，存储在对应的位置上
+        for (int i = 0; i &lt; length; i++)
+        &#123;
+            array[arr[i]]++;
+        &#125;
+        // 累加出现的次数
+        for (int i = 1; i &lt; max + 1; i++)
+        &#123;
+            array[i] += array[i - 1];
+        &#125;
+        // 根据次数进行排序
+        for (int i = 0; i &lt; length; i++)
+        &#123;
+            output[array[arr[i]] - 1] = arr[i];
+            array[arr[i]]--;
+        &#125;
+        // 复制到arr数组中 2, 4, 1, 2, 5, 3, 4, 8, 7
+        for (int i = 0; i &lt; length; i++)
+        &#123;
+            arr[i] = output[i];
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <blockquote>
 <p>输出：</p>
+<p>未排序前的数组：<br>2 4 1 2 5 3 4 8 7<br>排序后的数组：<br>1 2 2 3 4 4 5 7 8</p>
 </blockquote>
 <hr>
 <h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><blockquote>
@@ -293,24 +355,99 @@
 </ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F.gif" alt="基数排序"></p>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = &#123; 121, 432, 564, 23, 1, 45, 788 &#125;;
+        Console.WriteLine(&quot;未排序前的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+        Console.WriteLine();
+        radixSort(arr);
+        Console.WriteLine(&quot;排序后的数组：&quot;);
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            Console.Write(arr[i] + &quot; &quot;);
+        &#125;
+    &#125;
+
+    private static int getMax(int[] arr)
+    &#123;
+        int max = arr[0];
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            if (arr[i] &gt; max)
+            &#123;
+                max = arr[i];
+            &#125;
+        &#125;
+        return max;
+    &#125;
+
+    private static void countingSort(int[] arr, int place)
+    &#123;
+        int length = arr.Length;
+        int[] output = new int[length];
+
+        int max = (arr[0] / place) % 10;
+        for (int i = 1; i &lt; length; i++)
+        &#123;
+            if (((arr[i] / place) % 10) &gt; max)
+            &#123;
+                max = (arr[i] / place) % 10;
+            &#125;
+        &#125;
+
+        int[] count = new int[max + 1];
+        for (int i = 0; i &lt; length; i++)
+        &#123;
+            count[(arr[i] / place) % 10]++;
+        &#125;
+
+        for (int i = 1; i &lt; max + 1; i++)
+        &#123;
+            count[i] += count[i - 1];
+        &#125;
+
+        // 一定要从后往前排
+        for (int i = length - 1; i &gt;= 0; i--)
+        &#123;
+            output[count[(arr[i] / place) % 10] - 1] = arr[i];
+            count[(arr[i] / place) % 10]--;
+        &#125;
+
+        for (int i = 0; i &lt; length; i++)
+        &#123;
+            arr[i] = output[i];
+        &#125;
+    &#125;
+
+    private static void radixSort(int[] arr)
+    &#123;
+        int max = getMax(arr);
+        // 根据最高位数，从低位依次进行计数排序
+        for (int i = 1; max / i &gt; 0; i *= 10)
+        &#123;
+            countingSort(arr, i);
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <blockquote>
 <p>输出：</p>
+<p>未排序前的数组：<br>121 432 564 23 1 45 788<br>排序后的数组：<br>1 23 45 121 432 564 788</p>
 </blockquote>
 <hr>
 <h4 id="桶-x2F-箱排序"><a href="#桶-x2F-箱排序" class="headerlink" title="桶&#x2F;箱排序"></a>桶&#x2F;箱排序</h4><blockquote>
-<p>桶&#x2F;箱排序：待排序数组，分配到若干个桶，各自执行排序任务。是一种基于分治思想、效率很高的排序算法。</p>
+<p>桶&#x2F;箱排序：待排序数组，分配到若干个桶，各自执行排序任务。是一种基于分治思想、效率很高的排序算法。(适用于数据范围较小且分布均匀的浮点数数据)</p>
 <ul>
 <li>时间复杂度&#x3D;O(n+m+n(logn-logm))，空间复杂度&#x3D;O(n+m)。稳定排序。n:数据个数，m:数据位数。</li>
 </ul>
 </blockquote>
 <p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%A1%B6%E6%8E%92%E5%BA%8F.gif" alt="桶排序"></p>
-<pre><code class="c#">
-</code></pre>
-<blockquote>
-<p>输出：</p>
-</blockquote>
 
     </div>
     
