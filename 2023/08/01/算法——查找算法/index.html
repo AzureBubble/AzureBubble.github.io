@@ -11,7 +11,7 @@
         <link rel="icon" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
         <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/[object Object].min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
         <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
         
         <script src="https://polyfill.io/v3/polyfill.min.js?features="></script>
@@ -176,14 +176,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #00a596">
+                <a href="/tags/C/" style="color: #ffa2c4">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" style="color: #00a596">
+                <a href="/tags/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
                     查找算法
                 </a>
             </span>
@@ -398,13 +398,80 @@
 <hr>
 <h4 id="哈希查找算法"><a href="#哈希查找算法" class="headerlink" title="哈希查找算法"></a>哈希查找算法</h4><blockquote>
 <p><strong>哈希查找</strong>：又称<strong>散列查找算法</strong>，是一种借助哈希表（散列表）查找目标元素的方法，查找效率最高时对应的时间复杂度位O(2)。</p>
-<p><strong>基本思想</strong>：</p>
-<p>- </p>
+<p><strong>哈希表</strong>：又称散列表，是一种存储结构，通常用来存储多个元素。和其它存储结构（线性表、树等）相比，哈希表查找目标元素的效率非常高。每个存储到哈希表中的元素，都配有一个唯一的标识（又称“索引”或者“键”），用户想查找哪个元素，凭借该元素对应的标识就可以直接找到它，无需遍历整个哈希表。</p>
+<ul>
+<li>适用于大多数场景，既支持有序序列，也支持无序序列。</li>
+<li>常见的散列函数：直接定址法，除留余数法，平方取余法等</li>
+<li>处理冲突的方法：开放定址法，线性探测法，拉链法等</li>
+<li>影响冲突的主要三个因素：<ul>
+<li>散列函数是否均匀</li>
+<li>处理冲突的方法</li>
+<li>散列表的装填因子</li>
+</ul>
+</li>
+</ul>
 </blockquote>
-<pre><code class="c#">
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = new int[] &#123; 5, 30, 20, 55, 50 &#125;;
+        int[] hashArr = new int[10];
+        CreateHash(arr, hashArr);
+        int index = hash_search(hashArr, 20);
+        if (index != -1)
+        &#123;
+            Console.WriteLine($&quot;查找成功！序列为第&#123;index + 1&#125;个元素&quot;);
+        &#125;
+        else
+        &#123;
+            Console.WriteLine(&quot;查找失败&quot;);
+        &#125;
+    &#125;
+
+    // 哈希函数
+    private static int hash(int value)
+    &#123;
+        return value % 10;
+    &#125;
+
+    // 创建哈希表
+    private static void CreateHash(int[] arr, int[] hashArr)
+    &#123;
+        int i, index;
+        for (i = 0; i &lt; arr.Length; i++)
+        &#123;
+            // 通过哈希函数计算当前元素在哈希表中的位置
+            index = hash(arr[i]);
+            while (hashArr[index] != 0)
+            &#123;
+                index++;
+            &#125;
+            hashArr[index] = arr[i];
+        &#125;
+    &#125;
+
+    private static int hash_search(int[] hashArr, int value)
+    &#123;
+        // 通过哈希函数计算得到待查元素的下标
+        int hashIndex = hash(value);
+        // 如果发生冲突，则使用线性探测法向后探测
+        while (hashArr[hashIndex] != value)
+        &#123;
+            hashIndex = (hashIndex + 1) % 10;
+            // 如果探测位置为空
+            if (hashArr[hashIndex] == 0 || hashIndex == hash(value))
+            &#123;
+                return -1;
+            &#125;
+        &#125;
+        return hashIndex;
+    &#125;
+&#125;
 </code></pre>
 <blockquote>
 <p>输出：</p>
+<p>查找成功！序列为第2个元素</p>
 </blockquote>
 
     </div>
