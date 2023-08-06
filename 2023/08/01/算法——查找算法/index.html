@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>算法——查找算法 | 虫儿飞的游戏集</title>
+        <meta name="author" content="虫儿飞">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/[object Object].min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features="></script>
+        
+        
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+	<canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
+></canvas>
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/background.min.js"></script>
+<div id="cursor"></div>
+<link rel="stylesheet" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/css/cursor.min.css" />
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/cursor.min.js"></script>
+<canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/js/firework2.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height: 100vh; width: 100vw; position: fixed; display: flex; z-index: 2147483647; justify-content: space-between; background: #fff; transition: all 0.3s ease-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none">
+    <div style="position: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center">
+        <div id="loadcontent" style="width: 50vmin; height: 50vmin; padding: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: solid 10px #a3ddfb; text-align: center">
+            <div>
+                <h2>LOADING...</h2>
+                <p style="word-break: keep-all">加载过慢请开启缓存（浏览器默认开启）</p>
+                <div>
+                    <img alt="loading" src="/loading.gif" style="width: 60px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="layout">
+            <transition name="into">
+                <div v-show="showpage" style="display: -not-none">
+                    <div id="menushow">
+                        <nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">虫儿飞的游戏集</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;虫儿飞的游戏集</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                    </div>
+                    <div id="main">
+                        <div class="article">
+    <div>
+        <h1>算法——查找算法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/1
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #ff7d73">
+                    C#
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
+                    查找算法
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <blockquote>
+<p><strong>查找</strong>（<code>Search</code>）：是在一个数据集合中查找满足给定条件的记录。对于查找问题来说，没有一种算法对于任何情况下都是合适的。</p>
+<p><strong>查找表</strong>（<code>Search Table</code>）：是由同一类型的数据元素（或记录）构成的集合。对查找表经常进行的操作：</p>
+<ol>
+<li>查询某个数据元素是否在查找表中<strong>（静态查找表）</strong></li>
+<li>检索某个数据元素的属性<strong>（静态查找表）</strong></li>
+<li>向查找表中添加一个数据元素<strong>（动态查找表）</strong></li>
+<li>向查找表中删除一个数据元素<strong>（动态查找表）</strong></li>
+</ol>
+</blockquote>
+<hr>
+<h4 id="顺序查找算法"><a href="#顺序查找算法" class="headerlink" title="顺序查找算法"></a>顺序查找算法</h4><blockquote>
+<p><strong>顺序查找</strong>：又称<strong>顺序搜索算法</strong>或者<strong>线性搜索算法</strong>，是所有查找算法中最基本、最简单的。</p>
+<p><strong>基本思想</strong>：从查找表的一端开始，顺序扫描线性表，逐个同记录的关键字作比较，如果匹配成功，则查找成功；反之，直到最后一个关键字都没有匹配成功，则为失败。</p>
+<ul>
+<li>时间复杂度&#x3D;O(n)，空间复杂度&#x3D;O(1)；最好时间复杂度为O(1)；</li>
+<li>适用于绝大多数场景，既可以在有序序列中查找目标元素，也可以在无序序列中查找目标元素。</li>
+<li>静态查找表既可以使用顺序表表示，也可以使用链表结构表示。</li>
+<li>优点：算法简单而且使用面广。</li>
+<li>缺点：查找效率较低，特别是当待查找集合中元素较多时，不推荐使用顺序查找。</li>
+</ul>
+</blockquote>
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = new int[] &#123; 10, 14, 19, 26, 27, 31, 33, 35, 42, 44 &#125;;
+        int index = linear_search(arr, 33);
+        if (index != -1)
+        &#123;
+            Console.WriteLine($&quot;查找成功！序列为第&#123;index + 1&#125;个元素&quot;);
+        &#125;
+        else
+        &#123;
+            Console.WriteLine(&quot;查找失败&quot;);
+        &#125;
+    &#125;
+
+    private static int linear_search(int[] arr, int value)
+    &#123;
+        for (int i = 0; i &lt; arr.Length; i++)
+        &#123;
+            if (arr[i] == value)
+            &#123;
+                return i;
+            &#125;
+        &#125;
+        return -1;
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+<p>输出：</p>
+<p>查找成功！序列为第7个元素</p>
+</blockquote>
+<hr>
+<h4 id="二分查找算法"><a href="#二分查找算法" class="headerlink" title="二分查找算法"></a>二分查找算法</h4><blockquote>
+<p><strong>二分查找</strong>：又称<strong>折半查找、二分搜索、折半搜索</strong>等，是在分治算法基础上设计出来的查找算法。</p>
+<p><strong>基本思想</strong>：将表中间位置记录的关键字与查找关键字比较，若相等，则查找成功；否则利用中间位置记录将表分为前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。</p>
+<ul>
+<li>时间复杂度&#x3D;O(log<sub>2</sub>n)，循环方式：空间复杂度&#x3D;O(1)，递归方式：时间复杂度&#x3D;O(log<sub>2</sub>n)</li>
+<li>数组元素必须有序，查找的数值不能多个，只能一个。必须采用顺序存储结构。</li>
+<li>优点：比较次数少，查找速度块，平均性能好。</li>
+<li>缺点：必须要求待查表为有序表；插入删除困难。</li>
+</ul>
+</blockquote>
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = new int[] &#123; 10, 14, 19, 26, 27, 31, 33, 35, 42, 44 &#125;;
+        //int index = binary_search1(arr, 0, 9, 31);
+        int index = binary_search2(arr, 0, 9, 31);
+        if (index != -1)
+        &#123;
+            Console.WriteLine($&quot;查找成功！序列为第&#123;index + 1&#125;个元素&quot;);
+        &#125;
+        else
+        &#123;
+            Console.WriteLine(&quot;查找失败&quot;);
+        &#125;
+    &#125;
+
+    // 递归
+    private static int binary_search1(int[] arr, int start, int end, int value)
+    &#123;
+        if (start &gt; end) return -1;
+
+        int mid = start + (end - start) / 2;
+        if (value == arr[mid])
+        &#123;
+            return mid;
+        &#125;
+        if (value &lt; arr[mid])
+        &#123;
+            return binary_search1(arr, start, mid - 1, value);
+        &#125;
+        else
+        &#123;
+            return binary_search1(arr, mid + 1, end, value);
+        &#125;
+    &#125;
+
+    // 非递归
+    private static int binary_search2(int[] arr, int start, int end, int value)
+    &#123;
+        int left = start;
+        int right = end;
+        while (left &lt;= right)
+        &#123;
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == value)
+            &#123;
+                return mid;
+            &#125;
+            else if (value &lt; arr[mid])
+            &#123;
+                right = mid - 1;
+            &#125;
+            else
+            &#123;
+                left = mid + 1;
+            &#125;
+        &#125;
+        return -1;
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+<p>输出：</p>
+<p>查找成功！序列为第6个元素</p>
+</blockquote>
+<hr>
+<h4 id="插值查找算法"><a href="#插值查找算法" class="headerlink" title="插值查找算法"></a>插值查找算法</h4><blockquote>
+<p><strong>插值查找</strong>：又称为<strong>插值搜索算法</strong>，是在二分查找算法的基础上改进的一种查找算法，将查找点的选择改进位自适应选择，提高查找效率。</p>
+<p><strong>基本思想</strong>：插值查找类似平时我们查字典的时候，查一个以 s 开头的单词时，绝对不会用二分查找，从字典的中间第一页开始，因为我们知道它的大概位置是在字典的较后面部分，所以可以从后面的某处查起。我们先从首字母 s 的地方开始查找，然后再根据第二个字母在字母表中的位置，找到对应位置再继续查找，这样重复这个过程，直到找到我们查找的这个单词这就是插值查找的基本思想</p>
+<ul>
+<li>顺序存储的有序数列，根据关键字在数据中均匀分布。</li>
+<li>比较元素的位置公式：</li>
+</ul>
+<p>$$<br>Mid &#x3D; Begin + ( (End - Begin) &#x2F; (A[End] - A[Begin]) ) * (X - A[Begin])<br>$$</p>
+<ul>
+<li>Mid：计算得出的元素的位置；</li>
+<li>End：搜索区域内最后一个元素所在的位置；</li>
+<li>Begin：搜索区域内第一个元素所在的位置；</li>
+<li>X：要查找的目标元素；</li>
+<li>A[]：表示整个待搜索序列。</li>
+</ul>
+</blockquote>
+<pre><code class="c#">internal class Program
+&#123;
+    private static void Main(string[] args)
+    &#123;
+        int[] arr = new int[] &#123; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 &#125;;
+        int index = interpolation_search(arr, 0, 9, 5);
+        if (index != -1)
+        &#123;
+            Console.WriteLine($&quot;查找成功！序列为第&#123;index + 1&#125;个元素&quot;);
+        &#125;
+        else
+        &#123;
+            Console.WriteLine(&quot;查找失败&quot;);
+        &#125;
+    &#125;
+    
+    private static int interpolation_search(int[] arr, int begin, int end, int value)
+    &#123;
+        if (begin &gt; end)
+        &#123;
+            return -1;
+        &#125;
+        // 如果查找表中只有一个元素，则比较该元素和待查元素的值
+        if (begin == end)
+        &#123;
+            return arr[begin] == value ? begin : -1;
+        &#125;
+
+        // 根据公式找到中间元素的所在位置
+        int mid = ((end - begin) / (arr[end] - arr[begin]) * (value - arr[begin]));
+
+        // 递归出口
+        if (value == arr[mid])
+        &#123;
+            return mid;
+        &#125;
+
+        // 递归查询
+        if (value &lt; arr[mid])
+        &#123;
+            return interpolation_search(arr, begin, mid - 1, value);
+        &#125;
+        else
+        &#123;
+            return interpolation_search(arr, mid + 1, end, value);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+<p>输出：</p>
+<p>查找成功！序列为第5个元素</p>
+</blockquote>
+<hr>
+<h4 id="哈希查找算法"><a href="#哈希查找算法" class="headerlink" title="哈希查找算法"></a>哈希查找算法</h4><blockquote>
+<p><strong>哈希查找</strong>：又称<strong>散列查找算法</strong>，是一种借助哈希表（散列表）查找目标元素的方法，查找效率最高时对应的时间复杂度位O(2)。</p>
+<p><strong>基本思想</strong>：</p>
+<p>- </p>
+</blockquote>
+<pre><code class="c#">
+</code></pre>
+<blockquote>
+<p>输出：</p>
+</blockquote>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+        
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+
+</div>
+
+                        <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 虫儿飞的游戏集
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @虫儿飞
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> & <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+
+                    </div>
+                </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content" alt="showimg">
+            </div>
+        </div>
+        <script src="/js/functions.js"></script>
+<script src="/js/particlex.js"></script>
+
+    
+    
+    
+    <script src="https://cdn.staticfile.org/waline/2.9.1/waline.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.9.1/waline.min.css">
+    <script>
+        Waline.init({
+            el: "#waline-container",
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: true,
+            pageview: false,
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+            meta: "nick,mail,link".split(","),
+            requiredMeta: "nick".split(","),
+            lang: "zh-CN",
+            wordLimit: 0,
+            pageSize: "10",
+            login: "enable",
+            locale: {},
+        });
+    </script>
+    
+    
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <script>
+        Waline.init({
+            el: '#waline-container',
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: "true",
+            pageview: "false",
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(','),
+            meta: "nick,mail,link".split(','),
+            requiredMeta: "nick".split(','),
+            lang: "zh-CN",
+            wordLimit: parseInt("0"),
+            pageSize: "10",
+            login: "enable",
+        });
+    </script>
+    
+
+
+    </body>
+</html>
