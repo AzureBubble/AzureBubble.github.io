@@ -8,7 +8,7 @@
         <meta name="author" content="虫儿飞">
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link rel="icon" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
+        <link rel="icon" href="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
         <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
@@ -176,21 +176,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #03a9f4">
+                <a href="/tags/C/" style="color: #ff7d73">
                     C#
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
+                <a href="/tags/%E7%AE%97%E6%B3%95/" style="color: #00bcd4">
                     算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" style="color: #ffa2c4">
+                <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" style="color: #03a9f4">
                     回溯算法
                 </a>
             </span>
@@ -210,7 +210,7 @@
 </ul>
 <p>经典问题有：N皇后问题，迷宫问题等。</p>
 </blockquote>
-<h5 id="找到从A到K的行走路线"><a href="#找到从A到K的行走路线" class="headerlink" title="找到从A到K的行走路线"></a>找到从A到K的行走路线</h5><p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E2%80%94%E6%89%BE%E4%BB%8EA-K%E7%9A%84%E8%A1%8C%E8%B5%B0%E8%B7%AF%E7%BA%BF.png" alt="回溯算法—找从A-K的行走路线"></p>
+<h5 id="找到从A到K的行走路线"><a href="#找到从A到K的行走路线" class="headerlink" title="找到从A到K的行走路线"></a>找到从A到K的行走路线</h5><p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E2%80%94%E6%89%BE%E4%BB%8EA-K%E7%9A%84%E8%A1%8C%E8%B5%B0%E8%B7%AF%E7%BA%BF.png" alt="回溯算法—找从A-K的行走路线"></p>
 <h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
 <p>所谓“回溯”，其实就是回退、倒退的意思。仍以图 1 为例，回溯算法查找从 A 到 K 路线的过程是：</p>
 <ul>
@@ -230,7 +230,7 @@
 <li>重复 2、3 步，最终要么成功找到可行的路线，要么回退至起点位置，表明所有的路线都已经判断完毕。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98.png" alt="迷宫问题"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98.png" alt="迷宫问题"></p>
 <pre><code class="c#">// 用 1 表示白色区域，用 0 表示黑色区域。
 internal class Program
 &#123;
@@ -328,7 +328,7 @@ internal class Program
 <p>要想使 N 个皇后不相互攻击，应将它们放置在不同的行、不同的列、还不能位于同一条 45°（或 135°）角的斜线上。</p>
 <p>回溯算法解决N皇后问题的具体思路是：将 N 个皇后逐一放置在不同的行，以“回溯”的方式逐一测试出每行皇后所在行的具体位置，最终确定所有皇后的位置。 </p>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.png" alt="N皇后问题"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.png" alt="N皇后问题"></p>
 <pre><code class="c#">internal class Program
 &#123;
     private static int[] q = new int[20]; // 每个皇后的所在列数

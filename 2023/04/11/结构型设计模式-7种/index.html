@@ -8,7 +8,7 @@
         <meta name="author" content="虫儿飞">
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link rel="icon" href="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
+        <link rel="icon" href="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
         <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
@@ -183,14 +183,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #00a596">
+                <a href="/tags/C/" style="color: #ff7d73">
                     C++
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #03a9f4">
+                <a href="/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ffa2c4">
                     结构型设计模式
                 </a>
             </span>
@@ -249,7 +249,7 @@
 <blockquote>
 <p>通过继承实现适配器，使得适配器类既具有目标接口的行为，又能够调用被适配类的方法。在C++中，可以通过多继承和虚继承实现类适配器模式。</p>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%B1%BB%E9%80%82%E9%85%8D%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="类适配器结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E7%B1%BB%E9%80%82%E9%85%8D%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="类适配器结构图"></p>
 <p><strong>类适配器参考代码实现</strong></p>
 <pre><code class="c++">#include &lt;iostream&gt;
 #include&lt;string&gt;
@@ -303,7 +303,7 @@ int main()
 <blockquote>
 <p>通过组合实现适配器，使得适配器类包含一个被适配类的对象，并实现目标接口的方法，通过调用被适配类的方法来完成适配。在C++中，可以通过对象组合和接口继承实现对象适配器模式。</p>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%AF%B9%E8%B1%A1%E9%80%82%E9%85%8D%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="对象适配器结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E5%AF%B9%E8%B1%A1%E9%80%82%E9%85%8D%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="对象适配器结构图"></p>
 <p><strong>对象适配器参考代码实现</strong></p>
 <pre><code class="c++">#include &lt;iostream&gt;
 #include&lt;string&gt;
@@ -390,7 +390,7 @@ int main()
 <li>想在多个对象间共享实现（可能使用引用技术），但同时要求客户并不知道这一点。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="桥接模式结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="桥接模式结构图"></p>
 <h5 id="桥接模式包含两个关键角色："><a href="#桥接模式包含两个关键角色：" class="headerlink" title="桥接模式包含两个关键角色："></a>桥接模式包含两个关键角色：</h5><ol>
 <li><p><strong>抽象部分（Abstraction）</strong></p>
 <blockquote>
@@ -522,7 +522,7 @@ int main()
 <li>希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="组合模式结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="组合模式结构图"></p>
 <h5 id="组合模式中通常有两种类型的对象："><a href="#组合模式中通常有两种类型的对象：" class="headerlink" title="组合模式中通常有两种类型的对象："></a>组合模式中通常有两种类型的对象：</h5><ol>
 <li><p><strong>叶子节点（Leaf）</strong></p>
 <blockquote>
@@ -705,7 +705,7 @@ int main()
 <li>当不能采用生成子类的方式进行扩充时。一种情况是：可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是：由于类定义被隐藏，或类定义不能用于生成子类。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="装饰器模式结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="装饰器模式结构图"></p>
 <h5 id="装饰器模式有三个关键角色："><a href="#装饰器模式有三个关键角色：" class="headerlink" title="装饰器模式有三个关键角色："></a>装饰器模式有三个关键角色：</h5><ol>
 <li><p><strong>抽象组件（Component）</strong></p>
 <blockquote>
@@ -829,7 +829,7 @@ int main()
 <li><u>当需要构建一个层次结构的子系统时，使用 Facade 模式定义子系统中每层的入口点</u>。如果子系统之间是相互依赖的，则可以让它们仅通过 Facade 进行通信，从而简化了它们之间的依赖关系。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="外观模式结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="外观模式结构图"></p>
 <h5 id="外观模式有三个关键角色："><a href="#外观模式有三个关键角色：" class="headerlink" title="外观模式有三个关键角色："></a>外观模式有三个关键角色：</h5><ol>
 <li><p><strong>外观（Facade）</strong></p>
 <blockquote>
@@ -950,7 +950,7 @@ int main()
 <li>如果程序不依赖于对象标识。由于 Flyweight 对象可以被共享，所以对于概念上明显有别的对象，标识测试将返回真值。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="享元模式结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="享元模式结构图"></p>
 <h5 id="享元模式通常包含以下角色："><a href="#享元模式通常包含以下角色：" class="headerlink" title="享元模式通常包含以下角色："></a>享元模式通常包含以下角色：</h5><ol>
 <li><p><strong>Flyweight（抽象享元类）</strong></p>
 <blockquote>
@@ -1114,7 +1114,7 @@ int main()
 <li>智能代理（Smart Proxy）：用于在访问对象时添加额外的行为，例如性能监控、日志记录、缓存管理等。</li>
 </ol>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="代理模式结构图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="代理模式结构图"></p>
 <h5 id="代理模式有四个关键角色："><a href="#代理模式有四个关键角色：" class="headerlink" title="代理模式有四个关键角色："></a>代理模式有四个关键角色：</h5><ol>
 <li><p><strong>抽象主题（Subject）</strong></p>
 <blockquote>
