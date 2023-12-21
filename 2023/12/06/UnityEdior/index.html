@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>UnityEdior | 虫儿飞的游戏集</title>
+        <meta name="author" content="虫儿飞">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/img/HeadImage.jpg">
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features="></script>
+        
+        
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+	<canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
+></canvas>
+<script src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/js/background.min.js"></script>
+<div id="cursor"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/css/cursor.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/js/cursor.min.js"></script>
+<canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/js/firework2.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height: 100vh; width: 100vw; position: fixed; display: flex; z-index: 2147483647; justify-content: space-between; background: #fff; transition: all 0.3s ease-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none">
+    <div style="position: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center">
+        <div id="loadcontent" style="width: 50vmin; height: 50vmin; padding: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: solid 10px #a3ddfb; text-align: center">
+            <div>
+                <h2>LOADING...</h2>
+                <p style="word-break: keep-all">加载过慢请开启缓存（浏览器默认开启）</p>
+                <div>
+                    <img alt="loading" src="/loading.gif" style="width: 60px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="layout">
+            <transition name="into">
+                <div v-show="showpage" style="display: -not-none">
+                    <div id="menushow">
+                        <nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">虫儿飞的游戏集</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;虫儿飞的游戏集</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                    </div>
+                    <div id="main">
+                        <div class="article">
+    <div>
+        <h1>UnityEdior </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/6
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/UnityEditor/" style="color: #00bcd4">
+                    UnityEditor
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #ffa2c4">
+                    C#
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Unity/" style="color: #ff7d73">
+                    Unity
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/UnityEditor/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E5%8A%A8%E5%9B%BE.gif" alt="插入排序"></p>
+<blockquote>
+<p>UnityEditor编辑器的代码必须放在Editor文件夹下，因为这个文件夹下的代码是不会被打包出去，只允许程序员在Unity编辑器下使用，如果不放在Editor这个文件夹下，打包时若包含UnityEditor的代码，会报错。</p>
+</blockquote>
+<h4 id="MenuItem"><a href="#MenuItem" class="headerlink" title="MenuItem"></a>MenuItem</h4><h5 id="1-使用方法-MenuItem-“path”"><a href="#1-使用方法-MenuItem-“path”" class="headerlink" title="1.使用方法:[MenuItem(“path”)]"></a>1.使用方法:[MenuItem(“path”)]</h5><pre><code class="c#">using UnityEditor;
+using UnityEngine;
+
+namespace EditorExtensions
+&#123;
+    public class MenuItemExample
+    &#123;
+        // [MenuItem()] 修饰的必须是一个静态方法
+        // 才会在Unity菜单栏出现先对应的按键
+        // ()括号里的是这个方法在菜单栏的树形路径
+        [MenuItem(&quot;EditorExtensions/MenuItem/EditorTest&quot;)]
+        private static void EditorTest()
+        &#123;
+            Debug.Log(&quot;Hello Editor&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h5 id="2-Application-OpenURL-“path”-打开一个网址或者一个Application应用"><a href="#2-Application-OpenURL-“path”-打开一个网址或者一个Application应用" class="headerlink" title="2.Application.OpenURL(“path”) 打开一个网址或者一个Application应用"></a>2.Application.OpenURL(“path”) 打开一个网址或者一个Application应用</h5><pre><code class="c#">[MenuItem(&quot;EditorExtensions/MenuItem/OpenBilibili&quot;)]
+private static void OpenBilibili()
+&#123;
+    // 可以通过这个Api接口打开一个网址或者一个Application应用
+    Application.OpenURL(&quot;Http://bilibili.com&quot;);
+&#125;
+</code></pre>
+<h5 id="3-EditorUtility-RevealInFinder-“path”-打开一个指定的文件目录"><a href="#3-EditorUtility-RevealInFinder-“path”-打开一个指定的文件目录" class="headerlink" title="3.EditorUtility.RevealInFinder(“path”) 打开一个指定的文件目录"></a>3.EditorUtility.RevealInFinder(“path”) 打开一个指定的文件目录</h5><pre><code class="c#">[MenuItem(&quot;EditorExtensions/MenuItem/打开策划目录&quot;)]
+private static void OpenDesignFolder()
+&#123;
+    // 打开一个指定的文件目录 参数是一个文件的路径
+    EditorUtility.RevealInFinder(Application.dataPath.Replace(&quot;Assets&quot;, &quot;Library&quot;));
+&#125;
+</code></pre>
+<h5 id="4-Menu-SetChecked-“path”-isChecked-可勾选的菜单栏"><a href="#4-Menu-SetChecked-“path”-isChecked-可勾选的菜单栏" class="headerlink" title="4.Menu.SetChecked(“path”,isChecked) 可勾选的菜单栏"></a>4.Menu.SetChecked(“path”,isChecked) 可勾选的菜单栏</h5><pre><code class="c#">private static bool openShotCut = false; // 记录菜单栏勾选状态
+
+[MenuItem(&quot;EditorExtensions/MenuItem/快捷键开关&quot;)]
+private static void ToggleShotCut()
+&#123;
+    openShotCut = !openShotCut; // 切换状态
+    Menu.SetChecked(&quot;EditorExtensions/MenuItem/快捷键开关&quot;, openShotCut);
+&#125;
+</code></pre>
+<h5 id="5-MenuItem的快捷键设置"><a href="#5-MenuItem的快捷键设置" class="headerlink" title="5.MenuItem的快捷键设置"></a>5.MenuItem的快捷键设置</h5><pre><code class="c#">[MenuItem(&quot;EditorExtensions/MenuItem/EditorTestWithShotCut _c&quot;)]
+private static void EditorTestWithShotCut()
+&#123;
+    // 常用快捷键码
+    // # -&gt; Shift &amp; -&gt; Alt % -&gt; Ctrl/Command
+    // _a-z A-Z - a-z A-Z
+    Debug.Log(&quot;键盘C键的快捷键呼出菜单&quot;);
+&#125;
+
+[MenuItem(&quot;EditorExtensions/MenuItem/OpenBilibiliWithShotCut %#e&quot;)]
+private static void OpenBilibiliWithShotCut()
+&#123;
+    EditorUtility.RevealInFinder(Application.persistentDataPath);
+&#125;
+</code></pre>
+<h5 id="6-MenuItem-“path”-validate-x3D-true"><a href="#6-MenuItem-“path”-validate-x3D-true" class="headerlink" title="6.[MenuItem(“path”, validate &#x3D; true)]"></a>6.[MenuItem(“path”, validate &#x3D; true)]</h5><pre><code class="c#">private static bool openShotCut = false; // 记录菜单栏勾选状态
+
+[MenuItem(&quot;EditorExtensions/MenuItem/快捷键开关&quot;)]
+private static void ToggleShotCut()
+&#123;
+    openShotCut = !openShotCut; // 切换状态
+    Menu.SetChecked(&quot;EditorExtensions/MenuItem/快捷键开关&quot;, openShotCut);
+&#125;
+[MenuItem(&quot;EditorExtensions/MenuItem/EditorTestWithShotCut _c&quot;)]
+private static void EditorTestWithShotCut()
+&#123;
+    // 常用快捷键码
+    // # -&gt; Shift &amp; -&gt; Alt % -&gt; Ctrl/Command
+    // _a-z A-Z - a-z A-Z
+    Debug.Log(&quot;键盘C键的快捷键呼出菜单&quot;);
+&#125;
+// openShotCut 为true时才能被使用
+[MenuItem(&quot;EditorExtensions/MenuItem/EditorTestWithShotCut %#e&quot;, validate = true)]
+private static bool EditorTestWithShotCutValidate()
+&#123;
+    return openShotCut;
+&#125;
+
+[MenuItem(&quot;EditorExtensions/MenuItem/OpenBilibiliWithShotCut %#e&quot;)]
+private static void OpenBilibiliWithShotCut()
+&#123;
+    EditorUtility.RevealInFinder(Application.persistentDataPath);
+&#125;
+
+[MenuItem(&quot;EditorExtensions/MenuItem/OpenBilibiliWithShotCut %#e&quot;, validate = true)]
+private static bool OpenBilibiliWithShotCutValidate()
+&#123;
+    return openShotCut;
+&#125;
+</code></pre>
+<h5 id="7-EditorApplication-ExecuteMenuItem-“同名path”-复用MenuItem"><a href="#7-EditorApplication-ExecuteMenuItem-“同名path”-复用MenuItem" class="headerlink" title="7. EditorApplication.ExecuteMenuItem(“同名path”) 复用MenuItem"></a>7. EditorApplication.ExecuteMenuItem(“同名path”) 复用MenuItem</h5><pre><code class="c#">[MenuItem(&quot;EditorExtensions/MenuItem/EditorTestWithShotCut _c&quot;)]
+private static void EditorTestWithShotCut()
+&#123;
+ EditorApplication.ExecuteMenuItem(&quot;EditorExtensions/MenuItem/EditorTest&quot;);
+&#125;
+</code></pre>
+<h4 id="EditorWindow"><a href="#EditorWindow" class="headerlink" title="EditorWindow"></a>EditorWindow</h4><h5 id="1-绘制一个编辑器窗口"><a href="#1-绘制一个编辑器窗口" class="headerlink" title="1.绘制一个编辑器窗口"></a>1.绘制一个编辑器窗口</h5><pre><code class="c#">[MenuItem(&quot;EditorExtensions/IMGUI/OpenGUILayoutExample&quot;)]
+private static void OpenGUILayoutExample()
+&#123;
+ GUILayoutExample window = GetWindow&lt;GUILayoutExample&gt;();
+ window.Show();
+&#125;
+
+private void OnGUI()
+&#123;
+ GUILayout.Label(&quot;Hello IMGUI&quot;);
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+        
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+
+</div>
+
+                        <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 虫儿飞的游戏集
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @虫儿飞
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> & <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+
+                    </div>
+                </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content" alt="showimg">
+            </div>
+        </div>
+        <script src="/js/functions.js"></script>
+<script src="/js/particlex.js"></script>
+
+    
+    
+    
+    <script src="https://cdn.staticfile.org/waline/2.9.1/waline.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.9.1/waline.min.css">
+    <script>
+        Waline.init({
+            el: "#waline-container",
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: true,
+            pageview: false,
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+            meta: "nick,mail,link".split(","),
+            requiredMeta: "nick".split(","),
+            lang: "zh-CN",
+            wordLimit: 0,
+            pageSize: "10",
+            login: "enable",
+            locale: {},
+        });
+    </script>
+    
+    
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <script>
+        Waline.init({
+            el: '#waline-container',
+            serverURL: "https://azure-bubble-vercel.vercel.app/",
+            commentCount: "true",
+            pageview: "false",
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(','),
+            meta: "nick,mail,link".split(','),
+            requiredMeta: "nick".split(','),
+            lang: "zh-CN",
+            wordLimit: parseInt("0"),
+            pageSize: "10",
+            login: "enable",
+        });
+    </script>
+    
+
+
+    </body>
+</html>
