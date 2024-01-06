@@ -176,7 +176,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #ff7d73">
+                <a href="/tags/C/" style="color: #ffa2c4">
                     C#
                 </a>
             </span>
@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/UI%E6%A1%86%E6%9E%B6/" style="color: #00a596">
+                <a href="/tags/UI%E6%A1%86%E6%9E%B6/" style="color: #ff7d73">
                     UI框架
                 </a>
             </span>
@@ -200,7 +200,35 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <h2 id="框架简介"><a href="#框架简介" class="headerlink" title="框架简介"></a>框架简介</h2><blockquote>
+<p>Untiy高性能自动化UI管理框架ZMUIFramework是铸梦老师以性能点、自动化点、效率点和易使用点四个大点为基础研发的一个高性能、高效率的<b>Mono、物体分离式框架</b>，该框架打破常规的Mono依赖驱动，生命周期自动化管理，无需考虑与Mono周期混杂问题。全程界面物体上无任何一个脚本，但使用起来和Mono脚本无任何差别。对于IRuntime可以实现无障碍移植切换到热更域或Mono源工程。</p>
+<h4 id="框架在性能方面可以避免以下的问题点："><a href="#框架在性能方面可以避免以下的问题点：" class="headerlink" title="框架在性能方面可以避免以下的问题点："></a>框架在性能方面可以避免以下的问题点：</h4><ul>
+<li><strong>频繁的网格重建带来的大量性能消耗和垃圾回收</strong></li>
+<li><strong>频繁的SetActive带来的性能消耗和GC垃圾</strong></li>
+<li><strong>频繁Instantiate造成的卡顿和性能消耗以及GC垃圾</strong></li>
+<li><strong>不必要的组件属性带来的性能开销</strong></li>
+<li><strong>不正确的组件顺序导致打断合批带来的性能开销和DrawCall增加</strong></li>
+<li><strong>不必要的组件使用RaycastTarget带来的性能消耗</strong></li>
+</ul>
+<p>并且铸梦老师还考虑其他的各种原因，最终以<font color=red>Canvas</font>作为每个界面的基础进行制作。</p>
+<h4 id="把Canvas作为界面基础的主要原因为："><a href="#把Canvas作为界面基础的主要原因为：" class="headerlink" title="把Canvas作为界面基础的主要原因为："></a>把Canvas作为界面基础的主要原因为：</h4><ol>
+<li><strong>Canvas本身并不占用DrawCall</strong></li>
+<li><strong>Canvas分离能最大化的减少网格重建带来的性能消耗</strong></li>
+<li><strong>能够提高界面的性能，网格数据量小，绘制压力小</strong></li>
+<li><strong>能够提高界面的流畅性</strong></li>
+<li><strong>一般情况下,同屏同时显示的界面也很少能大于5个的,所以一般也不会产生Canvas过多的问题</strong></li>
+</ol>
+<p>对于性能点优化方面还不熟悉的同学可以先看下铸梦老师的这篇文章：**<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42461824/article/details/116283598">如何把UGUI做到极致的优化</a>**</p>
+<h4 id="这个框架包含以下六大系统-并且包含部分性能优化工具-："><a href="#这个框架包含以下六大系统-并且包含部分性能优化工具-：" class="headerlink" title="这个框架包含以下六大系统(并且包含部分性能优化工具)："></a>这个框架包含以下六大系统(并且包含部分<font color=red>性能优化工具</font>)：</h4><ul>
+<li><strong>UI管理系统</strong></li>
+<li><strong>遮罩系统</strong></li>
+<li><strong>堆栈系统</strong></li>
+<li><strong>灵活的层级系统</strong></li>
+<li><strong>自动化系统</strong></li>
+<li><strong>高效率系统</strong></li>
+</ul>
+</blockquote>
+
     </div>
     
     
