@@ -176,21 +176,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00a596">
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
                     设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #00bcd4">
+                <a href="/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="color: #ff7d73">
                     创建型设计模式
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #00a596">
+                <a href="/tags/C/" style="color: #ff7d73">
                     C++
                 </a>
             </span>
@@ -219,6 +219,9 @@
 </blockquote>
 <h5 id="6-迪米特法则（Law-of-Demeter）（LDP）"><a href="#6-迪米特法则（Law-of-Demeter）（LDP）" class="headerlink" title="6. 迪米特法则（Law of Demeter）（LDP）"></a>6. 迪米特法则（Law of Demeter）（LDP）</h5><blockquote>
 <p>迪米特法则指的是一个对象应该对其他对象有尽可能少的了解。一个类应该尽量减少对其他类的直接依赖，只与其直接的朋友（即与自己关联的对象）通信。这样可以降低类之间的耦合度，提高系统的可维护性和扩展性。</p>
+</blockquote>
+<h5 id="7-合成复用原则（Composite-Reuse-Principle）（CRP）"><a href="#7-合成复用原则（Composite-Reuse-Principle）（CRP）" class="headerlink" title="7.合成复用原则（Composite Reuse Principle）（CRP）"></a>7.合成复用原则（Composite Reuse Principle）（CRP）</h5><blockquote>
+<p>合成复用原则指的是尽量使用对象组合&#x2F;聚合，而不是继承。</p>
 </blockquote>
 <ul>
 <li><strong>设计模式共有23种，主要分三大类</strong><ul>
@@ -250,7 +253,7 @@
 <p>简单工厂模式的主要思想是通过一个工厂类（通常是一个<strong>静态类或方法</strong>）来封装对象的创建过程，隐藏对象的创建细节，因此又被称为静态工厂方法（Staitic Factory Method），对外提供一个简单的接口来创建对象实例。这样可以将对象的创建逻辑集中管理，从而在客户端代码中实现对象的创建和使用的解耦，简化了客户端的代码。</p>
 <p>简单工厂模式的<u>优点</u>是可以将对象的创建和使用解耦，隐藏了对象的创建细节，使得客户端代码更加简洁和易于维护。<u> 但缺点是当需要增加新的产品类时，需要修改工厂类的代码，违反了开闭原则，不够灵活 </u>。因此，简单工厂模式通常适用于对象创建逻辑比较简单且不经常变化的场景。</p>
 </blockquote>
-<p><img src="https://cdn.staticaly.com/gh/AzureBubble/PicBed@main/showImg/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="简单工厂模式"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/PicBed@main/showImg/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="简单工厂模式"></p>
 <h5 id="简单工厂模式通常包含以下几个角色："><a href="#简单工厂模式通常包含以下几个角色：" class="headerlink" title="简单工厂模式通常包含以下几个角色："></a>简单工厂模式通常包含以下几个角色：</h5><ol>
 <li><p><strong>工厂类（核心）（Factory Class）</strong></p>
 <blockquote>
