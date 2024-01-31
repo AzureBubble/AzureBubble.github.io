@@ -183,14 +183,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/Unity3D/" style="color: #ff7d73">
+                <a href="/tags/Unity3D/" style="color: #00bcd4">
                     Unity3D
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/" style="color: #ffa2c4">
+                <a href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/" style="color: #03a9f4">
                     游戏框架
                 </a>
             </span>
@@ -200,7 +200,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h2 id="QZGameFramework"><a href="#QZGameFramework" class="headerlink" title="QZGameFramework"></a>QZGameFramework</h2><h3 id="Unity-Editor-编辑器工具"><a href="#Unity-Editor-编辑器工具" class="headerlink" title="Unity Editor 编辑器工具"></a>Unity Editor 编辑器工具</h3><blockquote>
+        <h3 id="Unity-Editor-编辑器工具"><a href="#Unity-Editor-编辑器工具" class="headerlink" title="Unity Editor 编辑器工具"></a>Unity Editor 编辑器工具</h3><blockquote>
 <p>本框架工具一部分是在网上看到别人的好用的，然后我复刻并修改优化后整合，一部分则为原创。</p>
 </blockquote>
 <h4 id="ExcelTool-——-读取-Excel-配置表工具"><a href="#ExcelTool-——-读取-Excel-配置表工具" class="headerlink" title="ExcelTool —— 读取 Excel 配置表工具"></a>ExcelTool —— 读取 Excel 配置表工具</h4><blockquote>
@@ -250,16 +250,16 @@
 <h4 id="对象池模块"><a href="#对象池模块" class="headerlink" title="对象池模块"></a>对象池模块</h4><blockquote>
 </blockquote>
 <h4 id="包管理器模块"><a href="#包管理器模块" class="headerlink" title="包管理器模块"></a>包管理器模块</h4><h4 id="数据持久化模块"><a href="#数据持久化模块" class="headerlink" title="数据持久化模块"></a>数据持久化模块</h4><h4 id="场景切换管理器"><a href="#场景切换管理器" class="headerlink" title="场景切换管理器"></a>场景切换管理器</h4><h4 id="单例模式管理器"><a href="#单例模式管理器" class="headerlink" title="单例模式管理器"></a>单例模式管理器</h4><blockquote>
-<p>这是一个管理全局单例的模块。</p>
+<p>这是一个管理全局所有单例的模块：管理全局所有的单例，相对于传统的单例模式创建，这样更便于对单例的管理和销毁，且如果需要进行帧更新的单例可以继承IUpdateSingleton接口即可实现单例帧更新函数OnUpdate，且这个帧更新的单例可以单独设置优先级，控制单例的帧更新顺序。</p>
 </blockquote>
 <h4 id="自动化UI框架"><a href="#自动化UI框架" class="headerlink" title="自动化UI框架"></a>自动化UI框架</h4><blockquote>
-<p>搭建好界面后，一键生成通用UI脚本</p>
+<p>搭建好界面后，一键生成通用UI窗口脚本和UI元素脚本并挂载在窗口GameObject上</p>
 </blockquote>
 <h4 id="Timer计时器"><a href="#Timer计时器" class="headerlink" title="Timer计时器"></a>Timer计时器</h4><h4 id="SceneName特性"><a href="#SceneName特性" class="headerlink" title="SceneName特性"></a>SceneName特性</h4><blockquote>
 <p>[SceneName]特性标记string变量，可快速在Inspector窗口通过下拉框选择场景</p>
 </blockquote>
 <h4 id="ReadOnly特性"><a href="#ReadOnly特性" class="headerlink" title="ReadOnly特性"></a>ReadOnly特性</h4><blockquote>
-<p>编辑在Inspector显示但只读的变量属性。</p>
+<p>编辑在Inspector显示但只读的变量属性，可通过后面的单选框开启关闭只读绘制。</p>
 </blockquote>
 
     </div>
