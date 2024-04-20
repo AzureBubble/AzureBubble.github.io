@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/posts/69848392.html</loc>
+    <loc>https://azzurebubble.github.io/posts/3cf1d1bf.html</loc>
     
     <lastmod>2024-04-20</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/posts/3cf1d1bf.html</loc>
+    <loc>https://azzurebubble.github.io/posts/69848392.html</loc>
     
     <lastmod>2024-04-20</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/posts/18d056c9.html</loc>
+    <loc>https://azzurebubble.github.io/posts/d7fe9934.html</loc>
     
     <lastmod>2024-04-20</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/posts/d7fe9934.html</loc>
+    <loc>https://azzurebubble.github.io/posts/18d056c9.html</loc>
     
     <lastmod>2024-04-20</lastmod>
     
@@ -308,6 +308,15 @@
   </url>
   
   <url>
+    <loc>https://azzurebubble.github.io/box/nav/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://azzurebubble.github.io/box/animation/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -326,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/box/nav/index.html</loc>
+    <loc>https://azzurebubble.github.io/life/movies/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -335,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/life/movies/index.html</loc>
+    <loc>https://azzurebubble.github.io/personal/bb/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -354,15 +363,6 @@
   
   <url>
     <loc>https://azzurebubble.github.io/life/music/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/personal/bb/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -416,7 +416,7 @@
 
   
   <url>
-    <loc>https://azzurebubble.github.io/tags/C/</loc>
+    <loc>https://azzurebubble.github.io/tags/Shader/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -430,7 +430,14 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/tags/Shader/</loc>
+    <loc>https://azzurebubble.github.io/tags/UnityEditor/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/tags/C/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -472,6 +479,20 @@
   </url>
   
   <url>
+    <loc>https://azzurebubble.github.io/tags/Unity3D/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://azzurebubble.github.io/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -480,13 +501,6 @@
   
   <url>
     <loc>https://azzurebubble.github.io/tags/Winform/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -514,7 +528,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/tags/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://azzurebubble.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -528,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://azzurebubble.github.io/tags/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -542,13 +556,6 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://azzurebubble.github.io/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -556,7 +563,14 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://azzurebubble.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -571,6 +585,13 @@
   
   <url>
     <loc>https://azzurebubble.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -611,38 +632,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://azzurebubble.github.io/tags/UnityEditor/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/tags/Unity3D/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://azzurebubble.github.io/categories/Unity%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://azzurebubble.github.io/categories/Unity%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -656,6 +656,13 @@
   </url>
   
   <url>
+    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -663,7 +670,21 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</loc>
+    <loc>https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/Unity/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -677,34 +698,6 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -712,7 +705,28 @@
   </url>
   
   <url>
+    <loc>https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -740,21 +754,7 @@
   </url>
   
   <url>
-    <loc>https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/Unity/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2024-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/</loc>
+    <loc>https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
