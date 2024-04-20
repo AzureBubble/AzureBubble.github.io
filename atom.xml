@@ -3,11 +3,11 @@
   <title>Fomalhaut🥝</title>
   
   
-  <link href="https://www.fomal.cc/atom.xml" rel="self"/>
+  <link href="https://azzurebubble.github.io/atom.xml" rel="self"/>
   
-  <link href="https://www.fomal.cc/"/>
+  <link href="https://azzurebubble.github.io/"/>
   <updated>2024-04-20T02:21:01.462Z</updated>
-  <id>https://www.fomal.cc/</id>
+  <id>https://azzurebubble.github.io/</id>
   
   <author>
     <name>Rock</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Untiy游戏框架QZGameFramework</title>
-    <link href="https://www.fomal.cc/posts/3e60956b.html"/>
-    <id>https://www.fomal.cc/posts/3e60956b.html</id>
+    <link href="https://azzurebubble.github.io/posts/3e60956b.html"/>
+    <id>https://azzurebubble.github.io/posts/3e60956b.html</id>
     <published>2024-01-06T10:13:46.000Z</published>
     <updated>2024-04-20T02:21:01.462Z</updated>
     
@@ -33,25 +33,25 @@
     
     
     
-    <category term="框架搭建" scheme="https://www.fomal.cc/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/"/>
+    <category term="框架搭建" scheme="https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/"/>
     
-    <category term="Unity框架" scheme="https://www.fomal.cc/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/Unity%E6%A1%86%E6%9E%B6/"/>
+    <category term="Unity框架" scheme="https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/Unity%E6%A1%86%E6%9E%B6/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="Unity3D" scheme="https://www.fomal.cc/tags/Unity3D/"/>
+    <category term="Unity3D" scheme="https://azzurebubble.github.io/tags/Unity3D/"/>
     
-    <category term="游戏框架" scheme="https://www.fomal.cc/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/"/>
+    <category term="游戏框架" scheme="https://azzurebubble.github.io/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>UnityEdior</title>
-    <link href="https://www.fomal.cc/posts/ec874c57.html"/>
-    <id>https://www.fomal.cc/posts/ec874c57.html</id>
+    <link href="https://azzurebubble.github.io/posts/ec874c57.html"/>
+    <id>https://azzurebubble.github.io/posts/ec874c57.html</id>
     <published>2023-12-06T00:56:01.000Z</published>
     <updated>2024-04-20T01:10:48.249Z</updated>
     
@@ -65,48 +65,48 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="Unity" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/Unity/"/>
+    <category term="Unity" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/Unity/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="Unity" scheme="https://www.fomal.cc/tags/Unity/"/>
+    <category term="Unity" scheme="https://azzurebubble.github.io/tags/Unity/"/>
     
-    <category term="UnityEditor" scheme="https://www.fomal.cc/tags/UnityEditor/"/>
+    <category term="UnityEditor" scheme="https://azzurebubble.github.io/tags/UnityEditor/"/>
     
   </entry>
   
   <entry>
     <title>算法——最短路径算法</title>
-    <link href="https://www.fomal.cc/posts/17cfe08f.html"/>
-    <id>https://www.fomal.cc/posts/17cfe08f.html</id>
+    <link href="https://azzurebubble.github.io/posts/17cfe08f.html"/>
+    <id>https://azzurebubble.github.io/posts/17cfe08f.html</id>
     <published>2023-08-01T12:45:09.000Z</published>
     <updated>2024-04-20T01:10:50.275Z</updated>
     
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="最短路径算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"/>
+    <category term="最短路径算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="最短路径算法" scheme="https://www.fomal.cc/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"/>
+    <category term="最短路径算法" scheme="https://azzurebubble.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法——最小生成树算法</title>
-    <link href="https://www.fomal.cc/posts/3cf1d1bf.html"/>
-    <id>https://www.fomal.cc/posts/3cf1d1bf.html</id>
+    <link href="https://azzurebubble.github.io/posts/3cf1d1bf.html"/>
+    <id>https://azzurebubble.github.io/posts/3cf1d1bf.html</id>
     <published>2023-08-01T12:44:34.000Z</published>
     <updated>2024-04-20T01:10:50.274Z</updated>
     
@@ -123,23 +123,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="最小生成树算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/"/>
+    <category term="最小生成树算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="最小生成树算法" scheme="https://www.fomal.cc/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/"/>
+    <category term="最小生成树算法" scheme="https://azzurebubble.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法——查找算法</title>
-    <link href="https://www.fomal.cc/posts/f43b98cb.html"/>
-    <id>https://www.fomal.cc/posts/f43b98cb.html</id>
+    <link href="https://azzurebubble.github.io/posts/f43b98cb.html"/>
+    <id>https://azzurebubble.github.io/posts/f43b98cb.html</id>
     <published>2023-08-01T12:43:16.000Z</published>
     <updated>2024-04-20T01:10:50.275Z</updated>
     
@@ -155,23 +155,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="查找算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
+    <category term="查找算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="查找算法" scheme="https://www.fomal.cc/tags/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
+    <category term="查找算法" scheme="https://azzurebubble.github.io/tags/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>排序算法——归并/计数/基数/桶排序</title>
-    <link href="https://www.fomal.cc/posts/23241932.html"/>
-    <id>https://www.fomal.cc/posts/23241932.html</id>
+    <link href="https://azzurebubble.github.io/posts/23241932.html"/>
+    <id>https://azzurebubble.github.io/posts/23241932.html</id>
     <published>2023-07-28T14:41:30.000Z</published>
     <updated>2024-04-20T01:10:50.268Z</updated>
     
@@ -189,23 +189,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>排序算法——选择排序</title>
-    <link href="https://www.fomal.cc/posts/18d056c9.html"/>
-    <id>https://www.fomal.cc/posts/18d056c9.html</id>
+    <link href="https://azzurebubble.github.io/posts/18d056c9.html"/>
+    <id>https://azzurebubble.github.io/posts/18d056c9.html</id>
     <published>2023-07-25T16:08:58.000Z</published>
     <updated>2024-04-20T01:10:50.272Z</updated>
     
@@ -224,25 +224,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
-    <category term="选择排序" scheme="https://www.fomal.cc/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
+    <category term="选择排序" scheme="https://azzurebubble.github.io/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>排序算法——插入排序</title>
-    <link href="https://www.fomal.cc/posts/cd5503e2.html"/>
-    <id>https://www.fomal.cc/posts/cd5503e2.html</id>
+    <link href="https://azzurebubble.github.io/posts/cd5503e2.html"/>
+    <id>https://azzurebubble.github.io/posts/cd5503e2.html</id>
     <published>2023-07-24T11:43:40.000Z</published>
     <updated>2024-04-20T01:10:50.271Z</updated>
     
@@ -263,25 +263,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
-    <category term="插入排序" scheme="https://www.fomal.cc/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <category term="插入排序" scheme="https://azzurebubble.github.io/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>排序算法——交换排序</title>
-    <link href="https://www.fomal.cc/posts/327191a2.html"/>
-    <id>https://www.fomal.cc/posts/327191a2.html</id>
+    <link href="https://azzurebubble.github.io/posts/327191a2.html"/>
+    <id>https://azzurebubble.github.io/posts/327191a2.html</id>
     <published>2023-07-20T11:42:10.000Z</published>
     <updated>2024-04-20T01:10:50.269Z</updated>
     
@@ -300,25 +300,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="排序算法" scheme="https://www.fomal.cc/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <category term="排序算法" scheme="https://azzurebubble.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
-    <category term="交换排序" scheme="https://www.fomal.cc/tags/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/"/>
+    <category term="交换排序" scheme="https://azzurebubble.github.io/tags/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>算法——回溯算法</title>
-    <link href="https://www.fomal.cc/posts/69848392.html"/>
-    <id>https://www.fomal.cc/posts/69848392.html</id>
+    <link href="https://azzurebubble.github.io/posts/69848392.html"/>
+    <id>https://azzurebubble.github.io/posts/69848392.html</id>
     <published>2023-07-15T13:00:58.000Z</published>
     <updated>2024-04-20T01:10:50.274Z</updated>
     
@@ -334,25 +334,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="回溯算法" scheme="https://www.fomal.cc/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
+    <category term="回溯算法" scheme="https://azzurebubble.github.io/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法——动态规划算法</title>
-    <link href="https://www.fomal.cc/posts/d7fe9934.html"/>
-    <id>https://www.fomal.cc/posts/d7fe9934.html</id>
+    <link href="https://azzurebubble.github.io/posts/d7fe9934.html"/>
+    <id>https://azzurebubble.github.io/posts/d7fe9934.html</id>
     <published>2023-06-07T08:18:24.000Z</published>
     <updated>2024-04-20T01:10:50.272Z</updated>
     
@@ -368,25 +368,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="动态规划算法" scheme="https://www.fomal.cc/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/"/>
+    <category term="动态规划算法" scheme="https://azzurebubble.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法——贪心算法</title>
-    <link href="https://www.fomal.cc/posts/fa27ba66.html"/>
-    <id>https://www.fomal.cc/posts/fa27ba66.html</id>
+    <link href="https://azzurebubble.github.io/posts/fa27ba66.html"/>
+    <id>https://azzurebubble.github.io/posts/fa27ba66.html</id>
     <published>2023-06-07T07:54:22.000Z</published>
     <updated>2024-04-20T01:10:50.276Z</updated>
     
@@ -403,25 +403,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="贪心算法" scheme="https://www.fomal.cc/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    <category term="贪心算法" scheme="https://azzurebubble.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法——分治算法</title>
-    <link href="https://www.fomal.cc/posts/2a9d432c.html"/>
-    <id>https://www.fomal.cc/posts/2a9d432c.html</id>
+    <link href="https://azzurebubble.github.io/posts/2a9d432c.html"/>
+    <id>https://azzurebubble.github.io/posts/2a9d432c.html</id>
     <published>2023-06-07T01:17:46.000Z</published>
     <updated>2024-04-20T01:10:50.273Z</updated>
     
@@ -437,25 +437,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="分治算法" scheme="https://www.fomal.cc/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/"/>
+    <category term="分治算法" scheme="https://azzurebubble.github.io/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法——递归算法</title>
-    <link href="https://www.fomal.cc/posts/1999c5c.html"/>
-    <id>https://www.fomal.cc/posts/1999c5c.html</id>
+    <link href="https://azzurebubble.github.io/posts/1999c5c.html"/>
+    <id>https://azzurebubble.github.io/posts/1999c5c.html</id>
     <published>2023-06-06T09:27:28.000Z</published>
     <updated>2024-04-20T01:10:50.277Z</updated>
     
@@ -471,25 +471,25 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C#" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="算法" scheme="https://www.fomal.cc/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://azzurebubble.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="递归算法" scheme="https://www.fomal.cc/tags/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/"/>
+    <category term="递归算法" scheme="https://azzurebubble.github.io/tags/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>行为型设计模式（Behavioral Design Patterns） - 11种</title>
-    <link href="https://www.fomal.cc/posts/33555d0d.html"/>
-    <id>https://www.fomal.cc/posts/33555d0d.html</id>
+    <link href="https://azzurebubble.github.io/posts/33555d0d.html"/>
+    <id>https://azzurebubble.github.io/posts/33555d0d.html</id>
     <published>2023-04-15T02:00:44.000Z</published>
     <updated>2024-04-20T01:10:50.278Z</updated>
     
@@ -505,23 +505,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C++" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C++" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
     
-    <category term="设计模式" scheme="https://www.fomal.cc/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://azzurebubble.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-    <category term="C++" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C++" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="行为型设计模式" scheme="https://www.fomal.cc/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="行为型设计模式" scheme="https://azzurebubble.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>《巫鬼》</title>
-    <link href="https://www.fomal.cc/posts/1253424b.html"/>
-    <id>https://www.fomal.cc/posts/1253424b.html</id>
+    <link href="https://azzurebubble.github.io/posts/1253424b.html"/>
+    <id>https://azzurebubble.github.io/posts/1253424b.html</id>
     <published>2023-04-15T02:00:00.000Z</published>
     <updated>2024-04-20T01:10:50.265Z</updated>
     
@@ -538,25 +538,25 @@
     
     
     
-    <category term="游戏开发" scheme="https://www.fomal.cc/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
-    <category term="团队合作" scheme="https://www.fomal.cc/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <category term="团队合作" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="Unity" scheme="https://www.fomal.cc/tags/Unity/"/>
+    <category term="Unity" scheme="https://azzurebubble.github.io/tags/Unity/"/>
     
-    <category term="2D" scheme="https://www.fomal.cc/tags/2D/"/>
+    <category term="2D" scheme="https://azzurebubble.github.io/tags/2D/"/>
     
-    <category term="团队合作" scheme="https://www.fomal.cc/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <category term="团队合作" scheme="https://azzurebubble.github.io/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>结构型设计模式（Structural Design Patterns） - 7种</title>
-    <link href="https://www.fomal.cc/posts/85a95c31.html"/>
-    <id>https://www.fomal.cc/posts/85a95c31.html</id>
+    <link href="https://azzurebubble.github.io/posts/85a95c31.html"/>
+    <id>https://azzurebubble.github.io/posts/85a95c31.html</id>
     <published>2023-04-11T02:00:00.000Z</published>
     <updated>2024-04-20T01:10:50.278Z</updated>
     
@@ -573,23 +573,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C++" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C++" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
     
-    <category term="设计模式" scheme="https://www.fomal.cc/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://azzurebubble.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-    <category term="C++" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C++" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="结构型设计模式" scheme="https://www.fomal.cc/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="结构型设计模式" scheme="https://azzurebubble.github.io/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>创建型设计模式（Creational Design Patterns）-5种</title>
-    <link href="https://www.fomal.cc/posts/c3b7f8ea.html"/>
-    <id>https://www.fomal.cc/posts/c3b7f8ea.html</id>
+    <link href="https://azzurebubble.github.io/posts/c3b7f8ea.html"/>
+    <id>https://azzurebubble.github.io/posts/c3b7f8ea.html</id>
     <published>2023-04-10T02:54:11.000Z</published>
     <updated>2024-04-20T01:10:50.269Z</updated>
     
@@ -606,23 +606,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="C++" scheme="https://www.fomal.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
+    <category term="C++" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
     
     
-    <category term="设计模式" scheme="https://www.fomal.cc/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://azzurebubble.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-    <category term="创建型设计模式" scheme="https://www.fomal.cc/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="创建型设计模式" scheme="https://azzurebubble.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-    <category term="C++" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C++" scheme="https://azzurebubble.github.io/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>《Moother》</title>
-    <link href="https://www.fomal.cc/posts/8ed2e2b3.html"/>
-    <id>https://www.fomal.cc/posts/8ed2e2b3.html</id>
+    <link href="https://azzurebubble.github.io/posts/8ed2e2b3.html"/>
+    <id>https://azzurebubble.github.io/posts/8ed2e2b3.html</id>
     <published>2023-02-06T09:41:24.000Z</published>
     <updated>2024-04-20T01:10:50.263Z</updated>
     
@@ -639,25 +639,25 @@
     
     
     
-    <category term="游戏开发" scheme="https://www.fomal.cc/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
-    <category term="团队合作" scheme="https://www.fomal.cc/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <category term="团队合作" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="Unity" scheme="https://www.fomal.cc/tags/Unity/"/>
+    <category term="Unity" scheme="https://azzurebubble.github.io/tags/Unity/"/>
     
-    <category term="2D" scheme="https://www.fomal.cc/tags/2D/"/>
+    <category term="2D" scheme="https://azzurebubble.github.io/tags/2D/"/>
     
-    <category term="团队合作" scheme="https://www.fomal.cc/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <category term="团队合作" scheme="https://azzurebubble.github.io/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>《救赎之路》</title>
-    <link href="https://www.fomal.cc/posts/4b6bf36b.html"/>
-    <id>https://www.fomal.cc/posts/4b6bf36b.html</id>
+    <link href="https://azzurebubble.github.io/posts/4b6bf36b.html"/>
+    <id>https://azzurebubble.github.io/posts/4b6bf36b.html</id>
     <published>2023-01-12T02:32:27.000Z</published>
     <updated>2024-04-20T01:10:50.267Z</updated>
     
@@ -675,18 +675,18 @@
     
     
     
-    <category term="游戏开发" scheme="https://www.fomal.cc/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
-    <category term="团队合作" scheme="https://www.fomal.cc/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <category term="团队合作" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
     
-    <category term="C#" scheme="https://www.fomal.cc/tags/C/"/>
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
-    <category term="Unity" scheme="https://www.fomal.cc/tags/Unity/"/>
+    <category term="Unity" scheme="https://azzurebubble.github.io/tags/Unity/"/>
     
-    <category term="2D" scheme="https://www.fomal.cc/tags/2D/"/>
+    <category term="2D" scheme="https://azzurebubble.github.io/tags/2D/"/>
     
-    <category term="团队合作" scheme="https://www.fomal.cc/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <category term="团队合作" scheme="https://azzurebubble.github.io/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
   </entry>
   
