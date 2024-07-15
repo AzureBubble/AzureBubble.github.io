@@ -6,7 +6,7 @@
   <link href="https://azzurebubble.github.io/atom.xml" rel="self"/>
   
   <link href="https://azzurebubble.github.io/"/>
-  <updated>2024-07-05T03:43:00.044Z</updated>
+  <updated>2024-07-15T15:09:50.847Z</updated>
   <id>https://azzurebubble.github.io/</id>
   
   <author>
@@ -17,11 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UGUI源码解析——UI组件基类：UIBehaviour</title>
+    <link href="https://azzurebubble.github.io/posts/fef6e811.html"/>
+    <id>https://azzurebubble.github.io/posts/fef6e811.html</id>
+    <published>2024-07-15T15:07:52.000Z</published>
+    <updated>2024-07-15T15:09:50.847Z</updated>
+    
+    
+    <summary type="html">UI组件的基类，继承MonoBehaviour</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>UGUI源码解析——目录</title>
     <link href="https://azzurebubble.github.io/posts/42c102bd.html"/>
     <id>https://azzurebubble.github.io/posts/42c102bd.html</id>
     <published>2024-07-05T03:33:56.000Z</published>
-    <updated>2024-07-05T03:43:00.044Z</updated>
+    <updated>2024-07-14T15:55:00.117Z</updated>
     
     
     <summary type="html">这是一篇阅读分析UGUI源码的文章分享，欢迎大佬指正，一起学习。</summary>
@@ -62,9 +77,9 @@
     <category term="Unity框架" scheme="https://azzurebubble.github.io/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/C/Unity%E6%A1%86%E6%9E%B6/"/>
     
     
-    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
-    
     <category term="Unity3D" scheme="https://azzurebubble.github.io/tags/Unity3D/"/>
+    
+    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
     <category term="游戏框架" scheme="https://azzurebubble.github.io/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6/"/>
     
@@ -638,41 +653,6 @@
     <category term="创建型设计模式" scheme="https://azzurebubble.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     <category term="C++" scheme="https://azzurebubble.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《Moother》</title>
-    <link href="https://azzurebubble.github.io/posts/8ed2e2b3.html"/>
-    <id>https://azzurebubble.github.io/posts/8ed2e2b3.html</id>
-    <published>2023-02-06T09:41:24.000Z</published>
-    <updated>2024-04-20T01:10:50.263Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="2023年2月3日48小时Globe-Game-Jam《Moother》，主题《Roots》">2023年2月3日48小时Globe Game Jam《Moother》，主题《Roots》</h5><h4 id="游戏类型：">游戏类型：</h4><ul><li>2D横板叙事冒险游戏</li></ul><h4 id="故事背景：">故事背景：</h4><ul><li>母亲的女儿被抓走，需要获得更强的装备和能力才能去拯救她女儿。</li></ul><h4 id="核心机制：">核心机制：</h4><ul><li>玩家通过不断死亡，跳入游戏开发剧情，从而开发出新的功能，使得游戏中的母亲也能获得相应的技能。</li></ul><h4 id="灵感来源：">灵感来源：</h4><ul><li>母亲是人类文明的根，体现了伟大的母爱，在自己孩子丢失后，母亲会不惜一切去拯救自己的孩子。</li></ul><h4 id="美术风格：">美术风格：</h4><ul><li></li></ul><h4 id="B站链接：">B站链接：</h4><ul><li><a href="https://www.bilibili.com/video/BV1ws4y1s7cf?vd_source=054e3de2e692b8d7c47d2f3992fcc30d"><strong>【2023GGJ】《Moother》-深圳线下站</strong></a></li></ul><h4 id="游戏打包地址：">游戏打包地址：</h4><ul><li><a href="https://github.com/AzureBubble/SampleReels/blob/main/Project/Moother.zip"><strong>《Moother》</strong></a></li></ul><p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/SampleReels@main/Picture/Moother.png" alt="Moother"></p><p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/SampleReels@main/Picture/Moother1.png" alt="Moother1"></p><p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/SampleReels@main/Picture/Moother2.png" alt="Moother2"></p><p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/SampleReels@main/Picture/Moother3.png" alt="Moother3"></p><p><img src="https://cdn.jsdelivr.net/gh/AzureBubble/SampleReels@main/Picture/Moother4.png" alt="Moother4"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;2023年2月3日48小时Globe-Game-Jam《Moother》，主题《Roots》&quot;&gt;2023年2月3日48小时Globe Game Jam《Moother》，主题《Roots》&lt;/h5&gt;
-&lt;h4 id=&quot;游戏类型：&quot;&gt;游戏类型：&lt;/h4&gt;
-&lt;ul&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="游戏开发" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
-    
-    <category term="团队合作" scheme="https://azzurebubble.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
-    
-    
-    <category term="Unity" scheme="https://azzurebubble.github.io/tags/Unity/"/>
-    
-    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
-    
-    <category term="2D" scheme="https://azzurebubble.github.io/tags/2D/"/>
-    
-    <category term="团队合作" scheme="https://azzurebubble.github.io/tags/%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
     
   </entry>
   
