@@ -83,7 +83,7 @@
       <link href="/posts/42c102bd.html"/>
       <url>/posts/42c102bd.html</url>
       
-        <content type="html"><![CDATA[<p><a href="https://azurebubble.github.io/posts/45311df6.html"><strong>UGUI源码解析——UIBehaviour</strong></a></p><blockquote><p>UIBehaviour：UI组件的基类，继承MonoBehaviour</p></blockquote><p><a href="https://azurebubble.github.io/posts/6dcd3730.html"><strong>UGUI源码解析——CanvasUpdateRegistry</strong></a></p><blockquote><p>CanvasUpdateRegistry：图像、布局重建注册器</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://azurebubble.github.io/posts/45311df6.html"><strong>UGUI源码解析——UIBehaviour</strong></a></p><blockquote><p>UIBehaviour：UI组件的基类，继承MonoBehaviour</p></blockquote><p><a href="https://azurebubble.github.io/posts/6dcd3730.html"><strong>UGUI源码解析——CanvasUpdateRegistry</strong></a></p><blockquote><p>CanvasUpdateRegistry：图像、布局重建注册器</p></blockquote><p><a href="https://azzurebubble.github.io/posts/52e926ac.html"><strong>UGUI源码解析——LayoutRebuilder</strong></a></p><blockquote><p>LayoutRebuilder：主要负责布局的刷新(UI对象位置和大小的刷新)</p></blockquote>]]></content>
       
       
       <categories>
@@ -165,9 +165,9 @@
             
             <tag> Unity </tag>
             
-            <tag> C# </tag>
-            
             <tag> UnityEditor </tag>
+            
+            <tag> C# </tag>
             
         </tags>
       
