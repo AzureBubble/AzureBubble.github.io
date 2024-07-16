@@ -63,9 +63,9 @@
     <link href="https://azzurebubble.github.io/posts/42c102bd.html"/>
     <id>https://azzurebubble.github.io/posts/42c102bd.html</id>
     <published>2024-07-05T03:33:56.000Z</published>
-    <updated>2024-07-15T15:30:14.281Z</updated>
+    <updated>2024-07-16T14:34:50.155Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://azurebubble.github.io/posts/45311df6.html"><strong>UGUI源码解析——UI组件基类：UIBehaviour</strong></a></p><blockquote><p>UI组件的基类，继承MonoBehaviour</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://azurebubble.github.io/posts/45311df6.html"><strong>UGUI源码解析——UIBehaviour</strong></a></p><blockquote><p>UIBehaviour：UI组件的基类，继承MonoBehaviour</p></blockquote><p><a href="https://azurebubble.github.io/posts/45311df6.html"><strong>UGUI源码解析——CanvasUpdateRegistry</strong></a></p><blockquote><p>CanvasUpdateRegistry：图像、布局重建注册器</p></blockquote>]]></content>
     
     
     <summary type="html">这是一篇阅读分析UGUI源码的文章分享，欢迎大佬指正，一起学习</summary>
@@ -76,12 +76,12 @@
     
     <category term="学习" scheme="https://azzurebubble.github.io/categories/C/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="UGUI源码" scheme="https://azzurebubble.github.io/categories/C/%E5%AD%A6%E4%B9%A0/UGUI%E6%BA%90%E7%A0%81/"/>
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/categories/C/%E5%AD%A6%E4%B9%A0/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     
     
     <category term="Unity3D" scheme="https://azzurebubble.github.io/tags/Unity3D/"/>
     
-    <category term="UGUI" scheme="https://azzurebubble.github.io/tags/UGUI/"/>
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/tags/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     
   </entry>
   
