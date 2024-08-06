@@ -6,7 +6,7 @@
   <link href="https://azzurebubble.github.io/atom.xml" rel="self"/>
   
   <link href="https://azzurebubble.github.io/"/>
-  <updated>2024-08-06T13:36:40.327Z</updated>
+  <updated>2024-08-06T13:40:12.883Z</updated>
   <id>https://azzurebubble.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UGUI源码解析——ContentSizeFitter</title>
+    <link href="https://azzurebubble.github.io/posts/50b8b756.html"/>
+    <id>https://azzurebubble.github.io/posts/50b8b756.html</id>
+    <published>2024-08-06T13:37:41.000Z</published>
+    <updated>2024-08-06T13:40:12.883Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>ContentSizeFitter：它用于自适应对象尺寸，根据ILayoutElement接口的子物体调整自身大小。在使用时要注意，挂载ContentSizeFitter后，大小变化可能需要下一帧生效，可通过调用SetLayoutHorizontal或ForceRebuildLayoutImmediate方法强制更新。</p><p>ContentSizeFitter不改变子物体的大小和位置，而是根据子物体(ILayoutElement)来改变自身的尺寸<br>ContentSizeFitter所<a href="https://so.csdn.net/so/search?q=%E6%8C%82%E8%BD%BD&amp;spm=1001.2101.3001.7020">挂载</a>的对象上必须挂载了实现ILayoutElement接口的组件</p></blockquote><h4 id="源码解析">源码解析</h4>]]></content>
+    
+    
+    <summary type="html">继承了ILayoutElement和ILayoutSelfController，是调整对象自适应的组件。</summary>
+    
+    
+    
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/categories/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/tags/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>UGUI源码解析——GridLayoutGroup</title>
@@ -437,29 +458,6 @@
     <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
     
     <category term="UnityEditor" scheme="https://azzurebubble.github.io/tags/UnityEditor/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法——最短路径算法</title>
-    <link href="https://azzurebubble.github.io/posts/17cfe08f.html"/>
-    <id>https://azzurebubble.github.io/posts/17cfe08f.html</id>
-    <published>2023-08-01T12:45:09.000Z</published>
-    <updated>2024-04-20T01:10:50.275Z</updated>
-    
-    
-    
-    
-    <category term="学习笔记" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="C#" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/"/>
-    
-    <category term="最短路径算法" scheme="https://azzurebubble.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="C#" scheme="https://azzurebubble.github.io/tags/C/"/>
-    
-    <category term="最短路径算法" scheme="https://azzurebubble.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
