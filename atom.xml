@@ -6,7 +6,7 @@
   <link href="https://azzurebubble.github.io/atom.xml" rel="self"/>
   
   <link href="https://azzurebubble.github.io/"/>
-  <updated>2024-08-07T14:26:20.973Z</updated>
+  <updated>2024-08-07T14:28:34.309Z</updated>
   <id>https://azzurebubble.github.io/</id>
   
   <author>
@@ -21,8 +21,12 @@
     <link href="https://azzurebubble.github.io/posts/9b0fb5b4.html"/>
     <id>https://azzurebubble.github.io/posts/9b0fb5b4.html</id>
     <published>2024-08-07T14:24:14.000Z</published>
-    <updated>2024-08-07T14:26:20.973Z</updated>
+    <updated>2024-08-07T14:28:34.309Z</updated>
     
+    <content type="html"><![CDATA[<blockquote><p>LayoutElement：继承了ILayoutElement和ILayoutIgnorer接口，作为布局元素组件<br>挂载了Layout Element组件的对象，布局并不会生效，它是受到实现了布局组的控制(HorizontalLayoutGroup、VerticalLayoutGroup、GridLayoutGroup)</p></blockquote><h4 id="源码解析">源码解析</h4>]]></content>
+    
+    
+    <summary type="html">继承了ILayoutElement和ILayoutIgnorer接口，作为布局元素组件。</summary>
     
     
     
@@ -38,8 +42,12 @@
     <link href="https://azzurebubble.github.io/posts/a99e5cea.html"/>
     <id>https://azzurebubble.github.io/posts/a99e5cea.html</id>
     <published>2024-08-07T14:24:02.000Z</published>
-    <updated>2024-08-07T14:25:48.043Z</updated>
+    <updated>2024-08-07T14:27:32.989Z</updated>
     
+    <content type="html"><![CDATA[<blockquote><p>LayoutUtility：布局的工具类，可以获取到对象的minWidth、preferredWidth、flexibleWidth、minHeight、preferredHeight、layoutPriority的属性值</p></blockquote><h4 id="源码解析">源码解析</h4>]]></content>
+    
+    
+    <summary type="html">布局的工具类</summary>
     
     
     

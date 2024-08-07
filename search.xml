@@ -8,7 +8,7 @@
       <link href="/posts/9b0fb5b4.html"/>
       <url>/posts/9b0fb5b4.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>LayoutElement：继承了ILayoutElement和ILayoutIgnorer接口，作为布局元素组件<br>挂载了Layout Element组件的对象，布局并不会生效，它是受到实现了布局组的控制(HorizontalLayoutGroup、VerticalLayoutGroup、GridLayoutGroup)</p></blockquote><h4 id="源码解析">源码解析</h4>]]></content>
       
       
       <categories>
@@ -33,7 +33,7 @@
       <link href="/posts/a99e5cea.html"/>
       <url>/posts/a99e5cea.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>LayoutUtility：布局的工具类，可以获取到对象的minWidth、preferredWidth、flexibleWidth、minHeight、preferredHeight、layoutPriority的属性值</p></blockquote><h4 id="源码解析">源码解析</h4>]]></content>
       
       
       <categories>
