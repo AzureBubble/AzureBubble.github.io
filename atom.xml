@@ -6,7 +6,7 @@
   <link href="https://azzurebubble.github.io/atom.xml" rel="self"/>
   
   <link href="https://azzurebubble.github.io/"/>
-  <updated>2024-08-18T14:30:03.791Z</updated>
+  <updated>2024-08-18T14:30:13.166Z</updated>
   <id>https://azzurebubble.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://azzurebubble.github.io/posts/6390c557.html"/>
     <id>https://azzurebubble.github.io/posts/6390c557.html</id>
     <published>2024-08-18T14:27:03.000Z</published>
-    <updated>2024-08-18T14:30:03.791Z</updated>
+    <updated>2024-08-18T14:30:13.166Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>IMaterialModifier：是材质处理的接口，可以在子类中实现GetModifiedMaterial方法去修改渲染的材质。<br>Mask实现了此接口</p></blockquote><h4 id="源码解析">源码解析</h4><blockquote><p>GetModifiedMaterial：</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Material <span class="title">GetModifiedMaterial</span>(<span class="params">Material baseMaterial</span>)</span>;</span><br></pre></td></tr></table></figure><blockquote><p>Canvas每帧更新时会将materialForRendering赋给canvasRenderer进行渲染</p></blockquote>]]></content>
     
@@ -42,11 +42,19 @@
     <link href="https://azzurebubble.github.io/posts/93fc2cc0.html"/>
     <id>https://azzurebubble.github.io/posts/93fc2cc0.html</id>
     <published>2024-08-18T14:18:07.000Z</published>
-    <updated>2024-08-18T14:23:09.406Z</updated>
+    <updated>2024-08-18T14:31:42.514Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>VertexHelper：是一个工具类，可以帮助我们快速创建网格<br>我们知道一个UI想要显示出来就需要对应的Mesh网格信息，而生成Mesh的网格信息就保存在了VertexHelper中，实际上我们可以直接操作Mesh类添加顶点等数据，可以理解为VertexHelper是UGUI与Mesh之间的一座桥梁</p></blockquote><h4 id="源码解析">源码解析</h4><blockquote></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">网格数据的工具类。</summary>
     
     
     
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/categories/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     
+    
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/tags/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     
   </entry>
   
@@ -55,11 +63,15 @@
     <link href="https://azzurebubble.github.io/posts/59942898.html"/>
     <id>https://azzurebubble.github.io/posts/59942898.html</id>
     <published>2024-08-18T14:17:14.000Z</published>
-    <updated>2024-08-18T14:24:13.028Z</updated>
+    <updated>2024-08-18T14:30:39.020Z</updated>
     
     
     
     
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/categories/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/tags/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     
   </entry>
   
