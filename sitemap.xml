@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://azzurebubble.github.io/posts/59942898.html</loc>
+    <loc>https://azzurebubble.github.io/posts/6390c557.html</loc>
     
     <lastmod>2024-08-18</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://azzurebubble.github.io/posts/42c102bd.html</loc>
+    
+    <lastmod>2024-08-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://azzurebubble.github.io/posts/59942898.html</loc>
     
     <lastmod>2024-08-18</lastmod>
     

@@ -6,7 +6,7 @@
   <link href="https://azzurebubble.github.io/atom.xml" rel="self"/>
   
   <link href="https://azzurebubble.github.io/"/>
-  <updated>2024-08-18T14:23:09.406Z</updated>
+  <updated>2024-08-18T14:30:03.791Z</updated>
   <id>https://azzurebubble.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UGUI源码解析——IMaterialModifier</title>
+    <link href="https://azzurebubble.github.io/posts/6390c557.html"/>
+    <id>https://azzurebubble.github.io/posts/6390c557.html</id>
+    <published>2024-08-18T14:27:03.000Z</published>
+    <updated>2024-08-18T14:30:03.791Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>IMaterialModifier：是材质处理的接口，可以在子类中实现GetModifiedMaterial方法去修改渲染的材质。<br>Mask实现了此接口</p></blockquote><h4 id="源码解析">源码解析</h4><blockquote><p>GetModifiedMaterial：</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Material <span class="title">GetModifiedMaterial</span>(<span class="params">Material baseMaterial</span>)</span>;</span><br></pre></td></tr></table></figure><blockquote><p>Canvas每帧更新时会将materialForRendering赋给canvasRenderer进行渲染</p></blockquote>]]></content>
+    
+    
+    <summary type="html">材质处理的接口，可以在子类中实现GetModifiedMaterial方法去修改渲染的材质。</summary>
+    
+    
+    
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/categories/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/tags/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>UGUI源码解析——VertexHelper</title>
@@ -389,27 +410,6 @@
     
     
     <summary type="html">图像、布局重建注册器</summary>
-    
-    
-    
-    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/categories/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
-    
-    
-    <category term="UGUI源码解析" scheme="https://azzurebubble.github.io/tags/UGUI%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UGUI源码解析——ClipperRegistry</title>
-    <link href="https://azzurebubble.github.io/posts/c266fbd7.html"/>
-    <id>https://azzurebubble.github.io/posts/c266fbd7.html</id>
-    <published>2024-07-18T01:46:53.000Z</published>
-    <updated>2024-07-18T14:53:52.573Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>ClipperRegister：是一个裁剪注册器单例，用于跟踪场景中存在的所有IClipper。</p><p>这在CanvasUpdate循环期间用于剔除可剪裁元素。剪裁在布局之后但在图形更新之前调用。</p></blockquote><h4 id="源码解析">源码解析</h4><blockquote><p>单例</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单例获取</span></span><br><span class="line"><span class="keyword">static</span> ClipperRegistry s_Instance;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> ClipperRegistry instance</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">get</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (s_Instance == <span class="literal">null</span>)</span><br><span class="line">            s_Instance = <span class="keyword">new</span> ClipperRegistry();</span><br><span class="line">        <span class="keyword">return</span> s_Instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>保护类型的构造函数，这里面声明了一个空的带有具体类型的字典，是为了在AOT平台中能够识别使用前面说到的IndexedSet自定义容器中的字典容器。</p><p>类型的可参考xLua热更新就需要给每个泛型容器预先定义一个空的具体类型的容器。</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="title">ClipperRegistry</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> <span class="keyword">warning</span> disable 168</span></span><br><span class="line">    Dictionary&lt;IClipper, <span class="built_in">int</span>&gt; emptyIClipperDic;</span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> <span class="keyword">warning</span> restore 168</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>Register：将裁剪对象添加到m_Clippers序列中</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Register</span>(<span class="params">IClipper c</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="literal">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    instance.m_Clippers.AddUnique(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>Cull：对所有注册的IClipper执行剪辑，在CanvasUpdateRegistry类中的PerformUpdate中调用了这个方法，可回顾查看</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Cull</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; m_Clippers.Count; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        m_Clippers[i].PerformClipping();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>Unregister：取消注册的IClipper元素</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Unregister</span>(<span class="params">IClipper c</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">instance.m_Clippers.Remove(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">一个裁剪注册器单例</summary>
     
     
     
